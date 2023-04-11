@@ -36,7 +36,7 @@ class ProductPage extends StatelessWidget {
             brand: 'Lorem ipsum',
             characteristics: 'Lorem ipsum',
             description: 'Lorem ipsum',
-            discount: '50%',
+            discount: '-50%',
             images: [
               'https://skolko-stoit.ru/wp-content/uploads/2021/07/1-14.jpg',
               'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
