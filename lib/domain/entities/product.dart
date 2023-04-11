@@ -4,7 +4,7 @@ part of 'entities.dart';
 class Product with _$Product {
   factory Product({
     required String name,
-    required String image,
+    required List<String> images,
     required String discount,
     required String amount,
     required String description,

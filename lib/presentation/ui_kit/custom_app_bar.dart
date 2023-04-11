@@ -3,15 +3,17 @@ import 'package:third_task/presentation/assets/app_colors.dart';
 import 'package:third_task/presentation/ui_kit/svg_icon_button.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String title;
+  final String? titleText;
+  final Widget? title;
   final SvgIconButton? leading;
   final List<SvgIconButton>? actions;
   const CustomAppBar({
     super.key,
-    required this.title,
+    this.titleText,
+    this.title,
     this.leading,
     this.actions,
-  });
+  }) : assert(titleText != null || title != null);
 
   @override
   Widget build(BuildContext context) {
@@ -38,9 +40,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               alignment: Alignment.bottomCenter,
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 15),
-                child: Text(
-                  title,
-                ),
+                child: titleText != null
+                    ? Text(
+                        titleText!,
+                      )
+                    : title,
               ),
             ),
           ),
