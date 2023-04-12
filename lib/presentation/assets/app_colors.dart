@@ -1,6 +1,8 @@
 import 'dart:ui';
 
 abstract class AppColors {
+  static const secondaryTextColor = Color(0xFF8E9096);
+  static const enabledTextColor = Color(0xFFB9B9B9);
   static const appBarShadowColor = Color(0xFF0B1620);
   static const elementShadowColor = Color(0xFF4F5E73);
   static const navBarShadowColor = Color(0xFF0B1620);

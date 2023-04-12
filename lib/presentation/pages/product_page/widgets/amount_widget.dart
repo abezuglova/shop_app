@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/assets/app_colors.dart';
 import 'package:third_task/presentation/assets/app_fonts.dart';
 
 class AmountWidget extends StatefulWidget {
-  const AmountWidget({super.key});
+  final Product product;
+  const AmountWidget({super.key, required this.product});
 
   @override
   State<AmountWidget> createState() => _AmountWidgetState();
@@ -34,8 +36,10 @@ class _AmountWidgetState extends State<AmountWidget> {
                 ),
                 child: Center(
                   child: Text(
-                    '0,4 кг',
-                    style: AppFonts.medium13,
+                    widget.product.amount,
+                    style: AppFonts.medium13.copyWith(
+                      color: AppColors.secondaryTextColor,
+                    ),
                   ),
                 ),
               ),
@@ -60,9 +64,21 @@ class _AmountWidgetState extends State<AmountWidget> {
                   ],
                 ),
                 child: Center(
-                  child: Text(
-                    '0,4 кг',
-                    style: AppFonts.medium13,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        widget.product.amount,
+                        style: AppFonts.medium13,
+                      ),
+                      const SizedBox(width: 8),
+                      Text(
+                        '-${widget.product.discount}',
+                        style: AppFonts.medium13.copyWith(
+                          color: AppColors.discountColor,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),

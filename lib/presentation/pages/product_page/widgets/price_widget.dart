@@ -39,7 +39,9 @@ class PriceWidget extends StatelessWidget {
                 children: [
                   Text(
                     price,
-                    style: AppFonts.regular18,
+                    style: AppFonts.regular18.copyWith(
+                      color: AppColors.enabledTextColor,
+                    ),
                   ),
                   Positioned(
                     left: 1.71,
@@ -57,7 +59,9 @@ class PriceWidget extends StatelessWidget {
               ),
               Text(
                 price,
-                style: AppFonts.medium28,
+                style: AppFonts.medium28.copyWith(
+                  color: AppColors.discountColor,
+                ),
               ),
             ],
           ),
@@ -72,10 +76,12 @@ class PriceWidget extends StatelessWidget {
                     width: 24,
                     height: 24,
                   ),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   Text(
                     'В корзину',
-                    style: AppFonts.semiBold16,
+                    style: AppFonts.semiBold16.copyWith(
+                      color: Colors.white,
+                    ),
                   ),
                 ],
               ),

@@ -47,7 +47,9 @@ class ProductCardWidget extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Text(
                 product.amount,
-                style: AppFonts.regular12_135,
+                style: AppFonts.regular12_135.copyWith(
+                  color: AppColors.secondaryTextColor,
+                ),
               ),
             ),
             const Spacer(),

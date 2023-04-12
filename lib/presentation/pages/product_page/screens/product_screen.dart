@@ -30,7 +30,7 @@ class ProductScreen extends StatelessWidget {
                     product: product,
                   ),
                   const SizedBox(height: 24),
-                  const AmountWidget(),
+                  AmountWidget(product: product),
                 ],
               ),
             ),

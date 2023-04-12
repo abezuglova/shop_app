@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
+import 'package:third_task/presentation/assets/app_colors.dart';
 import 'package:third_task/presentation/assets/app_fonts.dart';
 
 class OverviewWidget extends StatefulWidget {
@@ -29,7 +30,8 @@ class _OverviewWidgetState extends State<OverviewWidget> {
                   'Описание',
                   style: _selectedTab == 0
                       ? AppFonts.semiBold16_132_5
-                      : AppFonts.semiBold16_132_5.copyWith(color: Colors.grey),
+                      : AppFonts.semiBold16_132_5
+                          .copyWith(color: AppColors.enabledTextColor),
                 ),
               ),
               const SizedBox(width: 16),
@@ -41,7 +43,8 @@ class _OverviewWidgetState extends State<OverviewWidget> {
                   'Характеристики',
                   style: _selectedTab == 1
                       ? AppFonts.semiBold16_132_5
-                      : AppFonts.semiBold16_132_5.copyWith(color: Colors.grey),
+                      : AppFonts.semiBold16_132_5
+                          .copyWith(color: AppColors.enabledTextColor),
                 ),
               ),
               const SizedBox(width: 16),
@@ -53,7 +56,8 @@ class _OverviewWidgetState extends State<OverviewWidget> {
                   'Отзывы',
                   style: _selectedTab == 2
                       ? AppFonts.semiBold16_132_5
-                      : AppFonts.semiBold16_132_5.copyWith(color: Colors.grey),
+                      : AppFonts.semiBold16_132_5
+                          .copyWith(color: AppColors.enabledTextColor),
                 ),
               ),
             ],
@@ -64,15 +68,21 @@ class _OverviewWidgetState extends State<OverviewWidget> {
             children: [
               Text(
                 widget.product.description,
-                style: AppFonts.regular16_160_5,
+                style: AppFonts.regular16_160_5.copyWith(
+                  color: AppColors.secondaryTextColor,
+                ),
               ),
               Text(
                 widget.product.characteristics,
-                style: AppFonts.regular16_160_5,
+                style: AppFonts.regular16_160_5.copyWith(
+                  color: AppColors.secondaryTextColor,
+                ),
               ),
               Text(
                 widget.product.reviews,
-                style: AppFonts.regular16_160_5,
+                style: AppFonts.regular16_160_5.copyWith(
+                  color: AppColors.secondaryTextColor,
+                ),
               ),
             ],
           ),

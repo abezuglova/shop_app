@@ -23,9 +23,21 @@ class MainInfoWidget extends StatelessWidget {
                 color: AppColors.discountColor,
                 borderRadius: BorderRadius.all(Radius.circular(4)),
               ),
-              child: Text(
-                product.discount,
-                style: AppFonts.bold13,
+              child: Row(
+                children: [
+                  Container(
+                    width: 6,
+                    height: 2,
+                    color: Colors.white,
+                  ),
+                  const SizedBox(width: 4),
+                  Text(
+                    product.discount,
+                    style: AppFonts.bold13.copyWith(
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
               ),
             ),
             const SizedBox(width: 8),
@@ -44,7 +56,9 @@ class MainInfoWidget extends StatelessWidget {
                   ),
                   Text(
                     'Органик',
-                    style: AppFonts.semiBold13,
+                    style: AppFonts.semiBold13.copyWith(
+                      color: Colors.white,
+                    ),
                   ),
                 ],
               ),
@@ -84,7 +98,9 @@ class MainInfoWidget extends StatelessWidget {
             const SizedBox(width: 8),
             Text(
               'Ближайшая дата доставки: завтра утром',
-              style: AppFonts.medium16,
+              style: AppFonts.medium16.copyWith(
+                color: AppColors.mainGreen,
+              ),
             ),
           ],
         ),
