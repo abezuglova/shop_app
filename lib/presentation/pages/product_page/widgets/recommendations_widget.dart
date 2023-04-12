@@ -17,7 +17,6 @@ class RecommendationsWidget extends StatelessWidget {
             'Рекомендуем',
           ),
         ),
-        const SizedBox(height: 18),
         SizedBox(
           height: 276,
           child: ListView.separated(

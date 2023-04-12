@@ -66,7 +66,7 @@ class ProductCardWidget extends StatelessWidget {
                         ),
                         elevation: 0,
                       ),
-                      child: SvgPicture.asset(AppIcons.shoppingCartIcon),
+                      child: SvgPicture.asset(AppIcons.smallShoppingCartIcon),
                     ),
                   ),
                 ],

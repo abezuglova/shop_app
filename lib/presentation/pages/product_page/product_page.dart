@@ -12,7 +12,6 @@ class ProductPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        extendBodyBehindAppBar: true,
         appBar: CustomAppBar(
           titleText: 'Говядина',
           leading: SvgIconButton(
