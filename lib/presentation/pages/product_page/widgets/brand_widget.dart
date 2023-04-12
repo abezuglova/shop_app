@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:third_task/presentation/assets/app_colors.dart';
+import 'package:third_task/presentation/assets/app_fonts.dart';
 import 'package:third_task/presentation/assets/app_icons.dart';
 
 class BrandWidget extends StatelessWidget {
@@ -16,7 +17,10 @@ class BrandWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Бренд "$brand"'),
+            Text(
+              'Бренд "$brand"',
+              style: AppFonts.medium16_132_5,
+            ),
             SvgPicture.asset(AppIcons.chevronRightIcon),
           ],
         ),

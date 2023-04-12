@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/assets/app_colors.dart';
+import 'package:third_task/presentation/assets/app_fonts.dart';
 import 'package:third_task/presentation/assets/app_icons.dart';
 
 class ProductCardWidget extends StatelessWidget {
@@ -37,13 +38,17 @@ class ProductCardWidget extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(12, 8, 12, 4),
               child: Text(
                 product.name,
+                style: AppFonts.regular12_135,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: Text(product.amount),
+              child: Text(
+                product.amount,
+                style: AppFonts.regular12_135,
+              ),
             ),
             const Spacer(),
             Padding(
@@ -51,7 +56,10 @@ class ProductCardWidget extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(product.price),
+                  Text(
+                    product.price,
+                    style: AppFonts.semiBold18_130,
+                  ),
                   SizedBox(
                     width: 52,
                     height: 31,

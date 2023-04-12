@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
+import 'package:third_task/presentation/assets/app_fonts.dart';
 import 'package:third_task/presentation/ui_kit/product_card_widget.dart';
 
 class RecommendationsWidget extends StatelessWidget {
@@ -11,10 +12,11 @@ class RecommendationsWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Text(
             'Рекомендуем',
+            style: AppFonts.regular20_132_5,
           ),
         ),
         SizedBox(

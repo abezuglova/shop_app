@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:third_task/presentation/assets/app_colors.dart';
+import 'package:third_task/presentation/assets/app_fonts.dart';
 import 'package:third_task/presentation/assets/app_icons.dart';
 
 class PriceWidget extends StatelessWidget {
@@ -32,10 +33,14 @@ class PriceWidget extends StatelessWidget {
         children: [
           Column(
             mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Stack(
                 children: [
-                  Text(price),
+                  Text(
+                    price,
+                    style: AppFonts.regular18,
+                  ),
                   Positioned(
                     left: 1.71,
                     top: 13,
@@ -50,7 +55,10 @@ class PriceWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              Text(price),
+              Text(
+                price,
+                style: AppFonts.medium28,
+              ),
             ],
           ),
           ElevatedButton(
@@ -65,7 +73,10 @@ class PriceWidget extends StatelessWidget {
                     height: 24,
                   ),
                   SizedBox(width: 8),
-                  Text('В корзину'),
+                  Text(
+                    'В корзину',
+                    style: AppFonts.semiBold16,
+                  ),
                 ],
               ),
             ),

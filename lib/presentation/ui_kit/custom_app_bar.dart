@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/presentation/assets/app_colors.dart';
+import 'package:third_task/presentation/assets/app_fonts.dart';
 import 'package:third_task/presentation/ui_kit/svg_icon_button.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -39,10 +40,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             child: Align(
               alignment: Alignment.bottomCenter,
               child: Padding(
-                padding: const EdgeInsets.only(bottom: 15),
+                padding: const EdgeInsets.only(bottom: 9),
                 child: titleText != null
                     ? Text(
                         titleText!,
+                        style: AppFonts.medium16,
                       )
                     : title,
               ),
@@ -70,7 +72,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                     )
                     .toList(),
               ),
-            )
+            ),
         ],
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/presentation/assets/app_colors.dart';
+import 'package:third_task/presentation/assets/app_fonts.dart';
 
 class AmountWidget extends StatefulWidget {
   const AmountWidget({super.key});
@@ -31,9 +32,10 @@ class _AmountWidgetState extends State<AmountWidget> {
                     Radius.circular(50),
                   ),
                 ),
-                child: const Center(
+                child: Center(
                   child: Text(
                     '0,4 кг',
+                    style: AppFonts.medium13,
                   ),
                 ),
               ),
@@ -57,9 +59,10 @@ class _AmountWidgetState extends State<AmountWidget> {
                     ),
                   ],
                 ),
-                child: const Center(
+                child: Center(
                   child: Text(
                     '0,4 кг',
+                    style: AppFonts.medium13,
                   ),
                 ),
               ),

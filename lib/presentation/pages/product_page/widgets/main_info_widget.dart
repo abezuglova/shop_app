@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/assets/app_colors.dart';
+import 'package:third_task/presentation/assets/app_fonts.dart';
 import 'package:third_task/presentation/assets/app_icons.dart';
 import 'package:third_task/presentation/assets/app_images.dart';
 
@@ -22,7 +23,10 @@ class MainInfoWidget extends StatelessWidget {
                 color: AppColors.discountColor,
                 borderRadius: BorderRadius.all(Radius.circular(4)),
               ),
-              child: Text(product.discount),
+              child: Text(
+                product.discount,
+                style: AppFonts.bold13,
+              ),
             ),
             const SizedBox(width: 8),
             Container(
@@ -32,14 +36,15 @@ class MainInfoWidget extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(4)),
               ),
               child: Row(
-                children: const [
-                  Image(
+                children: [
+                  const Image(
                     image: AssetImage(
                       AppImages.organicSign,
                     ),
                   ),
                   Text(
                     'Органик',
+                    style: AppFonts.semiBold13,
                   ),
                 ],
               ),
@@ -52,14 +57,15 @@ class MainInfoWidget extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(4)),
               ),
               child: Row(
-                children: const [
-                  Image(
+                children: [
+                  const Image(
                     image: AssetImage(
                       AppImages.deliverySign,
                     ),
                   ),
                   Text(
                     'Экспресс-доставка',
+                    style: AppFonts.medium13,
                   ),
                 ],
               ),
@@ -69,14 +75,16 @@ class MainInfoWidget extends StatelessWidget {
         const SizedBox(height: 16),
         Text(
           product.name,
+          style: AppFonts.regular20_132_5,
         ),
         const SizedBox(height: 32),
         Row(
           children: [
             SvgPicture.asset(AppIcons.deliveryIcon),
             const SizedBox(width: 8),
-            const Text(
+            Text(
               'Ближайшая дата доставки: завтра утром',
+              style: AppFonts.medium16,
             ),
           ],
         ),

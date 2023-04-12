@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
+import 'package:third_task/presentation/assets/app_fonts.dart';
 
 class OverviewWidget extends StatefulWidget {
   final Product product;
@@ -26,10 +27,9 @@ class _OverviewWidgetState extends State<OverviewWidget> {
                 ),
                 child: Text(
                   'Описание',
-                  style: TextStyle(
-                      fontWeight: _selectedTab == 0
-                          ? FontWeight.bold
-                          : FontWeight.normal),
+                  style: _selectedTab == 0
+                      ? AppFonts.semiBold16_132_5
+                      : AppFonts.semiBold16_132_5.copyWith(color: Colors.grey),
                 ),
               ),
               const SizedBox(width: 16),
@@ -39,10 +39,9 @@ class _OverviewWidgetState extends State<OverviewWidget> {
                 ),
                 child: Text(
                   'Характеристики',
-                  style: TextStyle(
-                      fontWeight: _selectedTab == 1
-                          ? FontWeight.bold
-                          : FontWeight.normal),
+                  style: _selectedTab == 1
+                      ? AppFonts.semiBold16_132_5
+                      : AppFonts.semiBold16_132_5.copyWith(color: Colors.grey),
                 ),
               ),
               const SizedBox(width: 16),
@@ -52,10 +51,9 @@ class _OverviewWidgetState extends State<OverviewWidget> {
                 ),
                 child: Text(
                   'Отзывы',
-                  style: TextStyle(
-                      fontWeight: _selectedTab == 2
-                          ? FontWeight.bold
-                          : FontWeight.normal),
+                  style: _selectedTab == 2
+                      ? AppFonts.semiBold16_132_5
+                      : AppFonts.semiBold16_132_5.copyWith(color: Colors.grey),
                 ),
               ),
             ],
@@ -64,9 +62,18 @@ class _OverviewWidgetState extends State<OverviewWidget> {
           IndexedStack(
             index: _selectedTab,
             children: [
-              Text(widget.product.description),
-              Text(widget.product.characteristics),
-              Text(widget.product.reviews),
+              Text(
+                widget.product.description,
+                style: AppFonts.regular16_160_5,
+              ),
+              Text(
+                widget.product.characteristics,
+                style: AppFonts.regular16_160_5,
+              ),
+              Text(
+                widget.product.reviews,
+                style: AppFonts.regular16_160_5,
+              ),
             ],
           ),
         ],
