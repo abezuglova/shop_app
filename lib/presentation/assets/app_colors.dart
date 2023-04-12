@@ -7,4 +7,6 @@ abstract class AppColors {
   static const deliveryColor = Color(0xFFFFDD00);
   static const brandColor = Color(0xFF8DC63F);
   static const offBackgroundColor2 = Color(0xFFF2F3F0);
+  static const mainGreen = Color(0xFF95CA00);
+  static const smallElevatedButtonColor = Color(0xFFAAD533);
 }

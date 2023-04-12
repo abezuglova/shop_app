@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:third_task/presentation/assets/app_colors.dart';
 import 'package:third_task/presentation/pages/product_page/product_page.dart';
 
 void main() {
@@ -15,8 +16,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.mainGreen,
             shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(11.58)),
+              borderRadius: BorderRadius.all(
+                Radius.circular(43),
+              ),
             ),
             elevation: 0,
           ),

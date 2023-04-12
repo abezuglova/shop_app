@@ -14,60 +14,63 @@ class _OverviewWidgetState extends State<OverviewWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          children: [
-            GestureDetector(
-              onTap: () => setState(
-                () => _selectedTab = 0,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              GestureDetector(
+                onTap: () => setState(
+                  () => _selectedTab = 0,
+                ),
+                child: Text(
+                  'Описание',
+                  style: TextStyle(
+                      fontWeight: _selectedTab == 0
+                          ? FontWeight.bold
+                          : FontWeight.normal),
+                ),
               ),
-              child: Text(
-                'Описание',
-                style: TextStyle(
-                    fontWeight: _selectedTab == 0
-                        ? FontWeight.bold
-                        : FontWeight.normal),
+              const SizedBox(width: 16),
+              GestureDetector(
+                onTap: () => setState(
+                  () => _selectedTab = 1,
+                ),
+                child: Text(
+                  'Характеристики',
+                  style: TextStyle(
+                      fontWeight: _selectedTab == 1
+                          ? FontWeight.bold
+                          : FontWeight.normal),
+                ),
               ),
-            ),
-            const SizedBox(width: 16),
-            GestureDetector(
-              onTap: () => setState(
-                () => _selectedTab = 1,
+              const SizedBox(width: 16),
+              GestureDetector(
+                onTap: () => setState(
+                  () => _selectedTab = 2,
+                ),
+                child: Text(
+                  'Отзывы',
+                  style: TextStyle(
+                      fontWeight: _selectedTab == 2
+                          ? FontWeight.bold
+                          : FontWeight.normal),
+                ),
               ),
-              child: Text(
-                'Характеристики',
-                style: TextStyle(
-                    fontWeight: _selectedTab == 1
-                        ? FontWeight.bold
-                        : FontWeight.normal),
-              ),
-            ),
-            const SizedBox(width: 16),
-            GestureDetector(
-              onTap: () => setState(
-                () => _selectedTab = 2,
-              ),
-              child: Text(
-                'Отзывы',
-                style: TextStyle(
-                    fontWeight: _selectedTab == 2
-                        ? FontWeight.bold
-                        : FontWeight.normal),
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 16),
-        IndexedStack(
-          index: _selectedTab,
-          children: [
-            Text(widget.product.description),
-            Text(widget.product.characteristics),
-            Text(widget.product.reviews),
-          ],
-        ),
-      ],
+            ],
+          ),
+          const SizedBox(height: 16),
+          IndexedStack(
+            index: _selectedTab,
+            children: [
+              Text(widget.product.description),
+              Text(widget.product.characteristics),
+              Text(widget.product.reviews),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

@@ -12,7 +12,7 @@ class Product with _$Product {
     required String reviews,
     required String brand,
     required String price,
-    
+    required List<Product> recommendations,
   }) = _Product;
 
   factory Product.fromJson(Map<String, dynamic> json) =>
