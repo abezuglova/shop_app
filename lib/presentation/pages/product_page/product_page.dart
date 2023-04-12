@@ -41,7 +41,7 @@ class ProductPage extends StatelessWidget {
               'https://skolko-stoit.ru/wp-content/uploads/2021/07/1-14.jpg',
               'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
             ],
-            name: 'Говядина',
+            name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
             price: '600 р/кг',
             reviews: 'Lorem ipsum',
           ),

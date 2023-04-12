@@ -11,11 +11,20 @@ class ProductScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        PhotoSliderWidget(images: product.images),
+        PhotoSliderWidget(
+          images: product.images,
+        ),
         const SizedBox(height: 24),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: MainInfoWidget(),
+          child: Column(
+            children: [
+              MainInfoWidget(
+                product: product,
+              ),
+              const SizedBox(height: 24),
+            ],
+          ),
         ),
       ],
     );
