@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/presentation/assets/app_colors.dart';
 
-class AmountWidget extends StatelessWidget {
+class AmountWidget extends StatefulWidget {
   const AmountWidget({super.key});
 
+  @override
+  State<AmountWidget> createState() => _AmountWidgetState();
+}
+
+class _AmountWidgetState extends State<AmountWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,11 +43,19 @@ class AmountWidget extends StatelessWidget {
           Expanded(
             child: GestureDetector(
               child: Container(
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.all(
+                  borderRadius: const BorderRadius.all(
                     Radius.circular(50),
                   ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.elementShadowColor.withOpacity(0.15),
+                      offset: const Offset(0, 5),
+                      blurRadius: 10,
+                      spreadRadius: -5,
+                    ),
+                  ],
                 ),
                 child: const Center(
                   child: Text(
