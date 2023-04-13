@@ -5,6 +5,7 @@ import 'package:third_task/presentation/pages/main_page/widgets/already_bought_l
 import 'package:third_task/presentation/pages/main_page/widgets/best_deals_widget.dart';
 import 'package:third_task/presentation/pages/main_page/widgets/brand_list_widget.dart';
 import 'package:third_task/presentation/pages/main_page/widgets/category_list_widget.dart';
+import 'package:third_task/presentation/pages/main_page/widgets/footer_widget.dart';
 
 class MainScreen extends StatelessWidget {
   final MainPageData mainPageData;
@@ -29,6 +30,9 @@ class MainScreen extends StatelessWidget {
         BrandListWidget(
           brandList: mainPageData.brandList,
         ),
+        const SizedBox(height: 36),
+        const FooterWidget(),
+        const SizedBox(height: 61),
       ],
     );
   }
