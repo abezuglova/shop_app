@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/pages/main_page/widgets/advertisement_list_widget.dart';
+import 'package:third_task/presentation/pages/main_page/widgets/already_bought_list_widget.dart';
 import 'package:third_task/presentation/pages/main_page/widgets/best_deals_widget.dart';
 import 'package:third_task/presentation/pages/main_page/widgets/category_list_widget.dart';
 
@@ -20,6 +21,9 @@ class MainScreen extends StatelessWidget {
         ),
         BestDealsWidget(
           bestDeals: mainPageData.bestDeals,
+        ),
+        AlreadyBoughtListWidget(
+          alreadyBoughtList: mainPageData.alreadyBoughtList,
         ),
       ],
     );
