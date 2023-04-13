@@ -11,5 +11,7 @@ part 'subcategory.dart';
 part 'payment_method.dart';
 part 'product_type.dart';
 part 'personal_data.dart';
+part 'main_page_data.dart';
+part 'brand.dart';
 part 'entities.g.dart';
 part 'entities.freezed.dart';
