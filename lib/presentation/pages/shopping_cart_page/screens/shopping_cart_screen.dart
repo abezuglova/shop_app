@@ -3,6 +3,8 @@ import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/assets/app_colors.dart';
 import 'package:third_task/presentation/assets/app_fonts.dart';
 import 'package:third_task/presentation/pages/shopping_cart_page/widgets/product_list_widget.dart';
+import 'package:third_task/presentation/pages/shopping_cart_page/widgets/summary_widget.dart';
+import 'package:third_task/presentation/ui_kit/recommendations_widget.dart';
 
 class ShoppingCartScreen extends StatelessWidget {
   final ShoppingCart shoppingCart;
@@ -17,6 +19,17 @@ class ShoppingCartScreen extends StatelessWidget {
             ProductListWidget(
               productList: shoppingCart.products,
             ),
+            RecommendationsWidget(
+              recommendations: shoppingCart.recommendations,
+            ),
+            const SizedBox(height: 6),
+            const Divider(
+              color: AppColors.offBackgroundColor2,
+            ),
+            SummaryWidget(
+              products: shoppingCart.products,
+            ),
+            const SizedBox(height: 98),
           ],
         ),
         Align(
