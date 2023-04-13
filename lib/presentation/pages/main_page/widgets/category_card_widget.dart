@@ -20,33 +20,38 @@ class CategoryCardWidget extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: const BorderRadius.all(
-                Radius.circular(8),
+                Radius.circular(12),
               ),
               boxShadow: [
                 BoxShadow(
-                  color: AppColors.advertisementShadowColor1.withOpacity(0.5),
+                  color: AppColors.elementShadowColor.withOpacity(0.1),
                   offset: const Offset(0, 10),
                   blurRadius: 20,
-                  spreadRadius: -13,
+                  spreadRadius: -5,
                 ),
               ],
             ),
           ),
           Positioned(
             left: 10,
-            right: 10,
+            top: 10,
             child: Image.network(
               category.image,
-              width: 75,
-              height: 75,
+              width: 50,
+              height: 50,
             ),
           ),
           Positioned(
             left: 12,
             bottom: 8,
-            child: Text(
-              category.name,
-              style: AppFonts.regular12_108_5,
+            child: SizedBox(
+              width: 84,
+              child: Text(
+                category.name,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: AppFonts.regular12_108_5,
+              ),
             ),
           ),
         ],
