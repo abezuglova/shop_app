@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
+import 'package:third_task/presentation/assets/app_colors.dart';
 import 'package:third_task/presentation/assets/app_icons.dart';
 import 'package:third_task/presentation/pages/product_page/screens/product_screen.dart';
 import 'package:third_task/presentation/ui_kit/custom_app_bar.dart';
@@ -12,6 +13,7 @@ class ProductPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: AppColors.scaffoldBackgroundColor,
         appBar: CustomAppBar(
           titleText: 'Говядина',
           leading: SvgIconButton(

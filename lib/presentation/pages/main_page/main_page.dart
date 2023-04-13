@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:third_task/domain/entities/entities.dart';
+import 'package:third_task/presentation/assets/app_colors.dart';
 import 'package:third_task/presentation/assets/app_fonts.dart';
 import 'package:third_task/presentation/assets/app_icons.dart';
 import 'package:third_task/presentation/pages/main_page/screens/main_screen.dart';
@@ -13,6 +14,7 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: AppColors.scaffoldBackgroundColor,
         appBar: CustomAppBar(
           title: Row(
             mainAxisSize: MainAxisSize.min,

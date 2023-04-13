@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/presentation/assets/app_colors.dart';
-import 'package:third_task/presentation/pages/catalog_page/catalog_page.dart';
-import 'package:third_task/presentation/pages/main_page/main_page.dart';
+import 'package:third_task/presentation/pages/category_page/category_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        dividerTheme: const DividerThemeData(
+          color: AppColors.dividerColor,
+          thickness: 1,
+          space: 0,
+        ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.mainGreen,
@@ -35,7 +39,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const CatalogPage(),
+      home: const CategoryPage(),
     );
   }
 }

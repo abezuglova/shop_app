@@ -1,0 +1,63 @@
+import 'package:flutter/material.dart';
+import 'package:third_task/domain/entities/entities.dart';
+import 'package:third_task/presentation/assets/app_colors.dart';
+import 'package:third_task/presentation/assets/app_icons.dart';
+import 'package:third_task/presentation/pages/category_page/screens/category_screen.dart';
+import 'package:third_task/presentation/ui_kit/custom_app_bar.dart';
+import 'package:third_task/presentation/ui_kit/svg_icon_button.dart';
+
+class CategoryPage extends StatelessWidget {
+  const CategoryPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: AppColors.scaffoldBackgroundColor,
+        appBar: CustomAppBar(
+          titleText: 'Напитки, соки, чай, кофе',
+          leading: SvgIconButton(
+            onPressed: () {},
+            iconPath: AppIcons.chevronLeftIcon,
+          ),
+        ),
+        body: CategoryScreen(
+          category: Category(
+            name: 'Напитки, соки, чай, кофе',
+            image: '',
+            subcategories: [
+              Subcategory(
+                name: 'Чай',
+                productTypes: [],
+              ),
+              Subcategory(
+                name: 'Кофе',
+                productTypes: [],
+              ),
+              Subcategory(
+                name: 'Какао, цикорий',
+                productTypes: [],
+              ),
+              Subcategory(
+                name: 'Соки, морсы, нектары, кампоты',
+                productTypes: [],
+              ),
+              Subcategory(
+                name: 'Вода минеральная и питьевая',
+                productTypes: [],
+              ),
+              Subcategory(
+                name: 'Лимонады, напитки',
+                productTypes: [],
+              ),
+              Subcategory(
+                name: 'Холодный чай, кофе, экзотика',
+                productTypes: [],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 abstract class AppColors {
+  static const scaffoldBackgroundColor = Color(0xFFFAFBF9);
   static const secondaryTextColor = Color(0xFF8E9096);
   static const enabledTextColor = Color(0xFFB9B9B9);
   static const appBarShadowColor = Color(0xFF0B1620);
@@ -14,4 +15,5 @@ abstract class AppColors {
   static const mainGreen = Color(0xFF95CA00);
   static const smallElevatedButtonColor = Color(0xFFAAD533);
   static const promoColor1 = Color(0xFFFCEAE6);
+  static const dividerColor = Color(0xFFE7E7EF);
 }
