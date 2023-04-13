@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
+import 'package:third_task/presentation/pages/main_page/widgets/advertisement_card_widget.dart';
 
 class AdvertisementListWidget extends StatelessWidget {
   final List<Advertisement> advertisementList;
@@ -7,6 +8,19 @@ class AdvertisementListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return SizedBox(
+      height: 272,
+      child: ListView.separated(
+        padding: const EdgeInsets.fromLTRB(20, 28, 20, 36),
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (BuildContext context, int index) =>
+            AdvertisementCardWidget(
+          advertisement: advertisementList[index],
+        ),
+        separatorBuilder: (BuildContext context, int index) =>
+            const SizedBox(width: 8),
+        itemCount: advertisementList.length,
+      ),
+    );
   }
 }

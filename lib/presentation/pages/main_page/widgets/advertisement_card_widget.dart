@@ -17,6 +17,7 @@ class AdvertisementCardWidget extends StatelessWidget {
           Container(
             width: 335,
             height: 208,
+            clipBehavior: Clip.hardEdge,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               color: AppColors.promoColor1,
@@ -25,7 +26,7 @@ class AdvertisementCardWidget extends StatelessWidget {
               ),
               boxShadow: [
                 BoxShadow(
-                  color: AppColors.advertisementShadowColor.withOpacity(0.5),
+                  color: AppColors.advertisementShadowColor1.withOpacity(0.5),
                   offset: const Offset(0, 10),
                   blurRadius: 20,
                   spreadRadius: -13,
@@ -35,16 +36,28 @@ class AdvertisementCardWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  advertisement.name,
-                  style: AppFonts.yesevaRegular24,
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  advertisement.description,
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                  style: AppFonts.regular14_135,
+                SizedBox(
+                  width: 233,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        advertisement.name,
+                        style: AppFonts.yesevaRegular24,
+                      ),
+                      const SizedBox(height: 8),
+                      SizedBox(
+                        width: 175,
+                        child: Text(
+                          advertisement.description,
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
+                          style: AppFonts.regular14_135,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 const Spacer(),
                 SizedBox(
@@ -64,10 +77,12 @@ class AdvertisementCardWidget extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: 178,
-            top: 42,
+            left: 200,
+            top: 50,
             child: Image.network(
               advertisement.image,
+              width: 200,
+              height: 200,
             ),
           ),
         ],

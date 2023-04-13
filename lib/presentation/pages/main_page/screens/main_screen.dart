@@ -10,7 +10,6 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        const SizedBox(height: 28),
         AdvertisementListWidget(
           advertisementList: mainPageData.advertisementList,
         ),

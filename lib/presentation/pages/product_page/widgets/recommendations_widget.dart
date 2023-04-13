@@ -31,7 +31,7 @@ class RecommendationsWidget extends StatelessWidget {
                 const SizedBox(width: 8),
             itemCount: recommendations.length,
           ),
-        )
+        ),
       ],
     );
   }
