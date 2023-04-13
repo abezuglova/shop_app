@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/pages/main_page/widgets/advertisement_list_widget.dart';
+import 'package:third_task/presentation/pages/main_page/widgets/best_deals_widget.dart';
 import 'package:third_task/presentation/pages/main_page/widgets/category_list_widget.dart';
 
 class MainScreen extends StatelessWidget {
@@ -16,6 +17,9 @@ class MainScreen extends StatelessWidget {
         ),
         CategoryListWidget(
           categories: mainPageData.popularCategories,
+        ),
+        BestDealsWidget(
+          bestDeals: mainPageData.bestDeals,
         ),
       ],
     );
