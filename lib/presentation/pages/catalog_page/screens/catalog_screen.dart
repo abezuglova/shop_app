@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/assets/app_fonts.dart';
+import 'package:third_task/presentation/pages/catalog_page/widgets/category_widget.dart';
 import 'package:third_task/presentation/pages/catalog_page/widgets/sections_widget.dart';
 
 class CatalogScreen extends StatelessWidget {
-  const CatalogScreen({super.key});
+  final List<Category> categories;
+  const CatalogScreen({super.key, required this.categories});
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +26,17 @@ class CatalogScreen extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(16),
           child: GridView.count(
+            childAspectRatio: 163 / 117,
             crossAxisCount: 2,
             crossAxisSpacing: 16,
             mainAxisSpacing: 16,
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
-            children: [],
+            children: categories
+                .map(
+                  (category) => CategoryWidget(category: category),
+                )
+                .toList(),
           ),
         ),
       ],

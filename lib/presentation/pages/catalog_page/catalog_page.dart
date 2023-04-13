@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/assets/app_fonts.dart';
 import 'package:third_task/presentation/assets/app_icons.dart';
 import 'package:third_task/presentation/pages/catalog_page/screens/catalog_screen.dart';
@@ -25,7 +26,80 @@ class CatalogPage extends StatelessWidget {
             ],
           ),
         ),
-        body: CatalogScreen(),
+        body: CatalogScreen(
+          categories: [
+            Category(
+              name: 'Молочные продукты, яйцо',
+              image: 'https://purmix.ru/images/uroki/karand/raznoe/cheese3.jpg',
+              subcategories: [],
+            ),
+            Category(
+              name: 'Молочные продукты, яйцо',
+              image: 'https://purmix.ru/images/uroki/karand/raznoe/cheese3.jpg',
+              subcategories: [],
+            ),
+            Category(
+              name: 'Молочные продукты, яйцо',
+              image: 'https://purmix.ru/images/uroki/karand/raznoe/cheese3.jpg',
+              subcategories: [],
+            ),
+            Category(
+              name: 'Молочные продукты, яйцо',
+              image: 'https://purmix.ru/images/uroki/karand/raznoe/cheese3.jpg',
+              subcategories: [],
+            ),
+            Category(
+              name: 'Молочные продукты, яйцо',
+              image: 'https://purmix.ru/images/uroki/karand/raznoe/cheese3.jpg',
+              subcategories: [],
+            ),
+            Category(
+              name: 'Молочные продукты, яйцо',
+              image: 'https://purmix.ru/images/uroki/karand/raznoe/cheese3.jpg',
+              subcategories: [],
+            ),
+            Category(
+              name: 'Молочные продукты, яйцо',
+              image: 'https://purmix.ru/images/uroki/karand/raznoe/cheese3.jpg',
+              subcategories: [],
+            ),
+            Category(
+              name: 'Молочные продукты, яйцо',
+              image: 'https://purmix.ru/images/uroki/karand/raznoe/cheese3.jpg',
+              subcategories: [],
+            ),
+            Category(
+              name: 'Молочные продукты, яйцо',
+              image: 'https://purmix.ru/images/uroki/karand/raznoe/cheese3.jpg',
+              subcategories: [],
+            ),
+            Category(
+              name: 'Молочные продукты, яйцо',
+              image: 'https://purmix.ru/images/uroki/karand/raznoe/cheese3.jpg',
+              subcategories: [],
+            ),
+            Category(
+              name: 'Молочные продукты, яйцо',
+              image: 'https://purmix.ru/images/uroki/karand/raznoe/cheese3.jpg',
+              subcategories: [],
+            ),
+            Category(
+              name: 'Молочные продукты, яйцо',
+              image: 'https://purmix.ru/images/uroki/karand/raznoe/cheese3.jpg',
+              subcategories: [],
+            ),
+            Category(
+              name: 'Молочные продукты, яйцо',
+              image: 'https://purmix.ru/images/uroki/karand/raznoe/cheese3.jpg',
+              subcategories: [],
+            ),
+            Category(
+              name: 'Молочные продукты, яйцо',
+              image: 'https://purmix.ru/images/uroki/karand/raznoe/cheese3.jpg',
+              subcategories: [],
+            ),
+          ],
+        ),
       ),
     );
   }
