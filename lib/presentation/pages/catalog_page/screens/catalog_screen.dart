@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:third_task/presentation/pages/catalog_page/widgets/sections_widget.dart';
 
 class CatalogScreen extends StatelessWidget {
   const CatalogScreen({super.key});
@@ -6,7 +7,11 @@ class CatalogScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: [],
+      padding: const EdgeInsets.all(16),
+      children: [
+        SectionsWidget(),
+        SizedBox(height: 16),
+      ],
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/presentation/assets/app_colors.dart';
+import 'package:third_task/presentation/pages/catalog_page/catalog_page.dart';
 import 'package:third_task/presentation/pages/main_page/main_page.dart';
 
 void main() {
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const MainPage(),
+      home: const CatalogPage(),
     );
   }
 }

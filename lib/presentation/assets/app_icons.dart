@@ -7,4 +7,6 @@ abstract class AppIcons {
   static const smallDeliveryIcon = 'icons/delivery_icon.svg';
   static const smallShoppingCartIcon = 'icons/shopping_cart.svg';
   static const shoppingCartIcon = 'icons/shopping_cart_icon.svg';
+  static const percentIcon = 'icons/percent.svg';
+  static const redLikeIcon = 'icons/red_like.svg';
 }

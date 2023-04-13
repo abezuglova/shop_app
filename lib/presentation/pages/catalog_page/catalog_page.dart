@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:third_task/presentation/assets/app_fonts.dart';
 import 'package:third_task/presentation/assets/app_icons.dart';
+import 'package:third_task/presentation/pages/catalog_page/screens/catalog_screen.dart';
 import 'package:third_task/presentation/ui_kit/custom_app_bar.dart';
 
 class CatalogPage extends StatelessWidget {
@@ -24,7 +25,7 @@ class CatalogPage extends StatelessWidget {
             ],
           ),
         ),
-        body: CatalogPage(),
+        body: CatalogScreen(),
       ),
     );
   }
