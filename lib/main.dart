@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/presentation/assets/app_colors.dart';
 import 'package:third_task/presentation/pages/category_page/category_page.dart';
+import 'package:third_task/presentation/pages/subcategory_page/subcategory_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const CategoryPage(),
+      home: const SubcategoryPage(),
     );
   }
 }

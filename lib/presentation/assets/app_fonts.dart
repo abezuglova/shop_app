@@ -37,7 +37,7 @@ abstract class AppFonts {
   );
   static final TextStyle regular14_121 = GoogleFonts.jost(
     color: Colors.black,
-    fontSize: 12,
+    fontSize: 14,
     fontWeight: FontWeight.w400,
     height: 1.21,
   );

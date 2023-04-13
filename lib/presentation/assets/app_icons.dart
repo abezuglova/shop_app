@@ -9,4 +9,5 @@ abstract class AppIcons {
   static const shoppingCartIcon = 'icons/shopping_cart_icon.svg';
   static const percentIcon = 'icons/percent.svg';
   static const redLikeIcon = 'icons/red_like.svg';
+  static const arrowDownIcon = 'icons/arrow_down.svg';
 }
