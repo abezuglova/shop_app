@@ -24,7 +24,7 @@ class SectionsWidget extends StatelessWidget {
       ],
     );
     return Padding(
-      padding: const EdgeInsets.only(bottom: 16),
+      padding: const EdgeInsets.all(16),
       child: Column(
         children: [
           Row(
