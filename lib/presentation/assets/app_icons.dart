@@ -11,4 +11,6 @@ abstract class AppIcons {
   static const redLikeIcon = 'icons/red_like.svg';
   static const arrowDownIcon = 'icons/arrow_down.svg';
   static const basketIcon = 'icons/basket.svg';
+  static const minusIcon = 'icons/minus.svg';
+  static const plusIcon = 'icons/plus.svg';
 }

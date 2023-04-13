@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
+import 'package:third_task/presentation/assets/app_colors.dart';
+import 'package:third_task/presentation/assets/app_fonts.dart';
+import 'package:third_task/presentation/pages/shopping_cart_page/widgets/product_list_widget.dart';
 
 class ShoppingCartScreen extends StatelessWidget {
   final ShoppingCart shoppingCart;
@@ -7,6 +10,50 @@ class ShoppingCartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Stack(
+      children: [
+        ListView(
+          children: [
+            ProductListWidget(
+              productList: shoppingCart.products,
+            ),
+          ],
+        ),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Container(
+            padding: const EdgeInsets.all(16),
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(12),
+                topRight: Radius.circular(12),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: AppColors.navBarShadowColor.withOpacity(0.06),
+                  offset: const Offset(0, -7),
+                  blurRadius: 15,
+                ),
+              ],
+            ),
+            child: ElevatedButton(
+              onPressed: () {},
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 70, vertical: 16),
+                child: Text(
+                  'Перейти к оформлению',
+                  style: AppFonts.semiBold18.copyWith(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
   }
 }
