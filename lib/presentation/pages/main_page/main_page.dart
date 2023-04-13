@@ -250,7 +250,7 @@ class MainPage extends StatelessWidget {
               ),
               Brand(
                 name: 'Углече поле',
-                logo: 'https://organicguide.ru/wp-content/uploads/2016/06/edC5WDqj.png',
+                logo: 'https://avatars.mds.yandex.net/get-mpic/5376414/img_id6722953875435341144.png/orig',
               ),
               Brand(
                 name: 'Углече поле',
@@ -258,7 +258,7 @@ class MainPage extends StatelessWidget {
               ),
               Brand(
                 name: 'Углече поле',
-                logo: 'https://organicguide.ru/wp-content/uploads/2016/06/edC5WDqj.png',
+                logo: 'https://avatars.mds.yandex.net/get-mpic/5376414/img_id6722953875435341144.png/orig',
               ),
               Brand(
                 name: 'Углече поле',
@@ -266,7 +266,7 @@ class MainPage extends StatelessWidget {
               ),
               Brand(
                 name: 'Углече поле',
-                logo: 'https://organicguide.ru/wp-content/uploads/2016/06/edC5WDqj.png',
+                logo: 'https://avatars.mds.yandex.net/get-mpic/5376414/img_id6722953875435341144.png/orig',
               ),
             ],
           ),

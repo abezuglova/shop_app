@@ -15,7 +15,7 @@ class AlreadyBoughtListWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Text(
-            'Лучшие предложения',
+            'Уже покупали',
             style: AppFonts.yesevaRegular24,
           ),
         ),
