@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/pages/main_page/widgets/advertisement_list_widget.dart';
+import 'package:third_task/presentation/pages/main_page/widgets/category_list_widget.dart';
 
 class MainScreen extends StatelessWidget {
   final MainPageData mainPageData;
@@ -12,6 +13,9 @@ class MainScreen extends StatelessWidget {
       children: [
         AdvertisementListWidget(
           advertisementList: mainPageData.advertisementList,
+        ),
+        CategoryListWidget(
+          categories: mainPageData.popularCategories,
         ),
       ],
     );
