@@ -19,7 +19,7 @@ class ShoppingCartPage extends StatelessWidget {
         appBar: CustomAppBar(
           title: Text(
             'Корзина',
-            style: AppFonts.medium16,
+            style: AppFonts.medium16_144_5,
           ),
           actions: [
             SvgIconButton(

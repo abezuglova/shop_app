@@ -15,4 +15,5 @@ abstract class AppIcons {
   static const plusIcon = 'icons/plus.svg';
   static const questionMarkIcon = 'icons/question_mark.svg';
   static const exitIcon = 'icons/exit.svg';
+  static const calenderIcon = 'icons/calender.svg';
 }

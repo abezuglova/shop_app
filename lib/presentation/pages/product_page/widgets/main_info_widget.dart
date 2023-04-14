@@ -98,7 +98,7 @@ class MainInfoWidget extends StatelessWidget {
             const SizedBox(width: 8),
             Text(
               'Ближайшая дата доставки: завтра утром',
-              style: AppFonts.medium16.copyWith(
+              style: AppFonts.medium16_144_5.copyWith(
                 color: AppColors.mainGreen,
               ),
             ),

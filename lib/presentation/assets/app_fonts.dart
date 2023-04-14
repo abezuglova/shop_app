@@ -25,10 +25,11 @@ abstract class AppFonts {
     fontWeight: FontWeight.w400,
     height: 1.445,
   );
-  static final TextStyle regular13 = GoogleFonts.jost(
+  static final TextStyle regular13_144_5 = GoogleFonts.jost(
     color: Colors.black,
     fontSize: 13,
     fontWeight: FontWeight.w400,
+    height: 1.445,
   );
   static final TextStyle regular14 = GoogleFonts.jost(
     color: Colors.black,
@@ -108,10 +109,11 @@ abstract class AppFonts {
     fontWeight: FontWeight.w500,
     height: 1.35,
   );
-  static final TextStyle medium16 = GoogleFonts.jost(
+  static final TextStyle medium16_144_5 = GoogleFonts.jost(
     color: Colors.black,
     fontSize: 16,
     fontWeight: FontWeight.w500,
+    height: 1.445,
   );
   static final TextStyle medium16_132_5 = GoogleFonts.jost(
     color: Colors.black,

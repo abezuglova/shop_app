@@ -44,7 +44,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 child: titleText != null
                     ? Text(
                         titleText!,
-                        style: AppFonts.medium16,
+                        style: AppFonts.medium16_144_5,
                       )
                     : title,
               ),

@@ -16,7 +16,7 @@ class ProfilePage extends StatelessWidget {
         appBar: CustomAppBar(
           title: Text(
             'Профиль',
-            style: AppFonts.medium16,
+            style: AppFonts.medium16_144_5,
           ),
         ),
         body: ProfileScreen(
