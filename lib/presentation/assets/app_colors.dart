@@ -16,4 +16,5 @@ abstract class AppColors {
   static const smallElevatedButtonColor = Color(0xFFAAD533);
   static const promoColor1 = Color(0xFFFCEAE6);
   static const dividerColor = Color(0xFFE7E7EF);
+  static const phoneColor = Color(0xFFB8BBC1);
 }

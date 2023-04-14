@@ -13,4 +13,6 @@ abstract class AppIcons {
   static const basketIcon = 'icons/basket.svg';
   static const minusIcon = 'icons/minus.svg';
   static const plusIcon = 'icons/plus.svg';
+  static const questionMarkIcon = 'icons/question_mark.svg';
+  static const exitIcon = 'icons/exit.svg';
 }
