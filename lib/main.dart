@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:third_task/presentation/assets/app_colors.dart';
 import 'package:third_task/presentation/pages/already_bought_page/already_bought_page.dart';
 import 'package:third_task/presentation/pages/category_page/category_page.dart';
+import 'package:third_task/presentation/pages/my_orders_page/my_orders_page.dart';
 import 'package:third_task/presentation/pages/personal_data_page/personal_data_page.dart';
 import 'package:third_task/presentation/pages/profile_page/profile_page.dart';
 import 'package:third_task/presentation/pages/shopping_cart_page/shopping_cart_page.dart';
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const PersonalDataPage(),
+      home: const MyOrdersPage(),
     );
   }
 }
