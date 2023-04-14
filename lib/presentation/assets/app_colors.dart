@@ -19,4 +19,5 @@ abstract class AppColors {
   static const phoneColor = Color(0xFFB8BBC1);
   static const dateColor = Color(0xFFA0A0A0);
   static const inWayColor = Color(0xFF3773E7);
+  static const orderDeliveryPriceColor = Color(0xFFEDF0E9);
 }
