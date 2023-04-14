@@ -79,7 +79,7 @@ class MainInfoWidget extends StatelessWidget {
                   ),
                   Text(
                     'Экспресс-доставка',
-                    style: AppFonts.medium13,
+                    style: AppFonts.medium13_144_5,
                   ),
                 ],
               ),

@@ -37,7 +37,7 @@ class _AmountWidgetState extends State<AmountWidget> {
                 child: Center(
                   child: Text(
                     widget.product.amount,
-                    style: AppFonts.medium13.copyWith(
+                    style: AppFonts.medium13_144_5.copyWith(
                       color: AppColors.secondaryTextColor,
                     ),
                   ),
@@ -69,12 +69,12 @@ class _AmountWidgetState extends State<AmountWidget> {
                     children: [
                       Text(
                         widget.product.amount,
-                        style: AppFonts.medium13,
+                        style: AppFonts.medium13_144_5,
                       ),
                       const SizedBox(width: 8),
                       Text(
                         '-${widget.product.discount}',
-                        style: AppFonts.medium13.copyWith(
+                        style: AppFonts.medium13_144_5.copyWith(
                           color: AppColors.discountColor,
                         ),
                       ),

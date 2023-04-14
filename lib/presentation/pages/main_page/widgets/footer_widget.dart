@@ -54,7 +54,7 @@ class FooterWidget extends StatelessWidget {
                   onPressed: () {},
                   child: Text(
                     'Доставка',
-                    style: AppFonts.medium13.copyWith(
+                    style: AppFonts.medium13_144_5.copyWith(
                       color: AppColors.mainGreen,
                     ),
                   ),
@@ -63,7 +63,7 @@ class FooterWidget extends StatelessWidget {
                   onPressed: () {},
                   child: Text(
                     'Оплата',
-                    style: AppFonts.medium13.copyWith(
+                    style: AppFonts.medium13_144_5.copyWith(
                       color: AppColors.mainGreen,
                     ),
                   ),
@@ -72,7 +72,7 @@ class FooterWidget extends StatelessWidget {
                   onPressed: () {},
                   child: Text(
                     'Поддержка',
-                    style: AppFonts.medium13.copyWith(
+                    style: AppFonts.medium13_144_5.copyWith(
                       color: AppColors.mainGreen,
                     ),
                   ),
@@ -81,7 +81,7 @@ class FooterWidget extends StatelessWidget {
                   onPressed: () {},
                   child: Text(
                     'Сертификаты',
-                    style: AppFonts.medium13.copyWith(
+                    style: AppFonts.medium13_144_5.copyWith(
                       color: AppColors.mainGreen,
                     ),
                   ),

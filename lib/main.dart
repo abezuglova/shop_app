@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const OrderPage(),
+      home: const ShoppingCartPage(),
     );
   }
 }
