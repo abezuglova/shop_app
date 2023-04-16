@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:third_task/presentation/assets/app_colors.dart';
-import 'package:third_task/presentation/assets/app_fonts.dart';
+import 'package:third_task/presentation/utils/app_colors.dart';
+import 'package:third_task/presentation/utils/app_fonts.dart';
 
 class FooterWidget extends StatelessWidget {
   const FooterWidget({super.key});

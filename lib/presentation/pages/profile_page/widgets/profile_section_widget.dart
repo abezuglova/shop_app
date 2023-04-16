@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:third_task/presentation/assets/app_fonts.dart';
-import 'package:third_task/presentation/assets/app_icons.dart';
+import 'package:third_task/presentation/utils/app_fonts.dart';
+import 'package:third_task/presentation/utils/app_icons.dart';
 
 class ProfileSectionWidget extends StatelessWidget {
   final String section;

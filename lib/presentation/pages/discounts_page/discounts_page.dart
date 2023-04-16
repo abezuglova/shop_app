@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
-import 'package:third_task/presentation/assets/app_colors.dart';
-import 'package:third_task/presentation/assets/app_icons.dart';
+import 'package:third_task/presentation/utils/app_colors.dart';
+import 'package:third_task/presentation/utils/app_icons.dart';
 import 'package:third_task/presentation/pages/discounts_page/screens/discounts_screen.dart';
 import 'package:third_task/presentation/ui_kit/custom_app_bar.dart';
 import 'package:third_task/presentation/ui_kit/svg_icon_button.dart';

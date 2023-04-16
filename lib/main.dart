@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:third_task/presentation/assets/app_colors.dart';
+import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/pages/already_bought_page/already_bought_page.dart';
 import 'package:third_task/presentation/pages/category_page/category_page.dart';
 import 'package:third_task/presentation/pages/my_orders_page/my_orders_page.dart';

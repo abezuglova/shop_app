@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
-import 'package:third_task/presentation/assets/app_colors.dart';
-import 'package:third_task/presentation/assets/app_fonts.dart';
-import 'package:third_task/presentation/assets/app_icons.dart';
+import 'package:third_task/presentation/utils/app_colors.dart';
+import 'package:third_task/presentation/utils/app_fonts.dart';
+import 'package:third_task/presentation/utils/app_icons.dart';
 import 'package:third_task/presentation/pages/shopping_cart_page/screens/empty_shopping_cart_screen.dart';
 import 'package:third_task/presentation/pages/shopping_cart_page/screens/shopping_cart_order_screen.dart';
 import 'package:third_task/presentation/pages/shopping_cart_page/screens/shopping_cart_screen.dart';

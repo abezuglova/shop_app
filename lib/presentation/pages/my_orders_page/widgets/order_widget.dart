@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 import 'package:third_task/domain/entities/entities.dart';
-import 'package:third_task/presentation/assets/app_colors.dart';
-import 'package:third_task/presentation/assets/app_fonts.dart';
-import 'package:third_task/presentation/assets/app_icons.dart';
+import 'package:third_task/presentation/utils/app_colors.dart';
+import 'package:third_task/presentation/utils/app_fonts.dart';
+import 'package:third_task/presentation/utils/app_icons.dart';
 
 class OrderWidget extends StatelessWidget {
   final Order order;

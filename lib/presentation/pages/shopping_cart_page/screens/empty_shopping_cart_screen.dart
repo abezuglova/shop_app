@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:third_task/presentation/assets/app_fonts.dart';
+import 'package:third_task/presentation/utils/app_fonts.dart';
 
 class EmptyShoppingCartScreen extends StatelessWidget {
   const EmptyShoppingCartScreen({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
-import 'package:third_task/presentation/assets/app_colors.dart';
+import 'package:third_task/presentation/utils/app_colors.dart';
 
 class FiltersWidget extends StatefulWidget {
   final List<ProductType> productTypes;

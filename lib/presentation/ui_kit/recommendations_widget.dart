@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
-import 'package:third_task/presentation/assets/app_fonts.dart';
+import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/ui_kit/product_card_widget.dart';
 
 class RecommendationsWidget extends StatelessWidget {

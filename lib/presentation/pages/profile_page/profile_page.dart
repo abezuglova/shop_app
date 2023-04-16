@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
-import 'package:third_task/presentation/assets/app_colors.dart';
-import 'package:third_task/presentation/assets/app_fonts.dart';
+import 'package:third_task/presentation/utils/app_colors.dart';
+import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/pages/profile_page/screens/profile_screen.dart';
 import 'package:third_task/presentation/ui_kit/custom_app_bar.dart';
 
