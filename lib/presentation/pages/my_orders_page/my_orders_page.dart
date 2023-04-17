@@ -43,7 +43,9 @@ class MyOrdersPage extends StatelessWidget {
               ),
               orderingDateTime: DateTime.now(),
               deliveryDateTime: DateTime.now(),
-              paymentMethod: PaymentMethod(),
+              paymentMethod: PaymentMethod(
+                cardList: [],
+              ),
             ),
             Order(
               number: 8934759379,
@@ -61,7 +63,9 @@ class MyOrdersPage extends StatelessWidget {
               ),
               orderingDateTime: DateTime.now(),
               deliveryDateTime: DateTime.now(),
-              paymentMethod: PaymentMethod(),
+              paymentMethod: PaymentMethod(
+                cardList: [],
+              ),
             ),
             Order(
               number: 8934759379,
@@ -79,7 +83,9 @@ class MyOrdersPage extends StatelessWidget {
               ),
               orderingDateTime: DateTime.now(),
               deliveryDateTime: DateTime.now(),
-              paymentMethod: PaymentMethod(),
+              paymentMethod: PaymentMethod(
+                cardList: [],
+              ),
             ),
           ],
         ),

@@ -13,5 +13,6 @@ part 'personal_data.dart';
 part 'main_page_data.dart';
 part 'brand.dart';
 part 'bonuses.dart';
+part 'bank_card.dart';
 part 'entities.g.dart';
 part 'entities.freezed.dart';
