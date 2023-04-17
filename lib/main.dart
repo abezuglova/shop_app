@@ -9,6 +9,7 @@ import 'package:third_task/presentation/pages/personal_data_page/personal_data_p
 import 'package:third_task/presentation/pages/profile_page/profile_page.dart';
 import 'package:third_task/presentation/pages/shopping_cart_page/shopping_cart_page.dart';
 import 'package:third_task/presentation/pages/subcategory_page/subcategory_page.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,6 +22,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       theme: ThemeData(
         dividerTheme: const DividerThemeData(
           color: AppColors.dividerColor,
