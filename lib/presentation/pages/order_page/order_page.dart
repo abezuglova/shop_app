@@ -73,7 +73,9 @@ class OrderPage extends StatelessWidget {
             ),
             orderingDateTime: DateTime.now(),
             deliveryDateTime: DateTime.now(),
-            paymentMethod: PaymentMethod(),
+            paymentMethod: PaymentMethod(
+              cardList: [],
+            ),
           ),
         ),
       ),
