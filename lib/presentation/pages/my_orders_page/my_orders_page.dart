@@ -11,80 +11,78 @@ class MyOrdersPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: AppColors.scaffoldBackgroundColor,
-        appBar: CustomAppBar(
-          titleText: 'Мои заказы',
-          leading: SvgIconButton(
-            onPressed: () {},
-            iconPath: AppIcons.chevronLeftIcon,
+    return Scaffold(
+      backgroundColor: AppColors.scaffoldBackgroundColor,
+      appBar: CustomAppBar(
+        titleText: 'Мои заказы',
+        leading: SvgIconButton(
+          onPressed: () {},
+          iconPath: AppIcons.chevronLeftIcon,
+        ),
+      ),
+      body: MyOrdersScreen(
+        orderList: [
+          Order(
+            number: 8934759379,
+            status: 'В пути',
+            productsNumber: 3,
+            generalDiscount: 150,
+            deliveryPrice: 99,
+            generalPrice: 1799,
+            productList: [],
+            deliveryAddress: Address(
+              name: 'Дом',
+              city: 'Москва',
+              street: 'Пушкина',
+              house: '13',
+            ),
+            orderingDateTime: DateTime.now(),
+            deliveryDateTime: DateTime.now(),
+            paymentMethod: PaymentMethod(
+              cardList: [],
+            ),
           ),
-        ),
-        body: MyOrdersScreen(
-          orderList: [
-            Order(
-              number: 8934759379,
-              status: 'В пути',
-              productsNumber: 3,
-              generalDiscount: 150,
-              deliveryPrice: 99,
-              generalPrice: 1799,
-              productList: [],
-              deliveryAddress: Address(
-                name: 'Дом',
-                city: 'Москва',
-                street: 'Пушкина',
-                house: '13',
-              ),
-              orderingDateTime: DateTime.now(),
-              deliveryDateTime: DateTime.now(),
-              paymentMethod: PaymentMethod(
-                cardList: [],
-              ),
+          Order(
+            number: 8934759379,
+            status: 'Доставлен',
+            productsNumber: 3,
+            generalDiscount: 150,
+            deliveryPrice: 99,
+            generalPrice: 1799,
+            productList: [],
+            deliveryAddress: Address(
+              name: 'Дом',
+              city: 'Москва',
+              street: 'Пушкина',
+              house: '13',
             ),
-            Order(
-              number: 8934759379,
-              status: 'Доставлен',
-              productsNumber: 3,
-              generalDiscount: 150,
-              deliveryPrice: 99,
-              generalPrice: 1799,
-              productList: [],
-              deliveryAddress: Address(
-                name: 'Дом',
-                city: 'Москва',
-                street: 'Пушкина',
-                house: '13',
-              ),
-              orderingDateTime: DateTime.now(),
-              deliveryDateTime: DateTime.now(),
-              paymentMethod: PaymentMethod(
-                cardList: [],
-              ),
+            orderingDateTime: DateTime.now(),
+            deliveryDateTime: DateTime.now(),
+            paymentMethod: PaymentMethod(
+              cardList: [],
             ),
-            Order(
-              number: 8934759379,
-              status: 'В пути',
-              productsNumber: 3,
-              generalDiscount: 150,
-              deliveryPrice: 99,
-              generalPrice: 1799,
-              productList: [],
-              deliveryAddress: Address(
-                name: 'Дом',
-                city: 'Москва',
-                street: 'Пушкина',
-                house: '13',
-              ),
-              orderingDateTime: DateTime.now(),
-              deliveryDateTime: DateTime.now(),
-              paymentMethod: PaymentMethod(
-                cardList: [],
-              ),
+          ),
+          Order(
+            number: 8934759379,
+            status: 'В пути',
+            productsNumber: 3,
+            generalDiscount: 150,
+            deliveryPrice: 99,
+            generalPrice: 1799,
+            productList: [],
+            deliveryAddress: Address(
+              name: 'Дом',
+              city: 'Москва',
+              street: 'Пушкина',
+              house: '13',
             ),
-          ],
-        ),
+            orderingDateTime: DateTime.now(),
+            deliveryDateTime: DateTime.now(),
+            paymentMethod: PaymentMethod(
+              cardList: [],
+            ),
+          ),
+        ],
       ),
     );
   }

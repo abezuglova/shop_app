@@ -11,51 +11,49 @@ class CategoryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: AppColors.scaffoldBackgroundColor,
-        appBar: CustomAppBar(
-          titleText: 'Напитки, соки, чай, кофе',
-          leading: SvgIconButton(
-            onPressed: () {},
-            iconPath: AppIcons.chevronLeftIcon,
-          ),
+    return Scaffold(
+      backgroundColor: AppColors.scaffoldBackgroundColor,
+      appBar: CustomAppBar(
+        titleText: 'Напитки, соки, чай, кофе',
+        leading: SvgIconButton(
+          onPressed: () {},
+          iconPath: AppIcons.chevronLeftIcon,
         ),
-        body: CategoryScreen(
-          category: Category(
-            name: 'Напитки, соки, чай, кофе',
-            image: '',
-            subcategories: [
-              Subcategory(
-                name: 'Чай',
-                productTypes: [],
-              ),
-              Subcategory(
-                name: 'Кофе',
-                productTypes: [],
-              ),
-              Subcategory(
-                name: 'Какао, цикорий',
-                productTypes: [],
-              ),
-              Subcategory(
-                name: 'Соки, морсы, нектары, кампоты',
-                productTypes: [],
-              ),
-              Subcategory(
-                name: 'Вода минеральная и питьевая',
-                productTypes: [],
-              ),
-              Subcategory(
-                name: 'Лимонады, напитки',
-                productTypes: [],
-              ),
-              Subcategory(
-                name: 'Холодный чай, кофе, экзотика',
-                productTypes: [],
-              ),
-            ],
-          ),
+      ),
+      body: CategoryScreen(
+        category: Category(
+          name: 'Напитки, соки, чай, кофе',
+          image: '',
+          subcategories: [
+            Subcategory(
+              name: 'Чай',
+              productTypes: [],
+            ),
+            Subcategory(
+              name: 'Кофе',
+              productTypes: [],
+            ),
+            Subcategory(
+              name: 'Какао, цикорий',
+              productTypes: [],
+            ),
+            Subcategory(
+              name: 'Соки, морсы, нектары, кампоты',
+              productTypes: [],
+            ),
+            Subcategory(
+              name: 'Вода минеральная и питьевая',
+              productTypes: [],
+            ),
+            Subcategory(
+              name: 'Лимонады, напитки',
+              productTypes: [],
+            ),
+            Subcategory(
+              name: 'Холодный чай, кофе, экзотика',
+              productTypes: [],
+            ),
+          ],
         ),
       ),
     );
