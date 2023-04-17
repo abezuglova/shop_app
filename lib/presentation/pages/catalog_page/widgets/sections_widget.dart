@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
@@ -31,6 +32,7 @@ class SectionsWidget extends StatelessWidget {
             children: [
               Expanded(
                 child: GestureDetector(
+                  onTap: () => context.go('/catalog/discounts'),
                   child: Container(
                     height: 54,
                     decoration: decoration,
@@ -55,6 +57,7 @@ class SectionsWidget extends StatelessWidget {
               const SizedBox(width: 8),
               Expanded(
                 child: GestureDetector(
+                  onTap: () => context.go('/catalog/favorites'),
                   child: Container(
                     height: 54,
                     decoration: decoration,
@@ -80,6 +83,7 @@ class SectionsWidget extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           GestureDetector(
+            onTap: () => context.go('/catalog/already_bought'),
             child: Container(
               height: 54,
               decoration: decoration,

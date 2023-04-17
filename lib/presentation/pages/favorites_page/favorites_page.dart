@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
@@ -16,7 +17,7 @@ class FavoritesPage extends StatelessWidget {
       appBar: CustomAppBar(
         titleText: 'Избранное',
         leading: SvgIconButton(
-          onPressed: () {},
+          onPressed: () => context.pop(),
           iconPath: AppIcons.chevronLeftIcon,
         ),
       ),
