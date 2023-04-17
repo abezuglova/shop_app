@@ -44,18 +44,37 @@ class CheckoutScreen extends StatelessWidget {
                 ),
               ],
             ),
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 103, vertical: 16),
-                child: Text(
-                  'Оформить заказ',
-                  style: AppFonts.semiBold18.copyWith(
-                    color: Colors.white,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 103, vertical: 16),
+                    child: Text(
+                      'Оформить заказ',
+                      style: AppFonts.semiBold18.copyWith(
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
-              ),
+                const SizedBox(height: 10),
+                Text(
+                  'Нажимая "Оформить заказ", вы принимаете условия',
+                  style: AppFonts.regular12_144_5,
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Публичной оферты',
+                    style: AppFonts.regular12_144_5.copyWith(
+                      color: AppColors.mainGreen,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ),
