@@ -20,4 +20,5 @@ abstract class AppColors {
   static const dateColor = Color(0xFFA0A0A0);
   static const inWayColor = Color(0xFF3773E7);
   static const orderDeliveryPriceColor = Color(0xFFEDF0E9);
+  static const bottomNavBarColor = Color(0xFFC0C0CA);
 }

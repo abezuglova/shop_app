@@ -17,4 +17,9 @@ abstract class AppIcons {
   static const questionMarkIcon = 'icons/question_mark.svg';
   static const exitIcon = 'icons/exit.svg';
   static const calenderIcon = 'icons/calender.svg';
+  static const mainPageIcon = 'icons/main_page_icon.svg';
+  static const catalogIcon = 'icons/catalog_icon.svg';
+  static const searchIcon = 'icons/search_icon.svg';
+  static const shoppingCartNavIcon = 'icons/shopping_cart_nav_icon.svg';
+  static const profileIcon = 'icons/profile_icon.svg';
 }

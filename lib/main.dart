@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:third_task/presentation/pages/catalog_page/catalog_page.dart';
 import 'package:third_task/presentation/pages/checkout_page/checkout_page.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/pages/already_bought_page/already_bought_page.dart';
@@ -50,7 +51,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const CheckoutPage(),
+      home: const CatalogPage(),
     );
   }
 }
