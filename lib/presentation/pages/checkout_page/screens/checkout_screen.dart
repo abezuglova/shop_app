@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/pages/checkout_page/widgets/checkout_fields_widget.dart';
+import 'package:third_task/presentation/pages/checkout_page/widgets/checkout_price_widget.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 
@@ -16,6 +17,10 @@ class CheckoutScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22.5),
           children: [
             CheckoutFieldsWidget(
+              order: order,
+            ),
+            const SizedBox(height: 16),
+            CheckoutPriceWidget(
               order: order,
             ),
           ],
