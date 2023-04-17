@@ -18,10 +18,7 @@ class ShoppingCartPage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: AppColors.scaffoldBackgroundColor,
         appBar: CustomAppBar(
-          title: Text(
-            'Корзина',
-            style: AppFonts.medium16_144_5,
-          ),
+          titleText: 'Корзина',
           actions: [
             SvgIconButton(
               onPressed: () {},

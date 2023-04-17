@@ -18,10 +18,7 @@ class PersonalDataPage extends StatelessWidget {
         child: Scaffold(
           backgroundColor: AppColors.scaffoldBackgroundColor,
           appBar: CustomAppBar(
-            title: Text(
-              'Личные данные',
-              style: AppFonts.medium16_144_5,
-            ),
+            titleText: 'Личные данные',
             leading: SvgIconButton(
               onPressed: () {},
               iconPath: AppIcons.chevronLeftIcon,

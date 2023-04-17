@@ -14,10 +14,7 @@ class ProfilePage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: AppColors.scaffoldBackgroundColor,
         appBar: CustomAppBar(
-          title: Text(
-            'Профиль',
-            style: AppFonts.medium16_144_5,
-          ),
+          titleText: 'Профиль',
         ),
         body: ProfileScreen(
           personalData: PersonalData(

@@ -15,7 +15,7 @@ class FavoritesPage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: AppColors.scaffoldBackgroundColor,
         appBar: CustomAppBar(
-          titleText: 'Уже покупали',
+          titleText: 'Избранное',
           leading: SvgIconButton(
             onPressed: () {},
             iconPath: AppIcons.chevronLeftIcon,
