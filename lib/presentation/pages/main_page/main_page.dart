@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:third_task/domain/entities/entities.dart';
-import 'package:third_task/presentation/ui_kit/custom_bottom_nav_bar.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
@@ -274,7 +273,6 @@ class MainPage extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: const CustomBottomNavBar(),
       ),
     );
   }

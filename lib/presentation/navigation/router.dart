@@ -1,11 +1,45 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:third_task/presentation/navigation/scaffold_with_bottom_nav_bar.dart';
+import 'package:third_task/presentation/pages/catalog_page/catalog_page.dart';
 import 'package:third_task/presentation/pages/main_page/main_page.dart';
+import 'package:third_task/presentation/pages/profile_page/profile_page.dart';
+import 'package:third_task/presentation/pages/shopping_cart_page/shopping_cart_page.dart';
+
+final _rootNavigatorKey = GlobalKey<NavigatorState>();
+final _shellNavigatorKey = GlobalKey<NavigatorState>();
 
 final router = GoRouter(
+  initialLocation: '/',
+  navigatorKey: _rootNavigatorKey,
   routes: [
-    GoRoute(
-      path: '/',
-      builder: (context, state) => MainPage(),
+    ShellRoute(
+      navigatorKey: _shellNavigatorKey,
+      builder: (BuildContext context, GoRouterState state, Widget child) {
+        return ScaffoldWithBottomNavBar(location: state.location, child: child);
+      },
+      routes: <RouteBase>[
+        GoRoute(
+          path: '/',
+          builder: (context, state) => const MainPage(),
+        ),
+        GoRoute(
+          path: '/catalog',
+          builder: (context, state) => const CatalogPage(),
+        ),
+        GoRoute(
+          path: '/search',
+          builder: (context, state) => const SizedBox(),
+        ),
+        GoRoute(
+          path: '/shopping_cart',
+          builder: (context, state) => const ShoppingCartPage(),
+        ),
+        GoRoute(
+          path: '/profile',
+          builder: (context, state) => const ProfilePage(),
+        ),
+      ],
     ),
   ],
 );
