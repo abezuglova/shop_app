@@ -19,11 +19,26 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final sections = [
-      'Личные данные',
-      'Мои заказы',
-      'Мои адреса',
-      'Способы оплаты',
-      'Связаться с нами',
+      SectionNavigationData(
+        name: 'Личные данные',
+        location: '/profile/personal_data',
+      ),
+      SectionNavigationData(
+        name: 'Мои заказы',
+        location: '/profile/my_orders',
+      ),
+      SectionNavigationData(
+        name: 'Мои адреса',
+        location: '/profile/my_addresses',
+      ),
+      SectionNavigationData(
+        name: 'Способы оплаты',
+        location: '/profile/payment_methods',
+      ),
+      SectionNavigationData(
+        name: 'Связаться с нами',
+        location: '/profile/connect_with_us',
+      ),
     ];
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 32),
@@ -88,4 +103,14 @@ class ProfileScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+class SectionNavigationData {
+  final String name;
+  final String location;
+
+  SectionNavigationData({
+    required this.name,
+    required this.location,
+  });
 }

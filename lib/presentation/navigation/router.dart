@@ -6,6 +6,8 @@ import 'package:third_task/presentation/pages/catalog_page/catalog_page.dart';
 import 'package:third_task/presentation/pages/discounts_page/discounts_page.dart';
 import 'package:third_task/presentation/pages/favorites_page/favorites_page.dart';
 import 'package:third_task/presentation/pages/main_page/main_page.dart';
+import 'package:third_task/presentation/pages/my_orders_page/my_orders_page.dart';
+import 'package:third_task/presentation/pages/personal_data_page/personal_data_page.dart';
 import 'package:third_task/presentation/pages/profile_page/profile_page.dart';
 import 'package:third_task/presentation/pages/shopping_cart_page/shopping_cart_page.dart';
 
@@ -55,6 +57,28 @@ final router = GoRouter(
         GoRoute(
           path: '/profile',
           builder: (context, state) => const ProfilePage(),
+          routes: [
+            GoRoute(
+              path: 'personal_data',
+              builder: (context, state) => const PersonalDataPage(),
+            ),
+            GoRoute(
+              path: 'my_orders',
+              builder: (context, state) => const MyOrdersPage(),
+            ),
+            GoRoute(
+              path: 'my_addresses',
+              builder: (context, state) => const SizedBox(),
+            ),
+            GoRoute(
+              path: 'payment_methods',
+              builder: (context, state) => const SizedBox(),
+            ),
+            GoRoute(
+              path: 'connect_with_us',
+              builder: (context, state) => const SizedBox(),
+            ),
+          ],
         ),
       ],
     ),
