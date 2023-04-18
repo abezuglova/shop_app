@@ -16,7 +16,7 @@ class BrandListWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            l10n.alreadyBought,
+            l10n.brands,
             style: AppFonts.yesevaRegular24,
           ),
           const SizedBox(height: 18),
