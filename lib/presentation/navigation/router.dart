@@ -9,6 +9,7 @@ import 'package:third_task/presentation/pages/favorites_page/favorites_page.dart
 import 'package:third_task/presentation/pages/main_page/main_page.dart';
 import 'package:third_task/presentation/pages/my_orders_page/my_orders_page.dart';
 import 'package:third_task/presentation/pages/personal_data_page/personal_data_page.dart';
+import 'package:third_task/presentation/pages/product_page/product_page.dart';
 import 'package:third_task/presentation/pages/profile_page/profile_page.dart';
 import 'package:third_task/presentation/pages/shopping_cart_page/shopping_cart_page.dart';
 
@@ -49,7 +50,7 @@ final router = GoRouter(
         ),
         GoRoute(
           path: '/search',
-          builder: (context, state) => const SizedBox(),
+          builder: (context, state) => const ProductPage(),
         ),
         GoRoute(
           path: '/shopping_cart',

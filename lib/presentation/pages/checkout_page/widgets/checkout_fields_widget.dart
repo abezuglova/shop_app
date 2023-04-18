@@ -104,13 +104,13 @@ class _CheckoutFieldsWidgetState extends State<CheckoutFieldsWidget> {
               value: light,
               width: 44,
               height: 24,
-              activeColor: AppColors.offBackgroundColor2,
+              activeColor: AppColors.mainGreen,
               inactiveColor: AppColors.offBackgroundColor2,
               toggleSize: 16,
               toggleBorder: Border.all(
                 color: AppColors.elementShadowColor.withOpacity(0.15),
               ),
-            )
+            ),
           ],
         ),
         const SizedBox(height: 12),
