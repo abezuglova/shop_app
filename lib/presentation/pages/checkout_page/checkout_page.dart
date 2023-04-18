@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/pages/checkout_page/screens/checkout_screen.dart';
 import 'package:third_task/presentation/ui_kit/custom_app_bar.dart';
@@ -18,7 +19,7 @@ class CheckoutPage extends StatelessWidget {
         appBar: CustomAppBar(
           titleText: 'Оформление заказа',
           leading: SvgIconButton(
-            onPressed: () {},
+            onPressed: () => context.pop(),
             iconPath: AppIcons.chevronLeftIcon,
           ),
         ),

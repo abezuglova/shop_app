@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:third_task/presentation/navigation/scaffold_with_bottom_nav_bar.dart';
 import 'package:third_task/presentation/pages/already_bought_page/already_bought_page.dart';
 import 'package:third_task/presentation/pages/catalog_page/catalog_page.dart';
+import 'package:third_task/presentation/pages/checkout_page/checkout_page.dart';
 import 'package:third_task/presentation/pages/discounts_page/discounts_page.dart';
 import 'package:third_task/presentation/pages/favorites_page/favorites_page.dart';
 import 'package:third_task/presentation/pages/main_page/main_page.dart';
@@ -53,6 +54,12 @@ final router = GoRouter(
         GoRoute(
           path: '/shopping_cart',
           builder: (context, state) => const ShoppingCartPage(),
+          routes: [
+            GoRoute(
+              path: 'checkout',
+              builder: (context, state) => const CheckoutPage(),
+            ),
+          ],
         ),
         GoRoute(
           path: '/profile',

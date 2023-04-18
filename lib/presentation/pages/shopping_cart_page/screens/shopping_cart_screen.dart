@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
@@ -52,7 +53,7 @@ class ShoppingCartScreen extends StatelessWidget {
               ],
             ),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () => context.go('/shopping_cart/checkout'),
               child: Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 70, vertical: 16),
