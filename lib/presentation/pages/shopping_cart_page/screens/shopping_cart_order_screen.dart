@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ShoppingCartOrderScreen extends StatelessWidget {
   final Order order;
@@ -9,23 +10,24 @@ class ShoppingCartOrderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            'Заказ успешно оформлен',
+            l10n.orderIsSuccessfullyCreated,
             style: AppFonts.medium24_144_5,
           ),
           const SizedBox(height: 9),
           Text(
-            'Номер заказа: ${order.number}',
+            '${l10n.orderNumber}: ${order.number}',
             style: AppFonts.regular14_144_5.copyWith(
               color: AppColors.secondaryTextColor,
             ),
           ),
           Text(
-            '${order.productList.length} товара на сумму ${order.generalPrice} р.',
+            '${l10n.nProducts(order.productList.length)} ${l10n.onSum} ${order.generalPrice} р.',
             style: AppFonts.regular14_144_5.copyWith(
               color: AppColors.secondaryTextColor,
             ),
@@ -34,7 +36,7 @@ class ShoppingCartOrderScreen extends StatelessWidget {
           TextButton(
             onPressed: () {},
             child: Text(
-              'Открыть детали заказа',
+              l10n.openOrderDetails,
               style: AppFonts.medium13_144_5.copyWith(
                 color: AppColors.mainGreen,
               ),
@@ -46,7 +48,7 @@ class ShoppingCartOrderScreen extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
               child: Text(
-                'Продолжить покупки',
+                l10n.continueShopping,
                 style: AppFonts.semiBold16_144_5.copyWith(
                   color: Colors.white,
                 ),

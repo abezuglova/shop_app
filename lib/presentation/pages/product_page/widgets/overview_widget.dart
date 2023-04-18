@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class OverviewWidget extends StatefulWidget {
   final Product product;
@@ -16,6 +17,7 @@ class _OverviewWidgetState extends State<OverviewWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
@@ -27,7 +29,7 @@ class _OverviewWidgetState extends State<OverviewWidget> {
                   () => _selectedTab = 0,
                 ),
                 child: Text(
-                  'Описание',
+                  l10n.description,
                   style: _selectedTab == 0
                       ? AppFonts.semiBold16_132_5
                       : AppFonts.semiBold16_132_5
@@ -40,7 +42,7 @@ class _OverviewWidgetState extends State<OverviewWidget> {
                   () => _selectedTab = 1,
                 ),
                 child: Text(
-                  'Характеристики',
+                  l10n.characteristics,
                   style: _selectedTab == 1
                       ? AppFonts.semiBold16_132_5
                       : AppFonts.semiBold16_132_5
@@ -53,7 +55,7 @@ class _OverviewWidgetState extends State<OverviewWidget> {
                   () => _selectedTab = 2,
                 ),
                 child: Text(
-                  'Отзывы',
+                  l10n.reviews,
                   style: _selectedTab == 2
                       ? AppFonts.semiBold16_132_5
                       : AppFonts.semiBold16_132_5

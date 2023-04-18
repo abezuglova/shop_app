@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PriceWidget extends StatelessWidget {
   final String price;
@@ -12,6 +13,7 @@ class PriceWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Container(
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
@@ -78,7 +80,7 @@ class PriceWidget extends StatelessWidget {
                   ),
                   const SizedBox(width: 8),
                   Text(
-                    'В корзину',
+                    l10n.toShoppingCart,
                     style: AppFonts.semiBold16.copyWith(
                       color: Colors.white,
                     ),

@@ -4,12 +4,14 @@ import 'package:go_router/go_router.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SectionsWidget extends StatelessWidget {
   const SectionsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final decoration = BoxDecoration(
       color: Colors.white,
       borderRadius: const BorderRadius.all(
@@ -45,7 +47,7 @@ class SectionsWidget extends StatelessWidget {
                           ),
                           const SizedBox(width: 8),
                           Text(
-                            'Скидки',
+                            l10n.discounts,
                             style: AppFonts.regular16_135,
                           ),
                         ],
@@ -70,7 +72,7 @@ class SectionsWidget extends StatelessWidget {
                           ),
                           const SizedBox(width: 8),
                           Text(
-                            'Избранное',
+                            l10n.favorites,
                             style: AppFonts.regular16_135,
                           ),
                         ],
@@ -100,7 +102,7 @@ class SectionsWidget extends StatelessWidget {
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      'Уже покупали',
+                      l10n.alreadyBought,
                       style: AppFonts.regular16_135,
                     ),
                   ],

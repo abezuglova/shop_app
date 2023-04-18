@@ -4,6 +4,7 @@ import 'package:third_task/presentation/pages/checkout_page/widgets/checkout_fie
 import 'package:third_task/presentation/pages/checkout_page/widgets/checkout_price_widget.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CheckoutScreen extends StatelessWidget {
   final Order order;
@@ -11,6 +12,7 @@ class CheckoutScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Stack(
       children: [
         ListView(
@@ -53,7 +55,7 @@ class CheckoutScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 103, vertical: 16),
                     child: Text(
-                      'Оформить заказ',
+                      l10n.doCheckout,
                       style: AppFonts.semiBold18.copyWith(
                         color: Colors.white,
                       ),
@@ -62,13 +64,13 @@ class CheckoutScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  'Нажимая "Оформить заказ", вы принимаете условия',
+                  l10n.pressingCheckoutYouAreAgreeWithConditions,
                   style: AppFonts.regular12_144_5,
                 ),
                 TextButton(
                   onPressed: () {},
                   child: Text(
-                    'Публичной оферты',
+                    l10n.publicOffer,
                     style: AppFonts.regular12_144_5.copyWith(
                       color: AppColors.mainGreen,
                     ),

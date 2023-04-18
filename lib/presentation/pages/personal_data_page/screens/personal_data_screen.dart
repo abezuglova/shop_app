@@ -1,11 +1,10 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
 import 'package:third_task/presentation/ui_kit/svg_icon_button.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PersonalDataScreen extends StatelessWidget {
   final PersonalData personalData;
@@ -13,6 +12,7 @@ class PersonalDataScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Stack(
       children: [
         Padding(
@@ -23,21 +23,21 @@ class PersonalDataScreen extends StatelessWidget {
                 TextField(
                   style: AppFonts.medium16_144_5,
                   decoration: _getTextFieldDecoration(
-                    'Имя',
+                    l10n.name,
                   ),
                 ),
                 const SizedBox(height: 12),
                 TextField(
                   style: AppFonts.medium16_144_5,
                   decoration: _getTextFieldDecoration(
-                    'Фамилия',
+                    l10n.surname,
                   ),
                 ),
                 const SizedBox(height: 12),
                 TextField(
                   style: AppFonts.medium16_144_5,
                   decoration: _getTextFieldDecoration(
-                    'Дата рождения',
+                    l10n.birthDate,
                     Padding(
                       padding: const EdgeInsets.only(right: 12),
                       child: SvgIconButton(
@@ -45,7 +45,7 @@ class PersonalDataScreen extends StatelessWidget {
                         iconPath: AppIcons.calenderIcon,
                       ),
                     ),
-                    BoxConstraints(
+                    const BoxConstraints(
                       maxWidth: 36,
                       maxHeight: 36,
                     ),
@@ -55,14 +55,14 @@ class PersonalDataScreen extends StatelessWidget {
                 TextField(
                   style: AppFonts.medium16_144_5,
                   decoration: _getTextFieldDecoration(
-                    'Телефон',
+                    l10n.phone,
                   ),
                 ),
                 const SizedBox(height: 12),
                 TextField(
                   style: AppFonts.medium16_144_5,
                   decoration: _getTextFieldDecoration(
-                    'E-mail',
+                    l10n.eMail,
                   ),
                 ),
               ],
@@ -94,7 +94,7 @@ class PersonalDataScreen extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 127, vertical: 16),
                 child: Text(
-                  'Сохранить',
+                  l10n.save,
                   style: AppFonts.semiBold18.copyWith(
                     color: Colors.white,
                   ),
@@ -113,13 +113,13 @@ class PersonalDataScreen extends StatelessWidget {
     BoxConstraints? suffixIconConstraints,
   ]) =>
       InputDecoration(
-        border: OutlineInputBorder(
+        border: const OutlineInputBorder(
           borderSide: BorderSide.none,
           borderRadius: BorderRadius.all(
             Radius.circular(4),
           ),
         ),
-        contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 19),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 19),
         fillColor: AppColors.offBackgroundColor2,
         filled: true,
         labelText: labelText,

@@ -6,6 +6,7 @@ import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
 import 'package:third_task/presentation/pages/order_page/widgets/order_info_widget.dart';
 import 'package:third_task/presentation/pages/order_page/widgets/order_product_list_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class OrderScreen extends StatelessWidget {
   final Order order;
@@ -13,6 +14,7 @@ class OrderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return ListView(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
       children: [
@@ -47,7 +49,7 @@ class OrderScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Доставка',
+                  l10n.delivery,
                   style: AppFonts.regular14_132_5,
                 ),
                 const SizedBox(height: 8),

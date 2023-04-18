@@ -5,6 +5,7 @@ import 'package:third_task/presentation/ui_kit/svg_icon_button.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CheckoutFieldsWidget extends StatefulWidget {
   final Order order;
@@ -19,12 +20,13 @@ class _CheckoutFieldsWidgetState extends State<CheckoutFieldsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Column(
       children: [
         TextField(
           style: AppFonts.medium16_144_5,
           decoration: _getTextFieldDecoration(
-            'Адрес доставки',
+            l10n.deliveryAddress,
             Padding(
               padding: const EdgeInsets.only(right: 12),
               child: SvgIconButton(
@@ -42,7 +44,7 @@ class _CheckoutFieldsWidgetState extends State<CheckoutFieldsWidget> {
         TextField(
           style: AppFonts.medium16_144_5,
           decoration: _getTextFieldDecoration(
-            'Дата и время доставки',
+            l10n.deliveryDateTime,
             Padding(
               padding: const EdgeInsets.only(right: 12),
               child: SvgIconButton(
@@ -60,7 +62,7 @@ class _CheckoutFieldsWidgetState extends State<CheckoutFieldsWidget> {
         TextField(
           style: AppFonts.medium16_144_5,
           decoration: _getTextFieldDecoration(
-            'Способ оплаты',
+            l10n.paymentMethod,
             Padding(
               padding: const EdgeInsets.only(right: 12),
               child: SvgIconButton(
@@ -83,7 +85,7 @@ class _CheckoutFieldsWidgetState extends State<CheckoutFieldsWidget> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  'Списать баллы',
+                  l10n.writeOffPoints,
                   style: AppFonts.regular16_144_5,
                 ),
                 const SizedBox(width: 4),
@@ -117,7 +119,7 @@ class _CheckoutFieldsWidgetState extends State<CheckoutFieldsWidget> {
         TextField(
           style: AppFonts.medium16_144_5,
           decoration: _getTextFieldDecoration(
-            'Комментарий',
+            l10n.comment,
           ),
         ),
       ],

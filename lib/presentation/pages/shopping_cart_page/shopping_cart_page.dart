@@ -8,16 +8,18 @@ import 'package:third_task/presentation/pages/shopping_cart_page/screens/shoppin
 import 'package:third_task/presentation/pages/shopping_cart_page/screens/shopping_cart_screen.dart';
 import 'package:third_task/presentation/ui_kit/custom_app_bar.dart';
 import 'package:third_task/presentation/ui_kit/svg_icon_button.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ShoppingCartPage extends StatelessWidget {
   const ShoppingCartPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundColor,
       appBar: CustomAppBar(
-        titleText: 'Корзина',
+        titleText: l10n.shoppingCart,
         actions: [
           SvgIconButton(
             onPressed: () {},

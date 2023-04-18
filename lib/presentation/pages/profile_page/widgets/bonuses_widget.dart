@@ -4,6 +4,7 @@ import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
 import 'package:third_task/presentation/ui_kit/svg_icon_button.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class BonusesWidget extends StatelessWidget {
   final Bonuses bonuses;
@@ -11,6 +12,7 @@ class BonusesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
       padding: const EdgeInsets.all(16),
@@ -34,7 +36,10 @@ class BonusesWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text('Бонусные баллы', style: AppFonts.bold16_144_5),
+              Text(
+                l10n.bonuses,
+                style: AppFonts.bold16_144_5,
+              ),
               SvgIconButton(
                 onPressed: () {},
                 iconPath: AppIcons.questionMarkIcon,
@@ -46,13 +51,13 @@ class BonusesWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                '250 баллов',
+                l10n.nPoints(250),
                 style: AppFonts.medium18_144_5.copyWith(
                   color: AppColors.mainGreen,
                 ),
               ),
               Text(
-                'Уровень 2',
+                '${l10n.level} 2',
                 style: AppFonts.regular16_144_5.copyWith(
                   color: AppColors.secondaryTextColor,
                 ),

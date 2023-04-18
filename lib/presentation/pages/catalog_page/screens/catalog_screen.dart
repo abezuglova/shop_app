@@ -3,6 +3,7 @@ import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/pages/catalog_page/widgets/category_widget.dart';
 import 'package:third_task/presentation/pages/catalog_page/widgets/sections_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CatalogScreen extends StatelessWidget {
   final List<Category> categories;
@@ -10,6 +11,7 @@ class CatalogScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return ListView(
       children: [
         const SectionsWidget(),
@@ -19,7 +21,7 @@ class CatalogScreen extends StatelessWidget {
             horizontal: 16,
           ),
           child: Text(
-            'Категории',
+            l10n.categories,
             style: AppFonts.yesevaRegular24,
           ),
         ),

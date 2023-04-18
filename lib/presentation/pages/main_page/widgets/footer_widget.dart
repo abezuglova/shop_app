@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class FooterWidget extends StatelessWidget {
   const FooterWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 9.5),
       child: Column(
@@ -20,7 +22,7 @@ class FooterWidget extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {},
                   child: Text(
-                    'О компании',
+                    l10n.aboutCompany,
                     style: AppFonts.semiBold18.copyWith(
                       color: Colors.white,
                     ),
@@ -33,7 +35,7 @@ class FooterWidget extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {},
                   child: Text(
-                    'Об органике',
+                    l10n.aboutOrganic,
                     style: AppFonts.semiBold18.copyWith(
                       color: Colors.white,
                     ),
@@ -51,7 +53,7 @@ class FooterWidget extends StatelessWidget {
                 TextButton(
                   onPressed: () {},
                   child: Text(
-                    'Доставка',
+                    l10n.delivery,
                     style: AppFonts.medium13_144_5.copyWith(
                       color: AppColors.mainGreen,
                     ),
@@ -60,7 +62,7 @@ class FooterWidget extends StatelessWidget {
                 TextButton(
                   onPressed: () {},
                   child: Text(
-                    'Оплата',
+                    l10n.payment,
                     style: AppFonts.medium13_144_5.copyWith(
                       color: AppColors.mainGreen,
                     ),
@@ -69,7 +71,7 @@ class FooterWidget extends StatelessWidget {
                 TextButton(
                   onPressed: () {},
                   child: Text(
-                    'Поддержка',
+                    l10n.help,
                     style: AppFonts.medium13_144_5.copyWith(
                       color: AppColors.mainGreen,
                     ),
@@ -78,7 +80,7 @@ class FooterWidget extends StatelessWidget {
                 TextButton(
                   onPressed: () {},
                   child: Text(
-                    'Сертификаты',
+                    l10n.certificates,
                     style: AppFonts.medium13_144_5.copyWith(
                       color: AppColors.mainGreen,
                     ),

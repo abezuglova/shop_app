@@ -5,6 +5,7 @@ import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
 import 'package:third_task/presentation/utils/app_images.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MainInfoWidget extends StatelessWidget {
   final Product product;
@@ -12,6 +13,7 @@ class MainInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -97,7 +99,7 @@ class MainInfoWidget extends StatelessWidget {
             SvgPicture.asset(AppIcons.deliveryIcon),
             const SizedBox(width: 8),
             Text(
-              'Ближайшая дата доставки: завтра утром',
+              '${l10n.nearliestDeliveryDate}: ${l10n.tomorrowMorning}',
               style: AppFonts.medium16_144_5.copyWith(
                 color: AppColors.mainGreen,
               ),

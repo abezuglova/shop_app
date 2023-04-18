@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SortingWidget extends StatefulWidget {
   const SortingWidget({super.key});
@@ -14,6 +15,7 @@ class SortingWidget extends StatefulWidget {
 class _SortingWidgetState extends State<SortingWidget> {
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
       child: Row(
@@ -21,7 +23,7 @@ class _SortingWidgetState extends State<SortingWidget> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            '12 товаров',
+            l10n.nProducts(12),
             style: AppFonts.regular14.copyWith(
               color: AppColors.secondaryTextColor,
             ),
@@ -30,7 +32,7 @@ class _SortingWidgetState extends State<SortingWidget> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'По дате добавления',
+                l10n.byAddingTime,
                 style: AppFonts.regular14,
               ),
               const SizedBox(width: 8),

@@ -6,6 +6,7 @@ import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
 import 'package:third_task/presentation/pages/profile_page/widgets/bonuses_widget.dart';
 import 'package:third_task/presentation/pages/profile_page/widgets/profile_section_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ProfileScreen extends StatelessWidget {
   final PersonalData personalData;
@@ -18,25 +19,26 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final sections = [
       SectionNavigationData(
-        name: 'Личные данные',
+        name: l10n.personalData,
         location: '/profile/personal_data',
       ),
       SectionNavigationData(
-        name: 'Мои заказы',
+        name: l10n.myOrders,
         location: '/profile/my_orders',
       ),
       SectionNavigationData(
-        name: 'Мои адреса',
+        name: l10n.myAddresses,
         location: '/profile/my_addresses',
       ),
       SectionNavigationData(
-        name: 'Способы оплаты',
+        name: l10n.paymentMethods,
         location: '/profile/payment_methods',
       ),
       SectionNavigationData(
-        name: 'Связаться с нами',
+        name: l10n.connectWithUs,
         location: '/profile/connect_with_us',
       ),
     ];
@@ -90,7 +92,7 @@ class ProfileScreen extends StatelessWidget {
                   SvgPicture.asset(AppIcons.exitIcon),
                   const SizedBox(width: 10),
                   Text(
-                    'Выйти',
+                    l10n.exit,
                     style: AppFonts.medium18_144_5.copyWith(
                       color: AppColors.secondaryTextColor,
                     ),

@@ -5,6 +5,7 @@ import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class OrderInfoWidget extends StatelessWidget {
   final Order order;
@@ -12,6 +13,7 @@ class OrderInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Column(
       children: [
         Text(
@@ -22,7 +24,7 @@ class OrderInfoWidget extends StatelessWidget {
         ),
         const SizedBox(height: 4),
         Text(
-          '${order.productList.length} товаров на сумму ${order.generalPrice} р.',
+          '${l10n.nProducts(order.productList.length)} ${l10n.onSum} ${order.generalPrice} р.',
           style: AppFonts.bold16_144_5,
         ),
         const SizedBox(height: 24),
@@ -49,7 +51,7 @@ class OrderInfoWidget extends StatelessWidget {
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      'В пути',
+                      l10n.inWay,
                       style: AppFonts.medium14_144_5.copyWith(
                         color: AppColors.inWayColor,
                       ),
@@ -64,7 +66,7 @@ class OrderInfoWidget extends StatelessWidget {
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      'Доставлен',
+                      l10n.sent,
                       style: AppFonts.medium14_144_5.copyWith(
                         color: AppColors.mainGreen,
                       ),

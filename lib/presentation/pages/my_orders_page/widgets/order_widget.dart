@@ -5,6 +5,7 @@ import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class OrderWidget extends StatelessWidget {
   final Order order;
@@ -12,6 +13,7 @@ class OrderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return GestureDetector(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -51,7 +53,7 @@ class OrderWidget extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '${order.productList.length} товаров на сумму ${order.generalPrice} р.',
+                    '${l10n.nProducts(order.productList.length)} ${l10n.onSum} ${order.generalPrice} р.',
                     style: AppFonts.semiBold14_144_5,
                   ),
                 ],

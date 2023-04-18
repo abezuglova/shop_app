@@ -6,18 +6,20 @@ import 'package:third_task/presentation/ui_kit/custom_app_bar.dart';
 import 'package:third_task/presentation/ui_kit/svg_icon_button.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CheckoutPage extends StatelessWidget {
   const CheckoutPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         backgroundColor: AppColors.scaffoldBackgroundColor,
         appBar: CustomAppBar(
-          titleText: 'Оформление заказа',
+          titleText: l10n.checkout,
           leading: SvgIconButton(
             onPressed: () => context.pop(),
             iconPath: AppIcons.chevronLeftIcon,

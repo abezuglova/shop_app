@@ -6,6 +6,7 @@ import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/pages/shopping_cart_page/widgets/shopping_cart_product_list_widget.dart';
 import 'package:third_task/presentation/pages/shopping_cart_page/widgets/summary_widget.dart';
 import 'package:third_task/presentation/ui_kit/recommendations_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ShoppingCartScreen extends StatelessWidget {
   final ShoppingCart shoppingCart;
@@ -13,6 +14,7 @@ class ShoppingCartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Stack(
       children: [
         ListView(
@@ -58,7 +60,7 @@ class ShoppingCartScreen extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 70, vertical: 16),
                 child: Text(
-                  'Перейти к оформлению',
+                  l10n.goToCheckout,
                   style: AppFonts.semiBold18.copyWith(
                     color: Colors.white,
                   ),

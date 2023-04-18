@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AdvertisementCardWidget extends StatelessWidget {
   final Advertisement advertisement;
@@ -9,6 +10,7 @@ class AdvertisementCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return SizedBox(
       width: 335,
       height: 208,
@@ -66,7 +68,7 @@ class AdvertisementCardWidget extends StatelessWidget {
                     child: ElevatedButton(
                       onPressed: () {},
                       child: Text(
-                        'Узнать больше',
+                        l10n.learnMore,
                         style: AppFonts.medium14_135.copyWith(
                           color: Colors.white,
                         ),
