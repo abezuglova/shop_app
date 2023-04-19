@@ -225,10 +225,11 @@ abstract class AppFonts {
     fontWeight: FontWeight.w700,
     height: 1.445,
   );
-  static final TextStyle bold20 = GoogleFonts.jost(
+  static final TextStyle bold20_144_5 = GoogleFonts.jost(
     color: Colors.black,
     fontSize: 20,
     fontWeight: FontWeight.w700,
+    height: 1.445,
   );
   static final TextStyle yesevaRegular18 = GoogleFonts.yesevaOne(
     color: Colors.black,

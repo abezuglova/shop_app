@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/pages/checkout_page/widgets/checkout_fields_widget.dart';
 import 'package:third_task/presentation/pages/checkout_page/widgets/checkout_price_widget.dart';
+import 'package:third_task/presentation/ui_kit/auth_phone_number_widget.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -50,7 +51,17 @@ class CheckoutScreen extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => showModalBottomSheet(
+                    context: context,
+                    isScrollControlled: true,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(12),
+                        topRight: Radius.circular(12),
+                      ),
+                    ),
+                    builder: (context) => const AuthPhoneNumberWidget(),
+                  ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 103, vertical: 16),
