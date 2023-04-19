@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:third_task/presentation/ui_kit/bottom_sheet_line.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AuthNameWidget extends StatelessWidget {
   const AuthNameWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Container(
@@ -25,7 +27,7 @@ class AuthNameWidget extends StatelessWidget {
             const BottomSheetLine(),
             const SizedBox(height: 24),
             Text(
-              'Как к вам обращаться?',
+              l10n.howToCallYou,
               style: AppFonts.bold20_144_5,
             ),
             const SizedBox(height: 24),
@@ -43,7 +45,7 @@ class AuthNameWidget extends StatelessWidget {
                     const EdgeInsets.symmetric(horizontal: 12, vertical: 19),
                 fillColor: AppColors.offBackgroundColor2,
                 filled: true,
-                hintText: 'Имя',
+                hintText: l10n.name,
                 hintStyle: AppFonts.regular16_144_5.copyWith(
                   color: AppColors.secondaryTextColor,
                 ),
@@ -64,7 +66,7 @@ class AuthNameWidget extends StatelessWidget {
                     const EdgeInsets.symmetric(horizontal: 12, vertical: 19),
                 fillColor: AppColors.offBackgroundColor2,
                 filled: true,
-                hintText: 'Фамилия',
+                hintText: l10n.surname,
                 hintStyle: AppFonts.regular16_144_5.copyWith(
                   color: AppColors.secondaryTextColor,
                 ),
@@ -79,7 +81,7 @@ class AuthNameWidget extends StatelessWidget {
                   vertical: 16,
                 ),
                 child: Text(
-                  'Продолжить оформление',
+                  l10n.continueCheckout,
                   style: AppFonts.semiBold18_144_5.copyWith(
                     color: Colors.white,
                   ),

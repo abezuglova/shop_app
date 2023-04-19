@@ -3,12 +3,14 @@ import 'package:third_task/presentation/ui_kit/auth_name_widget.dart';
 import 'package:third_task/presentation/ui_kit/bottom_sheet_line.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AuthCodeWidget extends StatelessWidget {
   const AuthCodeWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     const decoration = InputDecoration(
       border: OutlineInputBorder(
         borderSide: BorderSide.none,
@@ -37,12 +39,12 @@ class AuthCodeWidget extends StatelessWidget {
             const BottomSheetLine(),
             const SizedBox(height: 24),
             Text(
-              'Код подтверждения',
+              l10n.confirmationCode,
               style: AppFonts.bold20_144_5,
             ),
             const SizedBox(height: 8),
             Text(
-              'Введите код, который пришел на номер +7 123 456 78 90',
+              l10n.enterCode,
               style: AppFonts.regular16_144_5.copyWith(
                 color: AppColors.secondaryTextColor,
               ),
@@ -103,7 +105,7 @@ class AuthCodeWidget extends StatelessWidget {
                 builder: (context) => const AuthNameWidget(),
               ),
               child: Text(
-                'Получить код повторно',
+                l10n.getCodeAgain,
                 style: AppFonts.medium16_144_5.copyWith(
                   color: AppColors.mainGreen,
                 ),

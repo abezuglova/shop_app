@@ -3,12 +3,14 @@ import 'package:third_task/presentation/ui_kit/auth_code_widget.dart';
 import 'package:third_task/presentation/ui_kit/bottom_sheet_line.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AuthPhoneNumberWidget extends StatelessWidget {
   const AuthPhoneNumberWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Container(
@@ -26,12 +28,12 @@ class AuthPhoneNumberWidget extends StatelessWidget {
             const BottomSheetLine(),
             const SizedBox(height: 24),
             Text(
-              'Номер телефона',
+              l10n.phoneNumber,
               style: AppFonts.bold20_144_5,
             ),
             const SizedBox(height: 8),
             Text(
-              'Для продолжения оформления заказа укажите номер телефона',
+              l10n.enterPhoneNumber,
               style: AppFonts.regular16_144_5.copyWith(
                 color: AppColors.secondaryTextColor,
               ),
@@ -73,7 +75,7 @@ class AuthPhoneNumberWidget extends StatelessWidget {
                   vertical: 16,
                 ),
                 child: Text(
-                  'Получить код',
+                  l10n.getCode,
                   style: AppFonts.semiBold18_144_5.copyWith(
                     color: Colors.white,
                   ),
@@ -84,7 +86,7 @@ class AuthPhoneNumberWidget extends StatelessWidget {
             TextButton(
               onPressed: () {},
               child: Text(
-                'Нажимая “Получить код”, я соглашаюсь с Условиями продажи, Политикой конфиденциальности и Политикой в отношении обработки персональных данных.',
+                l10n.pressingEnterCodeIAgreeWith,
                 style: AppFonts.regular12_144_5.copyWith(
                   color: AppColors.mainGreen,
                 ),
@@ -103,7 +105,7 @@ class AuthPhoneNumberWidget extends StatelessWidget {
                   vertical: 16,
                 ),
                 child: Text(
-                  'Войти через Apple',
+                  l10n.enterWithApple,
                   style: AppFonts.semiBold18_144_5.copyWith(
                     color: Colors.white,
                   ),
