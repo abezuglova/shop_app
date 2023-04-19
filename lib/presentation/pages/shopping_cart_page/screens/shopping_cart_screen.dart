@@ -61,7 +61,7 @@ class ShoppingCartScreen extends StatelessWidget {
                     const EdgeInsets.symmetric(horizontal: 70, vertical: 16),
                 child: Text(
                   l10n.goToCheckout,
-                  style: AppFonts.semiBold18.copyWith(
+                  style: AppFonts.semiBold18_144_5.copyWith(
                     color: Colors.white,
                   ),
                 ),

@@ -56,7 +56,7 @@ class CheckoutScreen extends StatelessWidget {
                         horizontal: 103, vertical: 16),
                     child: Text(
                       l10n.doCheckout,
-                      style: AppFonts.semiBold18.copyWith(
+                      style: AppFonts.semiBold18_144_5.copyWith(
                         color: Colors.white,
                       ),
                     ),

@@ -23,7 +23,7 @@ class FooterWidget extends StatelessWidget {
                   onPressed: () {},
                   child: Text(
                     l10n.aboutCompany,
-                    style: AppFonts.semiBold18.copyWith(
+                    style: AppFonts.semiBold18_144_5.copyWith(
                       color: Colors.white,
                     ),
                   ),
@@ -36,7 +36,7 @@ class FooterWidget extends StatelessWidget {
                   onPressed: () {},
                   child: Text(
                     l10n.aboutOrganic,
-                    style: AppFonts.semiBold18.copyWith(
+                    style: AppFonts.semiBold18_144_5.copyWith(
                       color: Colors.white,
                     ),
                   ),

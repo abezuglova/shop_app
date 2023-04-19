@@ -185,10 +185,11 @@ abstract class AppFonts {
     fontWeight: FontWeight.w600,
     height: 1.445,
   );
-  static final TextStyle semiBold18 = GoogleFonts.jost(
+  static final TextStyle semiBold18_144_5 = GoogleFonts.jost(
     color: Colors.black,
     fontSize: 18,
     fontWeight: FontWeight.w600,
+    height: 1.445,
   );
   static final TextStyle semiBold18_130 = GoogleFonts.jost(
     color: Colors.black,
@@ -215,6 +216,12 @@ abstract class AppFonts {
   static final TextStyle bold16_144_5 = GoogleFonts.jost(
     color: Colors.black,
     fontSize: 16,
+    fontWeight: FontWeight.w700,
+    height: 1.445,
+  );
+  static final TextStyle bold18_144_5 = GoogleFonts.jost(
+    color: Colors.black,
+    fontSize: 18,
     fontWeight: FontWeight.w700,
     height: 1.445,
   );

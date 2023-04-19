@@ -95,7 +95,7 @@ class PersonalDataScreen extends StatelessWidget {
                     const EdgeInsets.symmetric(horizontal: 127, vertical: 16),
                 child: Text(
                   l10n.save,
-                  style: AppFonts.semiBold18.copyWith(
+                  style: AppFonts.semiBold18_144_5.copyWith(
                     color: Colors.white,
                   ),
                 ),

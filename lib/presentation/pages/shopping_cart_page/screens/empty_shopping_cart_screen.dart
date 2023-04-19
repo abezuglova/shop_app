@@ -28,7 +28,7 @@ class EmptyShoppingCartScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
               child: Text(
                 l10n.goShopping,
-                style: AppFonts.semiBold18.copyWith(
+                style: AppFonts.semiBold18_144_5.copyWith(
                   color: Colors.white,
                 ),
               ),
