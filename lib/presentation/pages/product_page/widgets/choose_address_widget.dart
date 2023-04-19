@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:third_task/presentation/ui_kit/bottom_sheet_line.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
@@ -23,16 +24,7 @@ class ChooseAddressWidget extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Container(
-            width: 39,
-            height: 4,
-            decoration: const BoxDecoration(
-              color: AppColors.dividerColor,
-              borderRadius: BorderRadius.all(
-                Radius.circular(50),
-              ),
-            ),
-          ),
+          const BottomSheetLine(),
           const SizedBox(height: 16),
           SvgPicture.asset(
             AppIcons.deliveryIcon,
