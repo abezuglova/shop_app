@@ -33,7 +33,7 @@ class CustomTextField extends StatelessWidget {
           labelStyle: AppFonts.regular16_144_5.copyWith(
             color: AppColors.secondaryTextColor,
           ),
-          floatingLabelStyle: AppFonts.regular13_144_5.copyWith(
+          floatingLabelStyle: AppFonts.regular16_144_5.copyWith(
             color: AppColors.secondaryTextColor,
           ),
           suffixIcon: suffixIcon,
