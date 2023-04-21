@@ -6,6 +6,7 @@ import 'package:third_task/presentation/pages/main_page/widgets/best_deals_widge
 import 'package:third_task/presentation/pages/main_page/widgets/brand_list_widget.dart';
 import 'package:third_task/presentation/pages/main_page/widgets/category_list_widget.dart';
 import 'package:third_task/presentation/pages/main_page/widgets/footer_widget.dart';
+import 'package:third_task/presentation/ui_kit/shadow_wrapper.dart';
 
 class MainScreen extends StatelessWidget {
   final MainPageData mainPageData;
@@ -13,27 +14,29 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        AdvertisementListWidget(
-          advertisementList: mainPageData.advertisementList,
-        ),
-        CategoryListWidget(
-          categories: mainPageData.popularCategories,
-        ),
-        BestDealsWidget(
-          bestDeals: mainPageData.bestDeals,
-        ),
-        AlreadyBoughtListWidget(
-          alreadyBoughtList: mainPageData.alreadyBoughtList,
-        ),
-        BrandListWidget(
-          brandList: mainPageData.brandList,
-        ),
-        const SizedBox(height: 36),
-        const FooterWidget(),
-        const SizedBox(height: 61),
-      ],
+    return ShadowWrapper(
+      child: ListView(
+        children: [
+          AdvertisementListWidget(
+            advertisementList: mainPageData.advertisementList,
+          ),
+          CategoryListWidget(
+            categories: mainPageData.popularCategories,
+          ),
+          BestDealsWidget(
+            bestDeals: mainPageData.bestDeals,
+          ),
+          AlreadyBoughtListWidget(
+            alreadyBoughtList: mainPageData.alreadyBoughtList,
+          ),
+          BrandListWidget(
+            brandList: mainPageData.brandList,
+          ),
+          const SizedBox(height: 36),
+          const FooterWidget(),
+          const SizedBox(height: 134),
+        ],
+      ),
     );
   }
 }

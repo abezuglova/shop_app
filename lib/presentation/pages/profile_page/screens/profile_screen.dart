@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:third_task/domain/entities/entities.dart';
+import 'package:third_task/presentation/ui_kit/shadow_wrapper.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
@@ -42,66 +43,68 @@ class ProfileScreen extends StatelessWidget {
         location: '/profile/connect_with_us',
       ),
     ];
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 32),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  personalData.name,
-                  style: AppFonts.medium24_144_5,
-                ),
-                Text(
-                  personalData.phone,
-                  style: AppFonts.medium18_144_5.copyWith(
-                    color: AppColors.phoneColor,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          BonusesWidget(
-            bonuses: bonuses,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Column(
-              children: sections
-                  .map(
-                    (section) => ProfileSectionWidget(
-                      section: section,
-                    ),
-                  )
-                  .toList(),
-            ),
-          ),
-          const Spacer(),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: TextButton(
-              onPressed: () {},
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.center,
+    return ShadowWrapper(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 32),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SvgPicture.asset(AppIcons.exitIcon),
-                  const SizedBox(width: 10),
                   Text(
-                    l10n.exit,
+                    personalData.name,
+                    style: AppFonts.medium24_144_5,
+                  ),
+                  Text(
+                    personalData.phone,
                     style: AppFonts.medium18_144_5.copyWith(
-                      color: AppColors.secondaryTextColor,
+                      color: AppColors.phoneColor,
                     ),
                   ),
                 ],
               ),
             ),
-          ),
-        ],
+            BonusesWidget(
+              bonuses: bonuses,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
+                children: sections
+                    .map(
+                      (section) => ProfileSectionWidget(
+                        section: section,
+                      ),
+                    )
+                    .toList(),
+              ),
+            ),
+            const Spacer(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: TextButton(
+                onPressed: () {},
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SvgPicture.asset(AppIcons.exitIcon),
+                    const SizedBox(width: 10),
+                    Text(
+                      l10n.exit,
+                      style: AppFonts.medium18_144_5.copyWith(
+                        color: AppColors.secondaryTextColor,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
