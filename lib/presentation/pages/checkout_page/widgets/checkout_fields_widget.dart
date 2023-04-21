@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:third_task/domain/entities/entities.dart';
+import 'package:third_task/presentation/ui_kit/custom_text_field.dart';
 import 'package:third_task/presentation/ui_kit/svg_icon_button.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
@@ -23,57 +24,39 @@ class _CheckoutFieldsWidgetState extends State<CheckoutFieldsWidget> {
     final l10n = AppLocalizations.of(context)!;
     return Column(
       children: [
-        TextField(
-          style: AppFonts.medium16_144_5,
-          decoration: _getTextFieldDecoration(
-            l10n.deliveryAddress,
-            Padding(
-              padding: const EdgeInsets.only(right: 12),
-              child: SvgIconButton(
-                onPressed: () {},
-                iconPath: AppIcons.chevronRightIcon,
-              ),
-            ),
-            const BoxConstraints(
-              maxWidth: 36,
-              maxHeight: 36,
-            ),
+        CustomTextField(
+          labelText: l10n.deliveryAddress,
+          suffixIcon: SvgIconButton(
+            onPressed: () {},
+            iconPath: AppIcons.chevronRightIcon,
+          ),
+          suffixIconConstraints: const BoxConstraints(
+            maxWidth: 36,
+            maxHeight: 36,
           ),
         ),
         const SizedBox(height: 12),
-        TextField(
-          style: AppFonts.medium16_144_5,
-          decoration: _getTextFieldDecoration(
-            l10n.deliveryDateTime,
-            Padding(
-              padding: const EdgeInsets.only(right: 12),
-              child: SvgIconButton(
-                onPressed: () {},
-                iconPath: AppIcons.chevronRightIcon,
-              ),
-            ),
-            const BoxConstraints(
-              maxWidth: 36,
-              maxHeight: 36,
-            ),
+        CustomTextField(
+          labelText: l10n.deliveryDateTime,
+          suffixIcon: SvgIconButton(
+            onPressed: () {},
+            iconPath: AppIcons.chevronRightIcon,
+          ),
+          suffixIconConstraints: const BoxConstraints(
+            maxWidth: 36,
+            maxHeight: 36,
           ),
         ),
         const SizedBox(height: 12),
-        TextField(
-          style: AppFonts.medium16_144_5,
-          decoration: _getTextFieldDecoration(
-            l10n.paymentMethod,
-            Padding(
-              padding: const EdgeInsets.only(right: 12),
-              child: SvgIconButton(
-                onPressed: () {},
-                iconPath: AppIcons.chevronRightIcon,
-              ),
-            ),
-            const BoxConstraints(
-              maxWidth: 36,
-              maxHeight: 36,
-            ),
+        CustomTextField(
+          labelText: l10n.paymentMethod,
+          suffixIcon: SvgIconButton(
+            onPressed: () {},
+            iconPath: AppIcons.chevronRightIcon,
+          ),
+          suffixIconConstraints: const BoxConstraints(
+            maxWidth: 36,
+            maxHeight: 36,
           ),
         ),
         const SizedBox(height: 12),
@@ -116,40 +99,10 @@ class _CheckoutFieldsWidgetState extends State<CheckoutFieldsWidget> {
           ],
         ),
         const SizedBox(height: 12),
-        TextField(
-          style: AppFonts.medium16_144_5,
-          decoration: _getTextFieldDecoration(
-            l10n.comment,
-          ),
+        CustomTextField(
+          labelText: l10n.comment,
         ),
       ],
     );
   }
-
-  InputDecoration _getTextFieldDecoration(
-    String labelText, [
-    Widget? suffixIcon,
-    BoxConstraints? suffixIconConstraints,
-  ]) =>
-      InputDecoration(
-        border: const OutlineInputBorder(
-          borderSide: BorderSide.none,
-          borderRadius: BorderRadius.all(
-            Radius.circular(4),
-          ),
-        ),
-        contentPadding:
-            const EdgeInsets.symmetric(horizontal: 12, vertical: 19),
-        fillColor: AppColors.offBackgroundColor2,
-        filled: true,
-        labelText: labelText,
-        labelStyle: AppFonts.regular16_144_5.copyWith(
-          color: AppColors.secondaryTextColor,
-        ),
-        floatingLabelStyle: AppFonts.regular13_144_5.copyWith(
-          color: AppColors.secondaryTextColor,
-        ),
-        suffixIcon: suffixIcon,
-        suffixIconConstraints: suffixIconConstraints,
-      );
 }
