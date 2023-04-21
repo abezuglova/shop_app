@@ -38,7 +38,7 @@ class ShoppingCartScreen extends StatelessWidget {
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.fromLTRB(16, 16, 16, 89),
             width: double.infinity,
             decoration: BoxDecoration(
               color: Colors.white,

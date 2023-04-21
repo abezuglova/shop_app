@@ -58,14 +58,23 @@ class _ScaffoldWithBottomNavBarState extends State<ScaffoldWithBottomNavBar> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(child: widget.child),
-      bottomNavigationBar: CustomBottomNavBar(
-        onTap: (int index) {
-          _goOtherTab(context, index);
-        },
-        currentIndex: _currentIndex,
-        tabs: tabs,
+    return SafeArea(
+      child: Scaffold(
+        body: Stack(
+          children: [
+            widget.child,
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: CustomBottomNavBar(
+                onTap: (int index) {
+                  _goOtherTab(context, index);
+                },
+                currentIndex: _currentIndex,
+                tabs: tabs,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -16,7 +16,7 @@ class PriceWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Container(
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsets.fromLTRB(8, 8, 8, 81),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: const BorderRadius.only(

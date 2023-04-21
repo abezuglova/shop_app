@@ -13,7 +13,7 @@ class ChooseAddressWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Container(
-      padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 89),
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(

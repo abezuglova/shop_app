@@ -25,7 +25,7 @@ class AuthCodeWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Container(
-        padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
+        padding: const EdgeInsets.fromLTRB(16, 12, 16, 89),
         decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
