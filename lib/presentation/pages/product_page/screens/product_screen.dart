@@ -18,6 +18,7 @@ class ProductScreen extends StatelessWidget {
       children: [
         ListView(
           children: [
+            const SizedBox(height: 30),
             PhotoSliderWidget(
               images: product.images,
             ),
