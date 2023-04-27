@@ -2,7 +2,7 @@ part of 'entities.dart';
 
 @freezed
 class Subcategory with _$Subcategory {
-  factory Subcategory({
+  const factory Subcategory({
     required String name,
     required List<ProductType> productTypes,
   }) = _Subcategory;

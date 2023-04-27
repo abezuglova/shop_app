@@ -9,44 +9,14 @@ class CategoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final subcategories = [
-      Subcategory(
-        name: 'Чай',
-        productTypes: [],
-      ),
-      Subcategory(
-        name: 'Кофе',
-        productTypes: [],
-      ),
-      Subcategory(
-        name: 'Какао, цикорий',
-        productTypes: [],
-      ),
-      Subcategory(
-        name: 'Соки, морсы, нектары, кампоты',
-        productTypes: [],
-      ),
-      Subcategory(
-        name: 'Вода минеральная и питьевая',
-        productTypes: [],
-      ),
-      Subcategory(
-        name: 'Лимонады, напитки',
-        productTypes: [],
-      ),
-      Subcategory(
-        name: 'Холодный чай, кофе, экзотика',
-        productTypes: [],
-      ),
-    ];
     return ShadowWrapper(
       child: ListView.separated(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         itemBuilder: (BuildContext context, int index) => SubcategoryWidget(
-          subcategory: subcategories[index],
+          subcategory: category.subcategories[index],
         ),
         separatorBuilder: (BuildContext context, int index) => const Divider(),
-        itemCount: subcategories.length,
+        itemCount: category.subcategories.length,
       ),
     );
   }
