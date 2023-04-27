@@ -16,7 +16,10 @@ class CategoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.go('/catalog/category', extra: category),
+      onTap: () => context.push(
+        '/catalog/category',
+        extra: category,
+      ),
       child: SizedBox(
         width: 163,
         height: 117,

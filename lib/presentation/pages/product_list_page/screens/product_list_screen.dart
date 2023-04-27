@@ -11,23 +11,19 @@ class ProductListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ShadowWrapper(
-      child: Column(
+      child: ListView(
         children: [
-          ListView(
-            children: [
-              const SortingWidget(),
-              const SizedBox(height: 20),
-              // Column(
-              //   children: subcategory.subcategories
-              //       .map(
-              //         (type) => ProductTypeWidget(
-              //           productType: type,
-              //         ),
-              //       )
-              //       .toList(),
-              // ),
-            ],
-          ),
+          const SortingWidget(),
+          const SizedBox(height: 20),
+          // Column(
+          //   children: subcategory.subcategories
+          //       .map(
+          //         (type) => ProductTypeWidget(
+          //           productType: type,
+          //         ),
+          //       )
+          //       .toList(),
+          // ),
         ],
       ),
     );
