@@ -12,4 +12,14 @@ void main() {
     print(suggestions);
     assert(suggestions.isNotEmpty);
   });
+
+  test('Products in a category', () async {
+    final dio = Dio(
+      BaseOptions(baseUrl: 'https://fakestoreapi.com'),
+    );
+    final repository = CatalogRepository(dio);
+    final suggestions = await repository.getProductsInSpecificCategory('jewelery');
+    print(suggestions);
+    assert(suggestions.isNotEmpty);
+  });
 }

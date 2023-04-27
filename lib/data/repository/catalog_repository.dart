@@ -27,9 +27,7 @@ class CatalogRepository implements ICatalogRepository {
         Category(
           id: id,
           name: 'Чай',
-          subcategories: [
-            
-          ],
+          subcategories: [],
         ),
         Category(
           id: id,
@@ -62,4 +60,12 @@ class CatalogRepository implements ICatalogRepository {
           subcategories: [],
         ),
       ];
+
+  @override
+  Future<List<Product>> getProductsInSpecificCategory(String id) async {
+    final response = await dio.get<List<dynamic>>(
+      '/products/category/$id',
+    );
+    return response.data!.map((json) => Product.fromJson(json)).toList();
+  }
 }
