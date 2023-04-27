@@ -3,7 +3,7 @@ import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 
 class FiltersWidget extends StatefulWidget {
-  final List<ProductType> productTypes;
+  final List<Category> productTypes;
   const FiltersWidget({super.key, required this.productTypes});
 
   @override

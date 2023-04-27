@@ -5,7 +5,7 @@ import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
 
 class SubcategoryWidget extends StatelessWidget {
-  final Subcategory subcategory;
+  final Category subcategory;
   const SubcategoryWidget({super.key, required this.subcategory});
 
   @override

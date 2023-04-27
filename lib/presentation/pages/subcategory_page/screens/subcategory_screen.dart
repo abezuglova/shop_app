@@ -6,7 +6,7 @@ import 'package:third_task/presentation/pages/subcategory_page/widgets/sorting_w
 import 'package:third_task/presentation/ui_kit/shadow_wrapper.dart';
 
 class SubcategoryScreen extends StatelessWidget {
-  final Subcategory subcategory;
+  final Category subcategory;
   const SubcategoryScreen({super.key, required this.subcategory});
 
   @override
@@ -15,21 +15,21 @@ class SubcategoryScreen extends StatelessWidget {
       child: Column(
         children: [
           FiltersWidget(
-            productTypes: subcategory.productTypes,
+            productTypes: subcategory.subcategories,
           ),
           ListView(
             children: [
               const SortingWidget(),
               const SizedBox(height: 20),
-              Column(
-                children: subcategory.productTypes
-                    .map(
-                      (type) => ProductTypeWidget(
-                        productType: type,
-                      ),
-                    )
-                    .toList(),
-              ),
+              // Column(
+              //   children: subcategory.subcategories
+              //       .map(
+              //         (type) => ProductTypeWidget(
+              //           productType: type,
+              //         ),
+              //       )
+              //       .toList(),
+              // ),
             ],
           ),
         ],

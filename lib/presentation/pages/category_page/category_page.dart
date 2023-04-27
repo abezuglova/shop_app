@@ -22,7 +22,9 @@ class CategoryPage extends StatelessWidget {
       ),
       body: CategoryScreen(
         category: Category(
+          id: '1',
           name: 'Напитки, соки, чай, кофе',
+          subcategories: [],
         ),
       ),
     );

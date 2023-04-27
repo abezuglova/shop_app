@@ -62,16 +62,24 @@ class MainPage extends StatelessWidget {
           ],
           popularCategories: [
             Category(
+              id: '1',
               name: 'Молочные продукты, яйцо',
+              subcategories: [],
             ),
             Category(
+              id: '1',
               name: 'Мясо и птица',
+              subcategories: [],
             ),
             Category(
+              id: '1',
               name: 'Овощи, фрукты, зелень',
+              subcategories: [],
             ),
             Category(
+              id: '1',
               name: 'Хлеб, выпечка',
+              subcategories: [],
             ),
           ],
           bestDeals: [
