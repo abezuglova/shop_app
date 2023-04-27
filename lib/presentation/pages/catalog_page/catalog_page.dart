@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:third_task/domain/entities/entities.dart';
+import 'package:third_task/di.dart';
+import 'package:third_task/domain/repository/i_catalog_repository.dart';
+import 'package:third_task/presentation/pages/catalog_page/cubit/catalog_cubit.dart';
+import 'package:third_task/presentation/ui_kit/error_screen.dart';
+import 'package:third_task/presentation/ui_kit/loading_screen.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
@@ -12,69 +17,37 @@ class CatalogPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.scaffoldBackgroundColor,
-      appBar: CustomAppBar(
-        title: TextButton(
-          onPressed: () {},
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SvgPicture.asset(AppIcons.smallDeliveryIcon),
-              const SizedBox(width: 8),
-              Text(
-                'ул. Пушкина 15, д. 20, кв. 113',
-                style: AppFonts.medium14,
-              ),
-            ],
+    return BlocProvider<CatalogCubit>(
+      create: (context) => CatalogCubit(
+        catalogRepository: getIt<ICatalogRepository>(),
+      )..onPageOpened(),
+      child: Scaffold(
+        backgroundColor: AppColors.scaffoldBackgroundColor,
+        appBar: CustomAppBar(
+          title: TextButton(
+            onPressed: () {},
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SvgPicture.asset(AppIcons.smallDeliveryIcon),
+                const SizedBox(width: 8),
+                Text(
+                  'ул. Пушкина 15, д. 20, кв. 113',
+                  style: AppFonts.medium14,
+                ),
+              ],
+            ),
           ),
         ),
-      ),
-      body: CatalogScreen(
-        categories: [
-          Category(
-            name: 'Молочные продукты, яйцо',
+        body: BlocBuilder<CatalogCubit, CatalogState>(
+          builder: (context, state) => state.map(
+            loadInProgress: (state) => const LoadingScreen(),
+            loadFailure: (state) => const ErrorScreen(),
+            loadSuccess: (state) => CatalogScreen(
+              categories: state.categories,
+            ),
           ),
-          Category(
-            name: 'Молочные продукты, яйцо',
-          ),
-          Category(
-            name: 'Молочные продукты, яйцо',
-          ),
-          Category(
-            name: 'Молочные продукты, яйцо',
-          ),
-          Category(
-            name: 'Молочные продукты, яйцо',
-          ),
-          Category(
-            name: 'Молочные продукты, яйцо',
-          ),
-          Category(
-            name: 'Молочные продукты, яйцо',
-          ),
-          Category(
-            name: 'Молочные продукты, яйцо',
-          ),
-          Category(
-            name: 'Молочные продукты, яйцо',
-          ),
-          Category(
-            name: 'Молочные продукты, яйцо',
-          ),
-          Category(
-            name: 'Молочные продукты, яйцо',
-          ),
-          Category(
-            name: 'Молочные продукты, яйцо',
-          ),
-          Category(
-            name: 'Молочные продукты, яйцо',
-          ),
-          Category(
-            name: 'Молочные продукты, яйцо',
-          ),
-        ],
+        ),
       ),
     );
   }
