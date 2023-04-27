@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:third_task/di.dart';
 import 'package:third_task/presentation/navigation/router.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
+  setupDI();
   runApp(const MyApp());
 }
 

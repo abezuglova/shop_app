@@ -73,6 +73,7 @@
   "getCodeAgain": "Получить код повторно",
   "howToCallYou": "Как к вам обращаться?",
   "continueCheckout": "Продолжить оформление",
+  "loadingFailure": "Ошибка загрузки",
   "nearliestDeliveryDate": "Ближайшая дата доставки",
   "tomorrowMorning": "завтра утром",
   "byAddingTime": "По дате добавления",
