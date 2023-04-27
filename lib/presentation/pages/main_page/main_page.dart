@@ -48,8 +48,7 @@ class MainPage extends StatelessWidget {
             ),
             Advertisement(
               name: 'Новинка от УГЛЕЧЕ ПОЛЕ',
-              description:
-                  'Продукт кисломолочный Угурт питьевой с Вишней 250г',
+              description: 'Продукт кисломолочный Угурт питьевой с Вишней 250г',
               image:
                   'https://s0.rbk.ru/v6_top_pics/media/img/0/65/756696433874650.webp',
             ),
@@ -64,33 +63,18 @@ class MainPage extends StatelessWidget {
           popularCategories: [
             Category(
               name: 'Молочные продукты, яйцо',
-              image:
-                  'https://purmix.ru/images/uroki/karand/raznoe/cheese3.jpg',
-              subcategories: [],
             ),
             Category(
               name: 'Молочные продукты, яйцо',
-              image:
-                  'https://purmix.ru/images/uroki/karand/raznoe/cheese3.jpg',
-              subcategories: [],
             ),
             Category(
               name: 'Молочные продукты, яйцо',
-              image:
-                  'https://purmix.ru/images/uroki/karand/raznoe/cheese3.jpg',
-              subcategories: [],
             ),
             Category(
               name: 'Молочные продукты, яйцо',
-              image:
-                  'https://purmix.ru/images/uroki/karand/raznoe/cheese3.jpg',
-              subcategories: [],
             ),
             Category(
               name: 'Молочные продукты, яйцо',
-              image:
-                  'https://purmix.ru/images/uroki/karand/raznoe/cheese3.jpg',
-              subcategories: [],
             ),
           ],
           bestDeals: [
@@ -250,27 +234,33 @@ class MainPage extends StatelessWidget {
           brandList: [
             Brand(
               name: 'Углече поле',
-              logo: 'https://organicguide.ru/wp-content/uploads/2016/06/edC5WDqj.png',
+              logo:
+                  'https://organicguide.ru/wp-content/uploads/2016/06/edC5WDqj.png',
             ),
             Brand(
               name: 'Углече поле',
-              logo: 'https://avatars.mds.yandex.net/get-mpic/5376414/img_id6722953875435341144.png/orig',
+              logo:
+                  'https://avatars.mds.yandex.net/get-mpic/5376414/img_id6722953875435341144.png/orig',
             ),
             Brand(
               name: 'Углече поле',
-              logo: 'https://organicguide.ru/wp-content/uploads/2016/06/edC5WDqj.png',
+              logo:
+                  'https://organicguide.ru/wp-content/uploads/2016/06/edC5WDqj.png',
             ),
             Brand(
               name: 'Углече поле',
-              logo: 'https://avatars.mds.yandex.net/get-mpic/5376414/img_id6722953875435341144.png/orig',
+              logo:
+                  'https://avatars.mds.yandex.net/get-mpic/5376414/img_id6722953875435341144.png/orig',
             ),
             Brand(
               name: 'Углече поле',
-              logo: 'https://organicguide.ru/wp-content/uploads/2016/06/edC5WDqj.png',
+              logo:
+                  'https://organicguide.ru/wp-content/uploads/2016/06/edC5WDqj.png',
             ),
             Brand(
               name: 'Углече поле',
-              logo: 'https://avatars.mds.yandex.net/get-mpic/5376414/img_id6722953875435341144.png/orig',
+              logo:
+                  'https://avatars.mds.yandex.net/get-mpic/5376414/img_id6722953875435341144.png/orig',
             ),
           ],
         ),

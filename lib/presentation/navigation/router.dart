@@ -50,7 +50,7 @@ final router = GoRouter(
         ),
         GoRoute(
           path: '/search',
-          builder: (context, state) => const ProductPage(),
+          builder: (context, state) => const SizedBox(),
         ),
         GoRoute(
           path: '/shopping_cart',

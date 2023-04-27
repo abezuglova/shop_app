@@ -4,8 +4,6 @@ part of 'entities.dart';
 class Category with _$Category {
   factory Category({
     required String name,
-    required String image,
-    required List<Subcategory> subcategories,
   }) = _Category;
 
   factory Category.fromJson(Map<String, dynamic> json) =>

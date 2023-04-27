@@ -4,9 +4,9 @@ import 'package:third_task/presentation/utils/app_fonts.dart';
 
 class CustomTextField extends StatelessWidget {
   final String labelText;
-  Widget? suffixIcon;
-  BoxConstraints? suffixIconConstraints;
-  CustomTextField({
+  final Widget? suffixIcon;
+  final BoxConstraints? suffixIconConstraints;
+  const CustomTextField({
     super.key,
     required this.labelText,
     this.suffixIcon,

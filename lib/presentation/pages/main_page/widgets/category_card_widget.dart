@@ -37,7 +37,7 @@ class CategoryCardWidget extends StatelessWidget {
               left: 10,
               top: 10,
               child: Image.network(
-                category.image,
+                'https://purmix.ru/images/uroki/karand/raznoe/cheese3.jpg',
                 width: 50,
                 height: 50,
               ),

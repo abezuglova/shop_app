@@ -23,37 +23,6 @@ class CategoryPage extends StatelessWidget {
       body: CategoryScreen(
         category: Category(
           name: 'Напитки, соки, чай, кофе',
-          image: '',
-          subcategories: [
-            Subcategory(
-              name: 'Чай',
-              productTypes: [],
-            ),
-            Subcategory(
-              name: 'Кофе',
-              productTypes: [],
-            ),
-            Subcategory(
-              name: 'Какао, цикорий',
-              productTypes: [],
-            ),
-            Subcategory(
-              name: 'Соки, морсы, нектары, кампоты',
-              productTypes: [],
-            ),
-            Subcategory(
-              name: 'Вода минеральная и питьевая',
-              productTypes: [],
-            ),
-            Subcategory(
-              name: 'Лимонады, напитки',
-              productTypes: [],
-            ),
-            Subcategory(
-              name: 'Холодный чай, кофе, экзотика',
-              productTypes: [],
-            ),
-          ],
         ),
       ),
     );
