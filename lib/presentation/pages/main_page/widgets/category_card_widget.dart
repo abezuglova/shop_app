@@ -5,7 +5,12 @@ import 'package:third_task/presentation/utils/app_fonts.dart';
 
 class CategoryCardWidget extends StatelessWidget {
   final Category category;
-  const CategoryCardWidget({super.key, required this.category});
+  final String image;
+  const CategoryCardWidget({
+    super.key,
+    required this.category,
+    required this.image,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -34,12 +39,10 @@ class CategoryCardWidget extends StatelessWidget {
               ),
             ),
             Positioned(
-              left: 10,
-              top: 10,
-              child: Image.network(
-                'https://purmix.ru/images/uroki/karand/raznoe/cheese3.jpg',
-                width: 50,
-                height: 50,
+              left: 0,
+              top: 0,
+              child: Image(
+                image: AssetImage(image),
               ),
             ),
             Positioned(

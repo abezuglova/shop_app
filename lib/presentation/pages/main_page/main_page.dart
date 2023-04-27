@@ -65,16 +65,13 @@ class MainPage extends StatelessWidget {
               name: 'Молочные продукты, яйцо',
             ),
             Category(
-              name: 'Молочные продукты, яйцо',
+              name: 'Мясо и птица',
             ),
             Category(
-              name: 'Молочные продукты, яйцо',
+              name: 'Овощи, фрукты, зелень',
             ),
             Category(
-              name: 'Молочные продукты, яйцо',
-            ),
-            Category(
-              name: 'Молочные продукты, яйцо',
+              name: 'Хлеб, выпечка',
             ),
           ],
           bestDeals: [

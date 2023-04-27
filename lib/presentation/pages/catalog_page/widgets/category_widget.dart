@@ -5,7 +5,12 @@ import 'package:third_task/presentation/utils/app_fonts.dart';
 
 class CategoryWidget extends StatelessWidget {
   final Category category;
-  const CategoryWidget({super.key, required this.category});
+  final String image;
+  const CategoryWidget({
+    super.key,
+    required this.category,
+    required this.image,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +24,7 @@ class CategoryWidget extends StatelessWidget {
             Container(
               width: 163,
               height: 117,
+              clipBehavior: Clip.hardEdge,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: const BorderRadius.all(
@@ -35,12 +41,10 @@ class CategoryWidget extends StatelessWidget {
               ),
             ),
             Positioned(
-              left: 10,
-              top: 10,
-              child: Image.network(
-                'https://purmix.ru/images/uroki/karand/raznoe/cheese3.jpg',
-                width: 50,
-                height: 50,
+              left: 0,
+              top: 0,
+              child: Image(
+                image: AssetImage(image),
               ),
             ),
             Positioned(

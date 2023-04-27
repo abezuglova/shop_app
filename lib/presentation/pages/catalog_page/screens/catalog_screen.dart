@@ -5,6 +5,7 @@ import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/pages/catalog_page/widgets/category_widget.dart';
 import 'package:third_task/presentation/pages/catalog_page/widgets/sections_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:third_task/presentation/utils/app_images.dart';
 
 class CatalogScreen extends StatelessWidget {
   final List<Category> categories;
@@ -13,37 +14,42 @@ class CatalogScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final categoryImages = [
+      AppImages.category1,
+      AppImages.category2,
+      AppImages.category3,
+      AppImages.category4,
+    ];
     return ShadowWrapper(
-      child: ListView(
-        children: [
-          const SectionsWidget(),
-          const SizedBox(height: 16),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16,
-            ),
-            child: Text(
-              l10n.categories,
-              style: AppFonts.yesevaRegular24,
-            ),
+      child: CustomScrollView(
+        slivers: [
+          const SliverToBoxAdapter(
+            child: SectionsWidget(),
           ),
-          Padding(
+          SliverPadding(
             padding: const EdgeInsets.all(16),
-            child: GridView.count(
-              childAspectRatio: 163 / 117,
-              crossAxisCount: 2,
-              crossAxisSpacing: 16,
-              mainAxisSpacing: 16,
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              children: categories
-                  .map(
-                    (category) => CategoryWidget(category: category),
-                  )
-                  .toList(),
+            sliver: SliverToBoxAdapter(
+              child: Text(
+                l10n.categories,
+                style: AppFonts.yesevaRegular24,
+              ),
             ),
           ),
-          const SizedBox(height: 89),
+          SliverPadding(
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 89),
+            sliver: SliverGrid.builder(
+              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                  maxCrossAxisExtent: 200,
+                  childAspectRatio: 163 / 117,
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16),
+              itemBuilder: (context, index) => CategoryWidget(
+                category: categories[index],
+                image: categoryImages[index],
+              ),
+              itemCount: categories.length,
+            ),
+          ),
         ],
       ),
     );
