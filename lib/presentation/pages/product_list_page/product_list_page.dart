@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
+import 'package:third_task/presentation/pages/product_list_page/screens/product_list_screen.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
-import 'package:third_task/presentation/pages/subcategory_page/screens/subcategory_screen.dart';
+
 import 'package:third_task/presentation/ui_kit/custom_app_bar.dart';
 import 'package:third_task/presentation/ui_kit/svg_icon_button.dart';
 
-class SubcategoryPage extends StatelessWidget {
-  const SubcategoryPage({super.key});
+class ProductListPage extends StatelessWidget {
+  const ProductListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class SubcategoryPage extends StatelessWidget {
           iconPath: AppIcons.chevronLeftIcon,
         ),
       ),
-      body: SubcategoryScreen(
+      body: ProductListScreen(
         subcategory: Category(
           id: '',
           name: 'Чай',
