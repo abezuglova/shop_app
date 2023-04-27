@@ -7,7 +7,4 @@ class Category with _$Category {
     required String name,
     required List<Category> subcategories,
   }) = _Category;
-
-  factory Category.fromJson(Map<String, dynamic> json) =>
-      _$CategoryFromJson(json);
 }

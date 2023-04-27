@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/navigation/scaffold_with_bottom_nav_bar.dart';
 import 'package:third_task/presentation/pages/already_bought_page/already_bought_page.dart';
 import 'package:third_task/presentation/pages/catalog_page/catalog_page.dart';
+import 'package:third_task/presentation/pages/category_page/category_page.dart';
 import 'package:third_task/presentation/pages/checkout_page/checkout_page.dart';
 import 'package:third_task/presentation/pages/discounts_page/discounts_page.dart';
 import 'package:third_task/presentation/pages/favorites_page/favorites_page.dart';
@@ -45,6 +47,13 @@ final router = GoRouter(
             GoRoute(
               path: 'already_bought',
               builder: (context, state) => const AlreadyBoughtPage(),
+            ),
+            GoRoute(
+              path: 'category',
+              builder: (context, state) {
+                final category = state.extra as Category;
+                return CategoryPage(category: category);
+              },
             ),
           ],
         ),

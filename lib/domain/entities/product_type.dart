@@ -6,7 +6,4 @@ class ProductType with _$ProductType {
     required String name,
     required List<Product> products,
   }) = _ProductType;
-
-  factory ProductType.fromJson(Map<String, dynamic> json) =>
-      _$ProductTypeFromJson(json);
 }

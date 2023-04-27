@@ -2,7 +2,7 @@ part of 'entities.dart';
 
 @freezed
 class Product with _$Product {
-  factory Product({
+  const factory Product({
     required int id,
     required String name,
     required List<String> images,
@@ -15,7 +15,4 @@ class Product with _$Product {
     required String price,
     required List<Product> recommendations,
   }) = _Product;
-
-  factory Product.fromJson(Map<String, dynamic> json) =>
-      _$ProductFromJson(json);
 }

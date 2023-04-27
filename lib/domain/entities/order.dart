@@ -17,6 +17,4 @@ class Order with _$Order {
     @Default(false) bool writeOffPoints,
     String? comment,
   }) = _Order;
-
-  factory Order.fromJson(Map<String, dynamic> json) => _$OrderFromJson(json);
 }

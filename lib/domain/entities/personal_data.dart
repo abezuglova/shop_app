@@ -9,7 +9,4 @@ class PersonalData with _$PersonalData {
     DateTime? birthDateTime,
     String? email,
   }) = _PersonalData;
-
-  factory PersonalData.fromJson(Map<String, dynamic> json) =>
-      _$PersonalDataFromJson(json);
 }

@@ -7,7 +7,4 @@ class Advertisement with _$Advertisement {
     required String description,
     required String image,
   }) = _Advertisement;
-
-  factory Advertisement.fromJson(Map<String, dynamic> json) =>
-      _$AdvertisementFromJson(json);
 }

@@ -12,7 +12,4 @@ class Address with _$Address {
     int? floor,
     String? additionalInformation,
   }) = _Address;
-
-  factory Address.fromJson(Map<String, dynamic> json) =>
-      _$AddressFromJson(json);
 }

@@ -6,6 +6,4 @@ class Brand with _$Brand {
     required String name,
     required String logo,
   }) = _Brand;
-
-  factory Brand.fromJson(Map<String, dynamic> json) => _$BrandFromJson(json);
 }

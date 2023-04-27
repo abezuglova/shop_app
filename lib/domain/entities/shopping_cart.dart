@@ -6,7 +6,4 @@ class ShoppingCart with _$ShoppingCart {
     required List<Product> products,
     required List<Product> recommendations,
   }) = _ShoppingCart;
-
-  factory ShoppingCart.fromJson(Map<String, dynamic> json) =>
-      _$ShoppingCartFromJson(json);
 }
