@@ -3,6 +3,7 @@ part of 'entities.dart';
 @freezed
 class Product with _$Product {
   factory Product({
+    required int id,
     required String name,
     required List<String> images,
     required String discount,

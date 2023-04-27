@@ -30,6 +30,7 @@ class OrderPage extends StatelessWidget {
           generalPrice: 1799,
           productList: [
             Product(
+              id: 1,
               amount: '1',
               brand: 'Углече поле',
               characteristics: 'Lorem ipsum sit amet dolor',
@@ -45,6 +46,7 @@ class OrderPage extends StatelessWidget {
               recommendations: [],
             ),
             Product(
+              id: 1,
               amount: '1',
               brand: 'Углече поле',
               characteristics: 'Lorem ipsum sit amet dolor',

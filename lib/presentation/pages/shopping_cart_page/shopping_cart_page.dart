@@ -84,6 +84,7 @@ class ShoppingCartPage extends StatelessWidget {
         shoppingCart: ShoppingCart(
           products: [
             Product(
+              id: 1,
               amount: '1',
               brand: 'Углече поле',
               characteristics: 'Lorem ipsum sit amet dolor',
@@ -99,6 +100,7 @@ class ShoppingCartPage extends StatelessWidget {
               recommendations: [],
             ),
             Product(
+              id: 1,
               amount: '1',
               brand: 'Углече поле',
               characteristics: 'Lorem ipsum sit amet dolor',
@@ -114,6 +116,7 @@ class ShoppingCartPage extends StatelessWidget {
               recommendations: [],
             ),
             Product(
+              id: 1,
               amount: '1',
               brand: 'Углече поле',
               characteristics: 'Lorem ipsum sit amet dolor',
@@ -131,6 +134,7 @@ class ShoppingCartPage extends StatelessWidget {
           ],
           recommendations: [
             Product(
+              id: 1,
               amount: '1',
               brand: 'Углече поле',
               characteristics: 'Lorem ipsum sit amet dolor',
@@ -146,6 +150,7 @@ class ShoppingCartPage extends StatelessWidget {
               recommendations: [],
             ),
             Product(
+              id: 1,
               amount: '1',
               brand: 'Углече поле',
               characteristics: 'Lorem ipsum sit amet dolor',
@@ -161,6 +166,7 @@ class ShoppingCartPage extends StatelessWidget {
               recommendations: [],
             ),
             Product(
+              id: 1,
               amount: '1',
               brand: 'Углече поле',
               characteristics: 'Lorem ipsum sit amet dolor',

@@ -18,6 +18,7 @@ class ProductPage extends StatelessWidget {
         children: [
           ProductScreen(
             product: Product(
+              id: 1,
               amount: '4 кг',
               brand: 'Углече поле',
               characteristics: 'Lorem ipsum sit amet dolor',
@@ -33,6 +34,7 @@ class ProductPage extends StatelessWidget {
               reviews: 'Lorem ipsum',
               recommendations: [
                 Product(
+                  id: 1,
                   amount: '1',
                   brand: 'Углече поле',
                   characteristics: 'Lorem ipsum sit amet dolor',
@@ -49,6 +51,7 @@ class ProductPage extends StatelessWidget {
                   recommendations: [],
                 ),
                 Product(
+                  id: 1,
                   amount: '1',
                   brand: 'Углече поле',
                   characteristics: 'Lorem ipsum sit amet dolor',
@@ -65,6 +68,7 @@ class ProductPage extends StatelessWidget {
                   recommendations: [],
                 ),
                 Product(
+                  id: 1,
                   amount: '1',
                   brand: 'Углече поле',
                   characteristics: 'Lorem ipsum sit amet dolor',
@@ -81,6 +85,7 @@ class ProductPage extends StatelessWidget {
                   recommendations: [],
                 ),
                 Product(
+                  id: 1,
                   amount: '1',
                   brand: 'Углече поле',
                   characteristics: 'Lorem ipsum sit amet dolor',
@@ -97,6 +102,7 @@ class ProductPage extends StatelessWidget {
                   recommendations: [],
                 ),
                 Product(
+                  id: 1,
                   amount: '1',
                   brand: 'Углече поле',
                   characteristics: 'Lorem ipsum sit amet dolor',

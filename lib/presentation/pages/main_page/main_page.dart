@@ -84,6 +84,7 @@ class MainPage extends StatelessWidget {
           ],
           bestDeals: [
             Product(
+              id: 1,
               amount: '1',
               brand: 'Углече поле',
               characteristics: 'Lorem ipsum sit amet dolor',
@@ -99,6 +100,7 @@ class MainPage extends StatelessWidget {
               recommendations: [],
             ),
             Product(
+              id: 1,
               amount: '1',
               brand: 'Углече поле',
               characteristics: 'Lorem ipsum sit amet dolor',
@@ -114,6 +116,7 @@ class MainPage extends StatelessWidget {
               recommendations: [],
             ),
             Product(
+              id: 1,
               amount: '1',
               brand: 'Углече поле',
               characteristics: 'Lorem ipsum sit amet dolor',
@@ -129,6 +132,7 @@ class MainPage extends StatelessWidget {
               recommendations: [],
             ),
             Product(
+              id: 1,
               amount: '1',
               brand: 'Углече поле',
               characteristics: 'Lorem ipsum sit amet dolor',
@@ -144,6 +148,7 @@ class MainPage extends StatelessWidget {
               recommendations: [],
             ),
             Product(
+              id: 1,
               amount: '1',
               brand: 'Углече поле',
               characteristics: 'Lorem ipsum sit amet dolor',
@@ -161,6 +166,7 @@ class MainPage extends StatelessWidget {
           ],
           alreadyBoughtList: [
             Product(
+              id: 1,
               amount: '1',
               brand: 'Углече поле',
               characteristics: 'Lorem ipsum sit amet dolor',
@@ -176,6 +182,7 @@ class MainPage extends StatelessWidget {
               recommendations: [],
             ),
             Product(
+              id: 1,
               amount: '1',
               brand: 'Углече поле',
               characteristics: 'Lorem ipsum sit amet dolor',
@@ -191,6 +198,7 @@ class MainPage extends StatelessWidget {
               recommendations: [],
             ),
             Product(
+              id: 1,
               amount: '1',
               brand: 'Углече поле',
               characteristics: 'Lorem ipsum sit amet dolor',
@@ -206,6 +214,7 @@ class MainPage extends StatelessWidget {
               recommendations: [],
             ),
             Product(
+              id: 1,
               amount: '1',
               brand: 'Углече поле',
               characteristics: 'Lorem ipsum sit amet dolor',
@@ -221,6 +230,7 @@ class MainPage extends StatelessWidget {
               recommendations: [],
             ),
             Product(
+              id: 1,
               amount: '1',
               brand: 'Углече поле',
               characteristics: 'Lorem ipsum sit amet dolor',

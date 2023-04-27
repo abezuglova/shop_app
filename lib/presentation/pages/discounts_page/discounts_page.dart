@@ -26,6 +26,7 @@ class DiscountsPage extends StatelessWidget {
       body: DiscountsScreen(
         discountProducts: [
           Product(
+            id: 1,
             amount: '1',
             brand: 'Углече поле',
             characteristics: 'Lorem ipsum sit amet dolor',
@@ -41,6 +42,7 @@ class DiscountsPage extends StatelessWidget {
             recommendations: [],
           ),
           Product(
+            id: 1,
             amount: '1',
             brand: 'Углече поле',
             characteristics: 'Lorem ipsum sit amet dolor',
@@ -56,6 +58,7 @@ class DiscountsPage extends StatelessWidget {
             recommendations: [],
           ),
           Product(
+            id: 1,
             amount: '1',
             brand: 'Углече поле',
             characteristics: 'Lorem ipsum sit amet dolor',
@@ -71,6 +74,7 @@ class DiscountsPage extends StatelessWidget {
             recommendations: [],
           ),
           Product(
+            id: 1,
             amount: '1',
             brand: 'Углече поле',
             characteristics: 'Lorem ipsum sit amet dolor',
@@ -86,6 +90,7 @@ class DiscountsPage extends StatelessWidget {
             recommendations: [],
           ),
           Product(
+            id: 1,
             amount: '1',
             brand: 'Углече поле',
             characteristics: 'Lorem ipsum sit amet dolor',
@@ -101,6 +106,7 @@ class DiscountsPage extends StatelessWidget {
             recommendations: [],
           ),
           Product(
+            id: 1,
             amount: '1',
             brand: 'Углече поле',
             characteristics: 'Lorem ipsum sit amet dolor',
@@ -116,6 +122,7 @@ class DiscountsPage extends StatelessWidget {
             recommendations: [],
           ),
           Product(
+            id: 1,
             amount: '1',
             brand: 'Углече поле',
             characteristics: 'Lorem ipsum sit amet dolor',
@@ -131,6 +138,7 @@ class DiscountsPage extends StatelessWidget {
             recommendations: [],
           ),
           Product(
+            id: 1,
             amount: '1',
             brand: 'Углече поле',
             characteristics: 'Lorem ipsum sit amet dolor',
@@ -146,6 +154,7 @@ class DiscountsPage extends StatelessWidget {
             recommendations: [],
           ),
           Product(
+            id: 1,
             amount: '1',
             brand: 'Углече поле',
             characteristics: 'Lorem ipsum sit amet dolor',
