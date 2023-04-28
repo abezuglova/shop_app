@@ -22,7 +22,7 @@ class AdvertisementListWidget extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) =>
             AdvertisementCardWidget(
           advertisement: advertisementList[index],
-          color: colors[index],
+          color: colors[index % colors.length],
         ),
         separatorBuilder: (BuildContext context, int index) =>
             const SizedBox(width: 8),
