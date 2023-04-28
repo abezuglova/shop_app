@@ -6,6 +6,7 @@ import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
 import 'package:third_task/presentation/ui_kit/svg_icon_button.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ShoppingCartProductWidget extends StatelessWidget {
   final Product product;
@@ -13,6 +14,7 @@ class ShoppingCartProductWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
@@ -53,7 +55,7 @@ class ShoppingCartProductWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          product.price,
+                          '${product.price} ${l10n.ruble}',
                           style: AppFonts.semiBold16.copyWith(
                             color: AppColors.discountColor,
                           ),
@@ -62,7 +64,7 @@ class ShoppingCartProductWidget extends StatelessWidget {
                         Stack(
                           children: [
                             Text(
-                              product.price,
+                              '${product.price} ${l10n.ruble}',
                               style: AppFonts.regular14.copyWith(
                                 color: AppColors.enabledTextColor,
                               ),

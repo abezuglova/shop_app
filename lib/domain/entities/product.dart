@@ -12,7 +12,7 @@ class Product with _$Product {
     required String characteristics,
     required String reviews,
     required String brand,
-    required String price,
+    required double price,
     required List<Product> recommendations,
   }) = _Product;
 }

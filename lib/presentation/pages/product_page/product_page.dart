@@ -13,7 +13,23 @@ class ProductPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundColor,
-     
+      appBar: CustomAppBar(
+        titleText: 'Говядина',
+        leading: SvgIconButton(
+          onPressed: () {},
+          iconPath: AppIcons.chevronLeftIcon,
+        ),
+        actions: [
+          SvgIconButton(
+            onPressed: () {},
+            iconPath: AppIcons.downloadIcon,
+          ),
+          SvgIconButton(
+            onPressed: () {},
+            iconPath: AppIcons.likeIcon,
+          ),
+        ],
+      ),
       body: Stack(
         children: [
           ProductScreen(
@@ -30,7 +46,7 @@ class ProductPage extends StatelessWidget {
                 'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
               ],
               name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-              price: '600 р/кг',
+              price: 600,
               reviews: 'Lorem ipsum',
               recommendations: [
                 Product(
@@ -38,15 +54,14 @@ class ProductPage extends StatelessWidget {
                   amount: '1',
                   brand: 'Углече поле',
                   characteristics: 'Lorem ipsum sit amet dolor',
-                  description:
-                      'Альтернативный Флэнк стейк',
+                  description: 'Альтернативный Флэнк стейк',
                   discount: '-50%',
                   images: [
                     'https://rightfood.net/wp-content/uploads/2014/11/669-4-e1416919923526.jpg',
                     'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
                   ],
                   name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-                  price: '600 р/кг',
+                  price: 600,
                   reviews: 'Lorem ipsum',
                   recommendations: [],
                 ),
@@ -55,15 +70,14 @@ class ProductPage extends StatelessWidget {
                   amount: '1',
                   brand: 'Углече поле',
                   characteristics: 'Lorem ipsum sit amet dolor',
-                  description:
-                      'Альтернативный Флэнк стейк',
+                  description: 'Альтернативный Флэнк стейк',
                   discount: '-50%',
                   images: [
                     'https://rightfood.net/wp-content/uploads/2014/11/669-4-e1416919923526.jpg',
                     'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
                   ],
                   name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-                  price: '600 р/кг',
+                  price: 600,
                   reviews: 'Lorem ipsum',
                   recommendations: [],
                 ),
@@ -72,15 +86,14 @@ class ProductPage extends StatelessWidget {
                   amount: '1',
                   brand: 'Углече поле',
                   characteristics: 'Lorem ipsum sit amet dolor',
-                  description:
-                      'Альтернативный Флэнк стейк',
+                  description: 'Альтернативный Флэнк стейк',
                   discount: '-50%',
                   images: [
                     'https://rightfood.net/wp-content/uploads/2014/11/669-4-e1416919923526.jpg',
                     'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
                   ],
                   name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-                  price: '600 р/кг',
+                  price: 600,
                   reviews: 'Lorem ipsum',
                   recommendations: [],
                 ),
@@ -89,15 +102,14 @@ class ProductPage extends StatelessWidget {
                   amount: '1',
                   brand: 'Углече поле',
                   characteristics: 'Lorem ipsum sit amet dolor',
-                  description:
-                      'Альтернативный Флэнк стейк',
+                  description: 'Альтернативный Флэнк стейк',
                   discount: '-50%',
                   images: [
                     'https://rightfood.net/wp-content/uploads/2014/11/669-4-e1416919923526.jpg',
                     'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
                   ],
                   name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-                  price: '600 р/кг',
+                  price: 600,
                   reviews: 'Lorem ipsum',
                   recommendations: [],
                 ),
@@ -106,15 +118,14 @@ class ProductPage extends StatelessWidget {
                   amount: '1',
                   brand: 'Углече поле',
                   characteristics: 'Lorem ipsum sit amet dolor',
-                  description:
-                      'Альтернативный Флэнк стейк',
+                  description: 'Альтернативный Флэнк стейк',
                   discount: '-50%',
                   images: [
                     'https://rightfood.net/wp-content/uploads/2014/11/669-4-e1416919923526.jpg',
                     'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
                   ],
                   name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-                  price: '600 р/кг',
+                  price: 600,
                   reviews: 'Lorem ipsum',
                   recommendations: [],
                 ),
@@ -124,22 +135,22 @@ class ProductPage extends StatelessWidget {
           Align(
             alignment: Alignment.topCenter,
             child: CustomAppBar(
-                  titleText: 'Говядина',
-                  leading: SvgIconButton(
-            onPressed: () {},
-            iconPath: AppIcons.chevronLeftIcon,
-                  ),
-                  actions: [
-            SvgIconButton(
-              onPressed: () {},
-              iconPath: AppIcons.downloadIcon,
-            ),
-            SvgIconButton(
-              onPressed: () {},
-              iconPath: AppIcons.likeIcon,
-            ),
-                  ],
+              titleText: 'Говядина',
+              leading: SvgIconButton(
+                onPressed: () {},
+                iconPath: AppIcons.chevronLeftIcon,
+              ),
+              actions: [
+                SvgIconButton(
+                  onPressed: () {},
+                  iconPath: AppIcons.downloadIcon,
                 ),
+                SvgIconButton(
+                  onPressed: () {},
+                  iconPath: AppIcons.likeIcon,
+                ),
+              ],
+            ),
           ),
         ],
       ),

@@ -11,7 +11,7 @@
   "categories": "Категории",
   "checkout": "Оформление заказа",
   "doCheckout": "Оформить заказ",
-  "pressingCheckoutYouAreAgreeWithConditions" : "Нажимая \"Оформить заказ\", вы принимаете условия",
+  "pressingCheckoutYouAreAgreeWithConditions": "Нажимая \"Оформить заказ\", вы принимаете условия",
   "publicOffer": "Публичной оферты",
   "inWay": "В пути",
   "sent": "Доставлен",
@@ -74,6 +74,7 @@
   "howToCallYou": "Как к вам обращаться?",
   "continueCheckout": "Продолжить оформление",
   "loadingFailure": "Ошибка загрузки",
+  "mockAddress": "ул. Пушкина 15, д. 20, кв. 113",
   "nearliestDeliveryDate": "Ближайшая дата доставки",
   "tomorrowMorning": "завтра утром",
   "byAddingTime": "По дате добавления",
@@ -95,7 +96,7 @@
       }
     }
   },
-  "nPoints":  "{count, plural, =1{{count} балл} few{{count} балла} other{{count} баллов}}",
+  "nPoints": "{count, plural, =1{{count} балл} few{{count} балла} other{{count} баллов}}",
   "@nPoints": {
     "description": "A plural message",
     "placeholders": {

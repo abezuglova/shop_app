@@ -11,12 +11,14 @@ import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
 import 'package:third_task/presentation/pages/catalog_page/screens/catalog_screen.dart';
 import 'package:third_task/presentation/ui_kit/custom_app_bar.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CatalogPage extends StatelessWidget {
   const CatalogPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return BlocProvider<CatalogCubit>(
       create: (context) => CatalogCubit(
         catalogRepository: getIt<ICatalogRepository>(),
@@ -32,7 +34,7 @@ class CatalogPage extends StatelessWidget {
                 SvgPicture.asset(AppIcons.smallDeliveryIcon),
                 const SizedBox(width: 8),
                 Text(
-                  'ул. Пушкина 15, д. 20, кв. 113',
+                  l10n.mockAddress,
                   style: AppFonts.medium14,
                 ),
               ],

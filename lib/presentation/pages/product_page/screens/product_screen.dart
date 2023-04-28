@@ -7,6 +7,7 @@ import 'package:third_task/presentation/pages/product_page/widgets/overview_widg
 import 'package:third_task/presentation/pages/product_page/widgets/photo_slider_widget.dart';
 import 'package:third_task/presentation/pages/product_page/widgets/price_widget.dart';
 import 'package:third_task/presentation/ui_kit/recommendations_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ProductScreen extends StatelessWidget {
   final Product product;
@@ -14,6 +15,7 @@ class ProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Stack(
       children: [
         ListView(
@@ -46,7 +48,7 @@ class ProductScreen extends StatelessWidget {
         ),
         Align(
           alignment: Alignment.bottomCenter,
-          child: PriceWidget(price: product.price),
+          child: PriceWidget(price: '${product.price} ${l10n.ruble}'),
         ),
       ],
     );
