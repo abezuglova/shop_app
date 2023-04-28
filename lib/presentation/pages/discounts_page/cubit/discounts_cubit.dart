@@ -5,21 +5,21 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/domain/repository/i_catalog_sections_repository.dart';
 
-part 'already_bought_state.dart';
-part 'already_bought_cubit.freezed.dart';
+part 'discounts_state.dart';
+part 'discounts_cubit.freezed.dart';
 
-class AlreadyBoughtCubit extends Cubit<AlreadyBoughtState> {
+class DiscountsCubit extends Cubit<DiscountsState> {
   final ICatalogSectionsRepository catalogSectionsRepository;
-  AlreadyBoughtCubit({
+  DiscountsCubit({
     required this.catalogSectionsRepository,
-  }) : super(const AlreadyBoughtState.loadInProgress());
+  }) : super(const DiscountsState.loadInProgress());
 
   Future<void> onPageOpened() async {
     try {
       final products =
-          await catalogSectionsRepository.getAlreadyBoughtProductList();
+          await catalogSectionsRepository.getDiscountsProductList();
       emit(
-        AlreadyBoughtState.loadSuccess(
+        DiscountsState.loadSuccess(
           products: products,
         ),
       );
@@ -30,7 +30,7 @@ class AlreadyBoughtCubit extends Cubit<AlreadyBoughtState> {
         stackTrace: stackTrace,
       );
       emit(
-        AlreadyBoughtState.loadFailure(loadError: error),
+        DiscountsState.loadFailure(loadError: error),
       );
     }
   }

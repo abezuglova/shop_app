@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:third_task/domain/entities/entities.dart';
+import 'package:third_task/di.dart';
+import 'package:third_task/domain/repository/i_catalog_sections_repository.dart';
+import 'package:third_task/presentation/pages/discounts_page/cubit/discounts_cubit.dart';
+import 'package:third_task/presentation/ui_kit/error_screen.dart';
+import 'package:third_task/presentation/ui_kit/loading_screen.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
 import 'package:third_task/presentation/pages/discounts_page/screens/discounts_screen.dart';
@@ -14,162 +19,28 @@ class DiscountsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    return Scaffold(
-      backgroundColor: AppColors.scaffoldBackgroundColor,
-      appBar: CustomAppBar(
-        titleText: l10n.discounts,
-        leading: SvgIconButton(
-          onPressed: () => context.pop(),
-          iconPath: AppIcons.chevronLeftIcon,
+    return BlocProvider<DiscountsCubit>(
+      create: (context) => DiscountsCubit(
+        catalogSectionsRepository: getIt<ICatalogSectionsRepository>(),
+      )..onPageOpened(),
+      child: Scaffold(
+        backgroundColor: AppColors.scaffoldBackgroundColor,
+        appBar: CustomAppBar(
+          titleText: l10n.discounts,
+          leading: SvgIconButton(
+            onPressed: () => context.pop(),
+            iconPath: AppIcons.chevronLeftIcon,
+          ),
         ),
-      ),
-      body: DiscountsScreen(
-        discountProducts: [
-          Product(
-            id: 1,
-            amount: '1',
-            brand: 'Углече поле',
-            characteristics: 'Lorem ipsum sit amet dolor',
-            description: 'Альтернативный Флэнк стейк',
-            discount: '-50%',
-            images: [
-              'https://rightfood.net/wp-content/uploads/2014/11/669-4-e1416919923526.jpg',
-              'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
-            ],
-            name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-            price: '600 р/кг',
-            reviews: 'Lorem ipsum',
-            recommendations: [],
+        body: BlocBuilder<DiscountsCubit, DiscountsState>(
+          builder: (context, state) => state.map(
+            loadInProgress: (state) => const LoadingScreen(),
+            loadFailure: (state) => const ErrorScreen(),
+            loadSuccess: (state) => DiscountsScreen(
+              discountProducts: state.products,
+            ),
           ),
-          Product(
-            id: 1,
-            amount: '1',
-            brand: 'Углече поле',
-            characteristics: 'Lorem ipsum sit amet dolor',
-            description: 'Альтернативный Флэнк стейк',
-            discount: '-50%',
-            images: [
-              'https://rightfood.net/wp-content/uploads/2014/11/669-4-e1416919923526.jpg',
-              'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
-            ],
-            name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-            price: '600 р/кг',
-            reviews: 'Lorem ipsum',
-            recommendations: [],
-          ),
-          Product(
-            id: 1,
-            amount: '1',
-            brand: 'Углече поле',
-            characteristics: 'Lorem ipsum sit amet dolor',
-            description: 'Альтернативный Флэнк стейк',
-            discount: '-50%',
-            images: [
-              'https://rightfood.net/wp-content/uploads/2014/11/669-4-e1416919923526.jpg',
-              'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
-            ],
-            name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-            price: '600 р/кг',
-            reviews: 'Lorem ipsum',
-            recommendations: [],
-          ),
-          Product(
-            id: 1,
-            amount: '1',
-            brand: 'Углече поле',
-            characteristics: 'Lorem ipsum sit amet dolor',
-            description: 'Альтернативный Флэнк стейк',
-            discount: '-50%',
-            images: [
-              'https://rightfood.net/wp-content/uploads/2014/11/669-4-e1416919923526.jpg',
-              'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
-            ],
-            name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-            price: '600 р/кг',
-            reviews: 'Lorem ipsum',
-            recommendations: [],
-          ),
-          Product(
-            id: 1,
-            amount: '1',
-            brand: 'Углече поле',
-            characteristics: 'Lorem ipsum sit amet dolor',
-            description: 'Альтернативный Флэнк стейк',
-            discount: '-50%',
-            images: [
-              'https://rightfood.net/wp-content/uploads/2014/11/669-4-e1416919923526.jpg',
-              'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
-            ],
-            name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-            price: '600 р/кг',
-            reviews: 'Lorem ipsum',
-            recommendations: [],
-          ),
-          Product(
-            id: 1,
-            amount: '1',
-            brand: 'Углече поле',
-            characteristics: 'Lorem ipsum sit amet dolor',
-            description: 'Альтернативный Флэнк стейк',
-            discount: '-50%',
-            images: [
-              'https://rightfood.net/wp-content/uploads/2014/11/669-4-e1416919923526.jpg',
-              'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
-            ],
-            name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-            price: '600 р/кг',
-            reviews: 'Lorem ipsum',
-            recommendations: [],
-          ),
-          Product(
-            id: 1,
-            amount: '1',
-            brand: 'Углече поле',
-            characteristics: 'Lorem ipsum sit amet dolor',
-            description: 'Альтернативный Флэнк стейк',
-            discount: '-50%',
-            images: [
-              'https://rightfood.net/wp-content/uploads/2014/11/669-4-e1416919923526.jpg',
-              'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
-            ],
-            name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-            price: '600 р/кг',
-            reviews: 'Lorem ipsum',
-            recommendations: [],
-          ),
-          Product(
-            id: 1,
-            amount: '1',
-            brand: 'Углече поле',
-            characteristics: 'Lorem ipsum sit amet dolor',
-            description: 'Альтернативный Флэнк стейк',
-            discount: '-50%',
-            images: [
-              'https://rightfood.net/wp-content/uploads/2014/11/669-4-e1416919923526.jpg',
-              'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
-            ],
-            name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-            price: '600 р/кг',
-            reviews: 'Lorem ipsum',
-            recommendations: [],
-          ),
-          Product(
-            id: 1,
-            amount: '1',
-            brand: 'Углече поле',
-            characteristics: 'Lorem ipsum sit amet dolor',
-            description: 'Альтернативный Флэнк стейк',
-            discount: '-50%',
-            images: [
-              'https://rightfood.net/wp-content/uploads/2014/11/669-4-e1416919923526.jpg',
-              'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
-            ],
-            name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-            price: '600 р/кг',
-            reviews: 'Lorem ipsum',
-            recommendations: [],
-          ),
-        ],
+        ),
       ),
     );
   }
