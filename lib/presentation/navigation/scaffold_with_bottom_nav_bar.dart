@@ -30,7 +30,7 @@ class _ScaffoldWithBottomNavBarState extends State<ScaffoldWithBottomNavBar> {
     tabs = [
       CustomNavBarItemData(
         title: l10n.mainPage,
-        location: '/',
+        location: '/main',
         iconPath: AppIcons.mainPageIcon,
       ),
       CustomNavBarItemData(

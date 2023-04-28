@@ -10,17 +10,18 @@ class AlreadyBoughtScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ShadowWrapper(
-      child: GridView.count(
+      child: GridView.builder(
         padding: const EdgeInsets.fromLTRB(16, 25, 16, 89),
-        childAspectRatio: 168 / 240,
-        crossAxisCount: 2,
-        crossAxisSpacing: 16,
-        mainAxisSpacing: 8,
-        children: alreadyBoughtProducts
-            .map(
-              (product) => ProductCardWidget(product: product),
-            )
-            .toList(),
+        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 200,
+          childAspectRatio: 168 / 240,
+          crossAxisSpacing: 8,
+          mainAxisSpacing: 16,
+        ),
+        itemBuilder: (context, index) => ProductCardWidget(
+          product: alreadyBoughtProducts[index],
+        ),
+        itemCount: alreadyBoughtProducts.length,
       ),
     );
   }
