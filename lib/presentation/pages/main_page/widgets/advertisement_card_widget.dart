@@ -6,7 +6,12 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AdvertisementCardWidget extends StatelessWidget {
   final Advertisement advertisement;
-  const AdvertisementCardWidget({super.key, required this.advertisement});
+  final Color color;
+  const AdvertisementCardWidget({
+    super.key,
+    required this.advertisement,
+    required this.color,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +30,7 @@ class AdvertisementCardWidget extends StatelessWidget {
               height: 208,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: AppColors.promoColor1,
+                color: color,
                 boxShadow: [
                   BoxShadow(
                     color: AppColors.advertisementShadowColor1.withOpacity(0.5),
