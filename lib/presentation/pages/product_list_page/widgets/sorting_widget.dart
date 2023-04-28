@@ -15,6 +15,13 @@ class SortingWidget extends StatefulWidget {
 }
 
 class _SortingWidgetState extends State<SortingWidget> {
+  static const values = [
+    'По возрастанию цены',
+    'По убыванию цены',
+  ];
+
+  var dropdownValue = values.first;
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -30,16 +37,31 @@ class _SortingWidgetState extends State<SortingWidget> {
               color: AppColors.secondaryTextColor,
             ),
           ),
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                l10n.byAddingTime,
-                style: AppFonts.regular14,
+          DropdownButtonHideUnderline(
+            child: SizedBox(
+              width: 150,
+              height: 20,
+              child: DropdownButton<String>(
+                value: dropdownValue,
+                icon: SvgPicture.asset(AppIcons.arrowDownIcon),
+                onChanged: (String? value) {
+                  setState(() {
+                    dropdownValue = value!;
+                  });
+                },
+                items: values
+                    .map<DropdownMenuItem<String>>(
+                      (String value) => DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(
+                          value,
+                          style: AppFonts.regular14,
+                        ),
+                      ),
+                    )
+                    .toList(),
               ),
-              const SizedBox(width: 8),
-              SvgPicture.asset(AppIcons.arrowDownIcon),
-            ],
+            ),
           ),
         ],
       ),
