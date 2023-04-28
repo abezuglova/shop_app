@@ -5,6 +5,7 @@ class ProductListState with _$ProductListState {
   const factory ProductListState.loadInProgress() = ProductListLoadInProgress;
   const factory ProductListState.loadSuccess({
     required List<Product> products,
+    @Default(ProductListCubit.defaultSort) ProductsSortType sortType,
   }) = ProductListLoadSuccess;
   const factory ProductListState.loadFailure({
     required Object loadError,

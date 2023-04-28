@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
+import 'package:third_task/domain/entities/products_sort_type.dart';
 import 'package:third_task/presentation/pages/product_list_page/widgets/sorting_widget.dart';
 import 'package:third_task/presentation/ui_kit/product_card_widget.dart';
 import 'package:third_task/presentation/ui_kit/shadow_wrapper.dart';
 
 class ProductListScreen extends StatelessWidget {
   final List<Product> productList;
-  const ProductListScreen({super.key, required this.productList});
+  final ProductsSortType sortType;
+  const ProductListScreen({
+    super.key,
+    required this.productList,
+    required this.sortType,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +22,7 @@ class ProductListScreen extends StatelessWidget {
           SliverToBoxAdapter(
             child: SortingWidget(
               productList: productList,
+              sortType: sortType,
             ),
           ),
           SliverPadding(
