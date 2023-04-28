@@ -16,20 +16,22 @@ class MainCubit extends Cubit<MainState> {
 
   Future<void> onPageOpened() async {
     try {
-      final advertisementList = await mainRepository.getAdvertisementList();
-      final alreadyBoughtProductList =
-          await mainRepository.getAlreadyBoughtProductList();
-      final bestDealsProductList =
-          await mainRepository.getBestDealsProductList();
-      final brandList = await mainRepository.getBrandList();
-      final popularCategories = await mainRepository.getPopularCategories();
+      final mainPageData = await Future.wait(
+        [
+          mainRepository.getAdvertisementList(),
+          mainRepository.getAlreadyBoughtProductList(),
+          mainRepository.getBestDealsProductList(),
+          mainRepository.getBrandList(),
+          mainRepository.getPopularCategories(),
+        ],
+      );
       emit(
         MainState.loadSuccess(
-          advertisementList: advertisementList,
-          alreadyBoughtProductList: alreadyBoughtProductList,
-          bestDealsProductList: bestDealsProductList,
-          brandList: brandList,
-          popularCategories: popularCategories,
+          advertisementList: mainPageData[0] as List<Advertisement>,
+          alreadyBoughtProductList: mainPageData[1] as List<Product>,
+          bestDealsProductList: mainPageData[2] as List<Product>,
+          brandList: mainPageData[3] as List<Brand>,
+          popularCategories: mainPageData[4] as List<Category>,
         ),
       );
     } catch (error, stackTrace) {

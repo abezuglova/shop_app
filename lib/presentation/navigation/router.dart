@@ -20,7 +20,7 @@ final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _shellNavigatorKey = GlobalKey<NavigatorState>();
 
 final router = GoRouter(
-  initialLocation: '/',
+  initialLocation: '/main',
   navigatorKey: _rootNavigatorKey,
   routes: [
     ShellRoute(
@@ -30,8 +30,17 @@ final router = GoRouter(
       },
       routes: <RouteBase>[
         GoRoute(
-          path: '/',
+          path: '/main',
           builder: (context, state) => const MainPage(),
+          routes: [
+            GoRoute(
+              path: 'category',
+              builder: (context, state) {
+                final category = state.extra as Category;
+                return CategoryPage(category: category);
+              },
+            ),
+          ],
         ),
         GoRoute(
           path: '/catalog',
