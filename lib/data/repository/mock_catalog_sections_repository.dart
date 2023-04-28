@@ -5,25 +5,25 @@ class MockCatalogSectionsRepository implements ICatalogSectionsRepository {
   @override
   Future<List<Product>> getAlreadyBoughtProductList() async {
     await Future.delayed(const Duration(milliseconds: 500));
-    final alreadyBoughtProductList = _getMockProductList();
-    return alreadyBoughtProductList;
+    const discountsProductList = _mockProductList;
+    return discountsProductList;
   }
 
   @override
   Future<List<Product>> getDiscountsProductList() async {
     await Future.delayed(const Duration(milliseconds: 500));
-    final discountsProductList = _getMockProductList();
+    const discountsProductList = _mockProductList;
     return discountsProductList;
   }
 
   @override
   Future<List<Product>> getFavoritesProductList() async {
     await Future.delayed(const Duration(milliseconds: 500));
-    final favoritesProductList = _getMockProductList();
+    const favoritesProductList = _mockProductList;
     return favoritesProductList;
   }
 
-  _getMockProductList() => const [
+  static const _mockProductList = [
         Product(
           id: 1,
           amount: '1',

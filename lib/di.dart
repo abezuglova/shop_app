@@ -1,8 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:third_task/data/repository/catalog_repository.dart';
+import 'package:third_task/data/repository/main_repository.dart';
 import 'package:third_task/data/repository/mock_catalog_sections_repository.dart';
 import 'package:third_task/domain/repository/i_catalog_repository.dart';
+import 'package:third_task/domain/repository/i_main_repository.dart';
 
 import 'domain/repository/i_catalog_sections_repository.dart';
 
@@ -25,5 +27,11 @@ void setupDI() {
 
   getIt.registerSingleton<ICatalogSectionsRepository>(
     MockCatalogSectionsRepository(),
+  );
+
+  getIt.registerSingleton<IMainRepository>(
+    MainRepository(
+      getIt<Dio>(),
+    ),
   );
 }
