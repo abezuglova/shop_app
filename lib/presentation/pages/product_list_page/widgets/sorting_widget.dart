@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SortingWidget extends StatefulWidget {
-  const SortingWidget({super.key});
+  final List<Product> productList;
+  const SortingWidget({super.key, required this.productList});
 
   @override
   State<SortingWidget> createState() => _SortingWidgetState();
@@ -23,7 +25,7 @@ class _SortingWidgetState extends State<SortingWidget> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            l10n.nProducts(12),
+            l10n.nProducts(widget.productList.length),
             style: AppFonts.regular14.copyWith(
               color: AppColors.secondaryTextColor,
             ),

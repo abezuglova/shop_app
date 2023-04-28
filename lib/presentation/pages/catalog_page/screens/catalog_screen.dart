@@ -39,10 +39,11 @@ class CatalogScreen extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 89),
             sliver: SliverGrid.builder(
               gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 200,
-                  childAspectRatio: 163 / 117,
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16),
+                maxCrossAxisExtent: 200,
+                childAspectRatio: 163 / 117,
+                crossAxisSpacing: 16,
+                mainAxisSpacing: 16,
+              ),
               itemBuilder: (context, index) => CategoryWidget(
                 category: categories[index],
                 image: categoryImages[index],

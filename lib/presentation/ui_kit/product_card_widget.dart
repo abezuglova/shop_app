@@ -33,7 +33,11 @@ class ProductCardWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.network(product.images[0]),
+            Image.network(
+              product.images[0],
+              width: 168,
+              height: 133,
+            ),
             Padding(
               padding: const EdgeInsets.fromLTRB(12, 8, 12, 4),
               child: Text(
@@ -61,6 +65,8 @@ class ProductCardWidget extends StatelessWidget {
                   Text(
                     product.price,
                     style: AppFonts.semiBold18_130,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                   ),
                   SizedBox(
                     width: 52,

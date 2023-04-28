@@ -47,7 +47,7 @@ class CatalogRepository implements ICatalogRepository {
             characteristics: 'Lorem ipsum',
             reviews: 'Lorem ipsum',
             brand: 'brand',
-            price: product.price.toString(),
+            price: '${product.price} ₽',
             recommendations: _recommendations,
           ),
         )

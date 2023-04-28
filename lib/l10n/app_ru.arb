@@ -84,6 +84,7 @@
   "onSum": "на сумму",
   "product": "товар",
   "point": "балл",
+  "ruble": "₽",
   "nProducts": "{count, plural, =1{{count} товар} few{{count} товара} other{{count} товаров}}",
   "@nProducts": {
     "description": "A plural message",
