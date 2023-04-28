@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
@@ -7,137 +8,24 @@ import 'package:third_task/presentation/ui_kit/custom_app_bar.dart';
 import 'package:third_task/presentation/ui_kit/svg_icon_button.dart';
 
 class ProductPage extends StatelessWidget {
-  const ProductPage({super.key});
+  final Product product;
+  const ProductPage({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundColor,
-      appBar: CustomAppBar(
-        titleText: 'Говядина',
-        leading: SvgIconButton(
-          onPressed: () {},
-          iconPath: AppIcons.chevronLeftIcon,
-        ),
-        actions: [
-          SvgIconButton(
-            onPressed: () {},
-            iconPath: AppIcons.downloadIcon,
-          ),
-          SvgIconButton(
-            onPressed: () {},
-            iconPath: AppIcons.likeIcon,
-          ),
-        ],
-      ),
       body: Stack(
         children: [
           ProductScreen(
-            product: Product(
-              id: 1,
-              amount: '4 кг',
-              brand: 'Углече поле',
-              characteristics: 'Lorem ipsum sit amet dolor',
-              description:
-                  'Альтернативный Флэнк стейк вырезается из нежирной брюшной части ближе к ребрам и имеет уникальный насыщенный вкус и яркий мясной аромат! Многогранен вариантами приготовления – отлично проявляется себя приготовленным целиком, или порезанным на слайсы. Здесь кулинарному экспериментатору есть где разгуляться! Просто пожарить, потушить или выдержать в маринаде – этот стейк подойдет для любых Ваших идей, благодаря своей текстуре с хорошо видимыми волокнами. Для мясного поголовья «Углече Поле» выбрана Абердин-Ангусская порода коров – признанная лучшей по качеству и вкусу мяса и стейков. При пастбищном содержании (то есть наши животные свободно пасутся на поле) мясо получается более диетическим и таким, каким оно и должно быть - в нем меньше жира, оно сочное, мягкое и обладает насыщенным вкусом.',
-              discount: '50%',
-              images: [
-                'https://rightfood.net/wp-content/uploads/2014/11/striploin-e1416919974721.jpg',
-                'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
-              ],
-              name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-              price: 600,
-              reviews: 'Lorem ipsum',
-              recommendations: [
-                Product(
-                  id: 1,
-                  amount: '1',
-                  brand: 'Углече поле',
-                  characteristics: 'Lorem ipsum sit amet dolor',
-                  description: 'Альтернативный Флэнк стейк',
-                  discount: '-50%',
-                  images: [
-                    'https://rightfood.net/wp-content/uploads/2014/11/669-4-e1416919923526.jpg',
-                    'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
-                  ],
-                  name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-                  price: 600,
-                  reviews: 'Lorem ipsum',
-                  recommendations: [],
-                ),
-                Product(
-                  id: 1,
-                  amount: '1',
-                  brand: 'Углече поле',
-                  characteristics: 'Lorem ipsum sit amet dolor',
-                  description: 'Альтернативный Флэнк стейк',
-                  discount: '-50%',
-                  images: [
-                    'https://rightfood.net/wp-content/uploads/2014/11/669-4-e1416919923526.jpg',
-                    'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
-                  ],
-                  name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-                  price: 600,
-                  reviews: 'Lorem ipsum',
-                  recommendations: [],
-                ),
-                Product(
-                  id: 1,
-                  amount: '1',
-                  brand: 'Углече поле',
-                  characteristics: 'Lorem ipsum sit amet dolor',
-                  description: 'Альтернативный Флэнк стейк',
-                  discount: '-50%',
-                  images: [
-                    'https://rightfood.net/wp-content/uploads/2014/11/669-4-e1416919923526.jpg',
-                    'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
-                  ],
-                  name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-                  price: 600,
-                  reviews: 'Lorem ipsum',
-                  recommendations: [],
-                ),
-                Product(
-                  id: 1,
-                  amount: '1',
-                  brand: 'Углече поле',
-                  characteristics: 'Lorem ipsum sit amet dolor',
-                  description: 'Альтернативный Флэнк стейк',
-                  discount: '-50%',
-                  images: [
-                    'https://rightfood.net/wp-content/uploads/2014/11/669-4-e1416919923526.jpg',
-                    'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
-                  ],
-                  name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-                  price: 600,
-                  reviews: 'Lorem ipsum',
-                  recommendations: [],
-                ),
-                Product(
-                  id: 1,
-                  amount: '1',
-                  brand: 'Углече поле',
-                  characteristics: 'Lorem ipsum sit amet dolor',
-                  description: 'Альтернативный Флэнк стейк',
-                  discount: '-50%',
-                  images: [
-                    'https://rightfood.net/wp-content/uploads/2014/11/669-4-e1416919923526.jpg',
-                    'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
-                  ],
-                  name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-                  price: 600,
-                  reviews: 'Lorem ipsum',
-                  recommendations: [],
-                ),
-              ],
-            ),
+            product: product,
           ),
           Align(
             alignment: Alignment.topCenter,
             child: CustomAppBar(
-              titleText: 'Говядина',
+              titleText: product.name,
               leading: SvgIconButton(
-                onPressed: () {},
+                onPressed: context.pop,
                 iconPath: AppIcons.chevronLeftIcon,
               ),
               actions: [

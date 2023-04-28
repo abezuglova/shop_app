@@ -20,7 +20,7 @@ class ProductScreen extends StatelessWidget {
       children: [
         ListView(
           children: [
-            const SizedBox(height: 30),
+            const SizedBox(height: 72),
             PhotoSliderWidget(
               images: product.images,
             ),
@@ -43,7 +43,7 @@ class ProductScreen extends StatelessWidget {
             BrandWidget(brand: product.brand),
             const SizedBox(height: 24),
             RecommendationsWidget(recommendations: product.recommendations),
-            const SizedBox(height: 74),
+            const SizedBox(height: 163),
           ],
         ),
         Align(

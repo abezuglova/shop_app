@@ -62,6 +62,15 @@ final router = GoRouter(
                     final category = state.extra as Category;
                     return ProductListPage(category: category);
                   },
+                  routes: [
+                    GoRoute(
+                      path: 'product',
+                      builder: (context, state) {
+                        final product = state.extra as Product;
+                        return ProductPage(product: product);
+                      },
+                    ),
+                  ],
                 ),
               ],
             ),

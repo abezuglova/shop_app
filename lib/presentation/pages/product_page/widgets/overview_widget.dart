@@ -68,22 +68,31 @@ class _OverviewWidgetState extends State<OverviewWidget> {
           IndexedStack(
             index: _selectedTab,
             children: [
-              Text(
-                widget.product.description,
-                style: AppFonts.regular16_160_5.copyWith(
-                  color: AppColors.secondaryTextColor,
+              SizedBox(
+                width: double.infinity,
+                child: Text(
+                  widget.product.description,
+                  style: AppFonts.regular16_160_5.copyWith(
+                    color: AppColors.secondaryTextColor,
+                  ),
                 ),
               ),
-              Text(
-                widget.product.characteristics,
-                style: AppFonts.regular16_160_5.copyWith(
-                  color: AppColors.secondaryTextColor,
+              SizedBox(
+                width: double.infinity,
+                child: Text(
+                  widget.product.characteristics,
+                  style: AppFonts.regular16_160_5.copyWith(
+                    color: AppColors.secondaryTextColor,
+                  ),
                 ),
               ),
-              Text(
-                widget.product.reviews,
-                style: AppFonts.regular16_160_5.copyWith(
-                  color: AppColors.secondaryTextColor,
+              SizedBox(
+                width: double.infinity,
+                child: Text(
+                  widget.product.reviews,
+                  style: AppFonts.regular16_160_5.copyWith(
+                    color: AppColors.secondaryTextColor,
+                  ),
                 ),
               ),
             ],

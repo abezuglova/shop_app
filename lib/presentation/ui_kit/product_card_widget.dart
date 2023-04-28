@@ -1,7 +1,6 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
@@ -16,6 +15,10 @@ class ProductCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return GestureDetector(
+      onTap: () => context.push(
+        '/catalog/category/product_list/product',
+        extra: product,
+      ),
       child: Container(
         width: 168,
         height: 240,
