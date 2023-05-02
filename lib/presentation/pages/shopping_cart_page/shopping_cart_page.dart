@@ -82,6 +82,10 @@ class ShoppingCartPage extends StatelessWidget {
       // ),
       body: ShoppingCartScreen(
         shoppingCart: ShoppingCart(
+          id: 5,
+          generalPrice: 1800,
+          discount: '10%',
+          generalDiscount: 150,
           products: [
             Product(
               id: 1,

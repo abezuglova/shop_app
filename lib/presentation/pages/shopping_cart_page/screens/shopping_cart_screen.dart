@@ -30,7 +30,7 @@ class ShoppingCartScreen extends StatelessWidget {
               color: AppColors.offBackgroundColor2,
             ),
             SummaryWidget(
-              products: shoppingCart.products,
+              shoppingCart: shoppingCart,
             ),
             const SizedBox(height: 98),
           ],

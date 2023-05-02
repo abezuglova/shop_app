@@ -4,8 +4,8 @@ import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 
 class SummaryWidget extends StatelessWidget {
-  final List<Product> products;
-  const SummaryWidget({super.key, required this.products});
+  final ShoppingCart shoppingCart;
+  const SummaryWidget({super.key, required this.shoppingCart});
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +17,13 @@ class SummaryWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                '${products.length} товара',
+                '${shoppingCart.products.length} товара',
                 style: AppFonts.regular18.copyWith(
                   color: AppColors.secondaryTextColor,
                 ),
               ),
               Text(
-                '1850 р',
+                '${shoppingCart.generalPrice} р',
                 style: AppFonts.regular18,
               ),
             ],
@@ -33,13 +33,13 @@ class SummaryWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Скидка 10%',
+                'Скидка ${shoppingCart.discount}',
                 style: AppFonts.regular18.copyWith(
                   color: AppColors.discountColor,
                 ),
               ),
               Text(
-                '-150 р',
+                '-${shoppingCart.generalDiscount} р',
                 style: AppFonts.regular18.copyWith(
                   color: AppColors.discountColor,
                 ),
