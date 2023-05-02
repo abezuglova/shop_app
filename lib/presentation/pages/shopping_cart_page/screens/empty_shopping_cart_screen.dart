@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:third_task/presentation/ui_kit/shadow_wrapper.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -25,9 +26,12 @@ class EmptyShoppingCartScreen extends StatelessWidget {
             ),
             const SizedBox(height: 44),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => context.push(
+                '/catalog',
+              ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                 child: Text(
                   l10n.goShopping,
                   style: AppFonts.semiBold18_144_5.copyWith(

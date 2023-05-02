@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:third_task/di.dart';
 import 'package:third_task/domain/repository/i_shopping_cart_repository.dart';
 import 'package:third_task/presentation/pages/shopping_cart_page/cubit/shopping_cart_cubit.dart';
+import 'package:third_task/presentation/pages/shopping_cart_page/screens/empty_shopping_cart_screen.dart';
 import 'package:third_task/presentation/ui_kit/error_screen.dart';
 import 'package:third_task/presentation/ui_kit/loading_screen.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
@@ -38,9 +39,11 @@ class ShoppingCartPage extends StatelessWidget {
           builder: (context, state) => state.map(
             loadInProgress: (state) => const LoadingScreen(),
             loadFailure: (state) => const ErrorScreen(),
-            loadSuccess: (state) => ShoppingCartScreen(
-              shoppingCart: state.shoppingCart,
-            ),
+            loadSuccess: (state) => state.shoppingCart.products.isEmpty
+                ? const EmptyShoppingCartScreen()
+                : ShoppingCartScreen(
+                    shoppingCart: state.shoppingCart,
+                  ),
           ),
         ),
       ),
