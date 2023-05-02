@@ -9,8 +9,8 @@ import 'package:third_task/presentation/ui_kit/svg_icon_button.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ShoppingCartProductWidget extends StatelessWidget {
-  final Product product;
-  const ShoppingCartProductWidget({super.key, required this.product});
+  final ShoppingCartItem shoppingCartItem;
+  const ShoppingCartProductWidget({super.key, required this.shoppingCartItem});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class ShoppingCartProductWidget extends StatelessWidget {
               ),
             ),
             child: Image.network(
-              product.images[0],
+              shoppingCartItem.product.images[0],
               fit: BoxFit.cover,
             ),
           ),
@@ -40,7 +40,7 @@ class ShoppingCartProductWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  product.name,
+                  shoppingCartItem.product.name,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: AppFonts.regular14_132_5,
@@ -55,7 +55,7 @@ class ShoppingCartProductWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          '${product.price} ${l10n.ruble}',
+                          '${shoppingCartItem.product.price} ${l10n.ruble}',
                           style: AppFonts.semiBold16.copyWith(
                             color: AppColors.discountColor,
                           ),
@@ -64,7 +64,7 @@ class ShoppingCartProductWidget extends StatelessWidget {
                         Stack(
                           children: [
                             Text(
-                              '${product.price} ${l10n.ruble}',
+                              '${shoppingCartItem.product.price} ${l10n.ruble}',
                               style: AppFonts.regular14.copyWith(
                                 color: AppColors.enabledTextColor,
                               ),
@@ -105,7 +105,7 @@ class ShoppingCartProductWidget extends StatelessWidget {
                               iconPath: AppIcons.minusIcon,
                             ),
                             Text(
-                              product.amount,
+                              shoppingCartItem.quantity.toString(),
                               style: AppFonts.regular12,
                             ),
                             SvgIconButton(

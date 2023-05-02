@@ -1,21 +1,26 @@
 import 'package:dio/dio.dart';
 import 'package:third_task/data/dto/dto.dart';
 import 'package:third_task/domain/entities/entities.dart';
+import 'package:third_task/domain/repository/i_product_repository.dart';
 import 'package:third_task/domain/repository/i_shopping_cart_repository.dart';
 
 class ShoppingCartRepository implements IShoppingCartRepository {
   final Dio dio;
+  final IProductRepository productRepository;
 
-  ShoppingCartRepository(this.dio);
+  ShoppingCartRepository(
+    this.dio,
+    this.productRepository,
+  );
 
   @override
-  Future<void> addProductToShoppingCart() {
+  Future<void> addProductToShoppingCart(int id) {
     // TODO: implement addProductToShoppingCart
     throw UnimplementedError();
   }
 
   @override
-  Future<void> deleteShoppingCart() {
+  Future<void> deleteShoppingCart(int id) {
     // TODO: implement deleteShoppingCart
     throw UnimplementedError();
   }
@@ -26,30 +31,18 @@ class ShoppingCartRepository implements IShoppingCartRepository {
       '/carts/$id',
     );
     final shoppingCart = ShoppingCartDTO.fromJson(response.data!);
+    final shoppingCartProducts = await Future.wait(
+      shoppingCart.products
+          .where((item) => item.id != -1)
+          .map((item) async => ShoppingCartItem(
+                product: await productRepository.getProductById(item.id),
+                quantity: item.quantity,
+              ))
+          .toList(),
+    );
     return ShoppingCart(
       id: shoppingCart.id,
-      products: shoppingCart.products
-          .map(
-            (product) => Product(
-              id: product.id,
-              name: product.name,
-              images: [
-                product.image,
-                product.image,
-                product.image,
-                product.image,
-              ],
-              discount: '25%',
-              amount: '2 шт',
-              description: product.description,
-              characteristics: 'Lorem ipsum',
-              reviews: 'Lorem ipsum',
-              brand: 'brand',
-              price: product.price,
-              recommendations: _recommendations,
-            ),
-          )
-          .toList(),
+      products: shoppingCartProducts,
       generalPrice: 1850,
       discount: '10%',
       generalDiscount: 150,
@@ -58,7 +51,7 @@ class ShoppingCartRepository implements IShoppingCartRepository {
   }
 
   @override
-  Future<ShoppingCart> updateShoppingCart() {
+  Future<ShoppingCart> updateShoppingCart(int id) {
     // TODO: implement updateShoppingCart
     throw UnimplementedError();
   }

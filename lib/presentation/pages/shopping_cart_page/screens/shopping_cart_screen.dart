@@ -26,8 +26,11 @@ class ShoppingCartScreen extends StatelessWidget {
               recommendations: shoppingCart.recommendations,
             ),
             const SizedBox(height: 6),
-            const Divider(
-              color: AppColors.offBackgroundColor2,
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Divider(
+                color: AppColors.offBackgroundColor2,
+              ),
             ),
             SummaryWidget(
               shoppingCart: shoppingCart,

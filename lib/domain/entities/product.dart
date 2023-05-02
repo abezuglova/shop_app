@@ -14,6 +14,5 @@ class Product with _$Product {
     required String brand,
     required double price,
     required List<Product> recommendations,
-    int? quantity,
   }) = _Product;
 }

@@ -4,6 +4,7 @@ part 'advertisement.dart';
 part 'product.dart';
 part 'category.dart';
 part 'shopping_cart.dart';
+part 'shopping_cart_item.dart';
 part 'order.dart';
 part 'address.dart';
 part 'payment_method.dart';

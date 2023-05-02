@@ -4,7 +4,7 @@ part of 'dto.dart';
 class ShoppingCartDTO with _$ShoppingCartDTO {
   factory ShoppingCartDTO({
     required int id,
-    required List<ProductDTO> products,
+    required List<ShoppingCartItemDTO> products,
   }) = _ShoppingCartDTO;
 
   factory ShoppingCartDTO.fromJson(Map<String, dynamic> json) =>

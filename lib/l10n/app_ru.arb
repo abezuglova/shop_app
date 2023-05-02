@@ -86,7 +86,7 @@
   "product": "товар",
   "point": "балл",
   "ruble": "₽",
-  "nProducts": "{count, plural, =1{{count} товар} few{{count} товара} other{{count} товаров}}",
+  "nProducts": "{count, plural, =0{{count} товаров} =1{{count} товар} few{{count} товара} other{{count} товаров}}",
   "@nProducts": {
     "description": "A plural message",
     "placeholders": {
@@ -96,7 +96,7 @@
       }
     }
   },
-  "nPoints": "{count, plural, =1{{count} балл} few{{count} балла} other{{count} баллов}}",
+  "nPoints": "{count, plural, =0{{count} товаров} =1{{count} балл} few{{count} балла} other{{count} баллов}}",
   "@nPoints": {
     "description": "A plural message",
     "placeholders": {

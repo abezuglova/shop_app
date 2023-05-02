@@ -13,7 +13,7 @@ class ProductRepository implements IProductRepository {
     final response = await dio.get<dynamic>(
       '/products/$id',
     );
-    final product = ProductDTO.fromJson(response.data!);
+    final product = ProductDTO.fromJson(response.data);
     return Product(
       id: product.id,
       name: product.name,

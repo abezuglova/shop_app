@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SummaryWidget extends StatelessWidget {
   final ShoppingCart shoppingCart;
@@ -9,6 +10,7 @@ class SummaryWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Padding(
       padding: const EdgeInsets.all(16),
       child: Column(
@@ -17,7 +19,7 @@ class SummaryWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                '${shoppingCart.products.length} товара',
+                l10n.nProducts(shoppingCart.products.length),
                 style: AppFonts.regular18.copyWith(
                   color: AppColors.secondaryTextColor,
                 ),
