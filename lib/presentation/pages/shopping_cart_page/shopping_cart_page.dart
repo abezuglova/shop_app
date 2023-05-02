@@ -21,7 +21,7 @@ class ShoppingCartPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => ShoppingCartCubit(
         shoppingCartRepository: getIt<IShoppingCartRepository>(),
-        shoppingCartId: 5,
+        shoppingCartId: 1,
       )..onPageOpened(),
       child: Scaffold(
         backgroundColor: AppColors.scaffoldBackgroundColor,

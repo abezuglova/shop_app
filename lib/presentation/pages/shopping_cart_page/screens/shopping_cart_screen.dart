@@ -35,7 +35,7 @@ class ShoppingCartScreen extends StatelessWidget {
             SummaryWidget(
               shoppingCart: shoppingCart,
             ),
-            const SizedBox(height: 98),
+            const SizedBox(height: 164),
           ],
         ),
         Align(

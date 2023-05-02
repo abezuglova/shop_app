@@ -33,7 +33,6 @@ class ShoppingCartRepository implements IShoppingCartRepository {
     final shoppingCart = ShoppingCartDTO.fromJson(response.data!);
     final shoppingCartProducts = await Future.wait(
       shoppingCart.products
-          .where((item) => item.id != -1)
           .map((item) async => ShoppingCartItem(
                 product: await productRepository.getProductById(item.id),
                 quantity: item.quantity,

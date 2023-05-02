@@ -5,7 +5,7 @@ part of 'dto.dart';
 @freezed
 class ShoppingCartItemDTO with _$ShoppingCartItemDTO {
   factory ShoppingCartItemDTO({
-    @JsonKey(defaultValue: -1) required int id,
+    @JsonKey(name: 'productId') required int id,
     @JsonKey(defaultValue: 0) required int quantity,
   }) = _ShoppingCartItemDTO;
 
