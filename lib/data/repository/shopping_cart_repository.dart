@@ -27,6 +27,7 @@ class ShoppingCartRepository implements IShoppingCartRepository {
       data: shoppingCart,
     );
     _shoppingCart?.products.add(shoppingCartItem);
+    
   }
 
   @override

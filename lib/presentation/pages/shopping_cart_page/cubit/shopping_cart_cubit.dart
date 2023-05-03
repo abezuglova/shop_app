@@ -40,14 +40,94 @@ class ShoppingCartCubit extends Cubit<ShoppingCartState> {
     }
   }
 
-  Future<void> onShoppingCartDeleted(int id) async {
-    
-  }
-}
+  Future<void> onShoppingCartDeleted(int id) async =>
+      await state.mapOrNull<Future>(
+        loadSuccess: (state) async {
+          try {
+            if (_shoppingCart != null) {
+              await shoppingCartRepository.deleteShoppingCart(id);
+              _shoppingCart = _shoppingCart!.copyWith(
+                products: [],
+              );
+              emit(
+                state.copyWith(
+                  shoppingCart: _shoppingCart!,
+                ),
+              );
+            }
+          } catch (error, stackTrace) {
+            log(
+              'Error during shopping cart deleting',
+              error: error,
+              stackTrace: stackTrace,
+            );
+            emit(
+              ShoppingCartState.loadFailure(loadError: error),
+            );
+          }
+        },
+      );
 
-// shoppingCart.copyWith(
-//         products: shoppingCart.products
-//             .map(
-//               (item) => item.copyWith(quantity: item.quantity + 1),
-//             )
-//             .toList());
+  Future<void> onProductToShoppingCartAdded(
+    int id,
+    ShoppingCartItem shoppingCartItem,
+  ) async =>
+      await state.mapOrNull<Future>(
+        loadSuccess: (state) async {
+          try {
+            if (_shoppingCart != null) {
+              await shoppingCartRepository.addProductToShoppingCart(
+                id,
+                shoppingCartItem,
+              );
+              _shoppingCart!.products.add(shoppingCartItem);
+              emit(
+                state.copyWith(
+                  shoppingCart: _shoppingCart!,
+                ),
+              );
+            }
+          } catch (error, stackTrace) {
+            log(
+              'Error during product to shopping cart adding',
+              error: error,
+              stackTrace: stackTrace,
+            );
+            emit(
+              ShoppingCartState.loadFailure(loadError: error),
+            );
+          }
+        },
+      );
+
+  Future<void> onProductQuantityChanged(
+          ShoppingCartItem shoppingCartItem) async =>
+      await state.mapOrNull<Future>(loadSuccess: (state) async {
+        try {
+          if (_shoppingCart != null) {
+            final updatedShoppingCart = _shoppingCart!.copyWith();
+            final updatingItemIndex = updatedShoppingCart.products.indexWhere(
+              (item) => item.product.id == shoppingCartItem.product.id,
+            );
+            updatedShoppingCart.products[updatingItemIndex] = shoppingCartItem;
+            await shoppingCartRepository
+                .updateShoppingCart(updatedShoppingCart);
+            _shoppingCart = updatedShoppingCart;
+            emit(
+              state.copyWith(
+                shoppingCart: _shoppingCart!,
+              ),
+            );
+          }
+        } catch (error, stackTrace) {
+          log(
+            'Error during shopping cart updating',
+            error: error,
+            stackTrace: stackTrace,
+          );
+          emit(
+            ShoppingCartState.loadFailure(loadError: error),
+          );
+        }
+      });
+}
