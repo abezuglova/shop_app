@@ -20,8 +20,13 @@ class ShoppingCartRepository implements IShoppingCartRepository {
     int id,
     ShoppingCartItem shoppingCartItem,
   ) async {
-    await Future.delayed(const Duration(milliseconds: 500));
-    _shoppingCart ?? _shoppingCart!.products.add(shoppingCartItem);
+    final shoppingCart = _shoppingCart;
+    shoppingCart?.products.add(shoppingCartItem);
+    await dio.post<dynamic>(
+      '/carts',
+      data: shoppingCart,
+    );
+    _shoppingCart?.products.add(shoppingCartItem);
   }
 
   @override
@@ -29,7 +34,11 @@ class ShoppingCartRepository implements IShoppingCartRepository {
     await dio.delete<dynamic>(
       '/carts/$id',
     );
-    _shoppingCart = null;
+    if (_shoppingCart != null) {
+      _shoppingCart = _shoppingCart!.copyWith(
+        products: [],
+      );
+    }
   }
 
   @override
@@ -40,8 +49,20 @@ class ShoppingCartRepository implements IShoppingCartRepository {
 
   @override
   Future<ShoppingCart> updateShoppingCart(ShoppingCart shoppingCart) async {
+    await dio.put<dynamic>(
+      '/carts/${shoppingCart.id}',
+      data: ShoppingCartDTO(
+              id: shoppingCart.id,
+              products: shoppingCart.products
+                  .map((e) => ShoppingCartItemDTO(
+                        id: e.product.id,
+                        quantity: e.quantity,
+                      ))
+                  .toList())
+          .toJson(),
+    );
     await Future.delayed(const Duration(milliseconds: 500));
-    _shoppingCart ??= shoppingCart;
+    _shoppingCart = shoppingCart;
     return _shoppingCart!;
   }
 

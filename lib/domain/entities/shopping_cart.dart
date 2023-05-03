@@ -1,6 +1,6 @@
 part of 'entities.dart';
 
-@freezed
+@Freezed(makeCollectionsUnmodifiable: false)
 class ShoppingCart with _$ShoppingCart {
   factory ShoppingCart({
     required int id,

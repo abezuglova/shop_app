@@ -11,18 +11,21 @@ part 'shopping_cart_cubit.freezed.dart';
 class ShoppingCartCubit extends Cubit<ShoppingCartState> {
   final int shoppingCartId;
   final IShoppingCartRepository shoppingCartRepository;
+
+  ShoppingCart? _shoppingCart;
+
   ShoppingCartCubit({
     required this.shoppingCartRepository,
     required this.shoppingCartId,
   }) : super(const ShoppingCartState.loadInProgress());
-  
+
   Future<void> onPageOpened() async {
     try {
-      final shoppingCart =
+      _shoppingCart =
           await shoppingCartRepository.getShoppingCart(shoppingCartId);
       emit(
         ShoppingCartState.loadSuccess(
-          shoppingCart: shoppingCart,
+          shoppingCart: _shoppingCart!,
         ),
       );
     } catch (error, stackTrace) {
@@ -35,6 +38,10 @@ class ShoppingCartCubit extends Cubit<ShoppingCartState> {
         ShoppingCartState.loadFailure(loadError: error),
       );
     }
+  }
+
+  Future<void> onShoppingCartDeleted(int id) async {
+    
   }
 }
 
