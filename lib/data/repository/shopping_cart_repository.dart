@@ -20,12 +20,12 @@ class ShoppingCartRepository implements IShoppingCartRepository {
     int id,
     ShoppingCartItem shoppingCartItem,
   ) async {
-    final shoppingCart = _shoppingCart;
-    shoppingCart?.products.add(shoppingCartItem);
-    await dio.post<dynamic>(
-      '/carts',
-      data: shoppingCart,
-    );
+    // final shoppingCart = _shoppingCart;
+    // shoppingCart?.products.add(shoppingCartItem);
+    // await dio.post<dynamic>(
+    //   '/carts',
+    //   data: shoppingCart,
+    // );
     _shoppingCart?.products.add(shoppingCartItem);
     
   }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:third_task/domain/entities/entities.dart';
+import 'package:third_task/presentation/pages/shopping_cart_page/cubit/shopping_cart_cubit.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
@@ -79,7 +81,12 @@ class ProductCardWidget extends StatelessWidget {
                     width: 52,
                     height: 31,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () => context
+                          .read<ShoppingCartCubit>()
+                          .onProductToShoppingCartAdded(
+                            product.id,
+                            product,
+                          ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.smallElevatedButtonColor,
                         shape: const RoundedRectangleBorder(
