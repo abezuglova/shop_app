@@ -37,3 +37,10 @@ class ShoppingCartCubit extends Cubit<ShoppingCartState> {
     }
   }
 }
+
+// shoppingCart.copyWith(
+//         products: shoppingCart.products
+//             .map(
+//               (item) => item.copyWith(quantity: item.quantity + 1),
+//             )
+//             .toList());

@@ -8,25 +8,44 @@ class ShoppingCartRepository implements IShoppingCartRepository {
   final Dio dio;
   final IProductRepository productRepository;
 
+  ShoppingCart? _shoppingCart;
+
   ShoppingCartRepository(
     this.dio,
     this.productRepository,
   );
 
   @override
-  Future<void> addProductToShoppingCart(int id) {
-    // TODO: implement addProductToShoppingCart
-    throw UnimplementedError();
+  Future<void> addProductToShoppingCart(
+    int id,
+    ShoppingCartItem shoppingCartItem,
+  ) async {
+    await Future.delayed(const Duration(milliseconds: 500));
+    _shoppingCart ?? _shoppingCart!.products.add(shoppingCartItem);
   }
 
   @override
-  Future<void> deleteShoppingCart(int id) {
-    // TODO: implement deleteShoppingCart
-    throw UnimplementedError();
+  Future<void> deleteShoppingCart(int id) async {
+    await dio.delete<dynamic>(
+      '/carts/$id',
+    );
+    _shoppingCart = null;
   }
 
   @override
   Future<ShoppingCart> getShoppingCart(int id) async {
+    _shoppingCart ??= await _getShoppingCartFromAPI(id);
+    return _shoppingCart!;
+  }
+
+  @override
+  Future<ShoppingCart> updateShoppingCart(ShoppingCart shoppingCart) async {
+    await Future.delayed(const Duration(milliseconds: 500));
+    _shoppingCart ??= shoppingCart;
+    return _shoppingCart!;
+  }
+
+  Future<ShoppingCart> _getShoppingCartFromAPI(int id) async {
     final response = await dio.get<dynamic>(
       '/carts/$id',
     );
@@ -47,12 +66,6 @@ class ShoppingCartRepository implements IShoppingCartRepository {
       generalDiscount: 150,
       recommendations: _recommendations,
     );
-  }
-
-  @override
-  Future<ShoppingCart> updateShoppingCart(int id) {
-    // TODO: implement updateShoppingCart
-    throw UnimplementedError();
   }
 
   static const _recommendations = [
