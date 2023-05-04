@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
-import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/ui_kit/custom_text_field.dart';
 import 'package:third_task/presentation/ui_kit/svg_icon_button.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
@@ -9,8 +8,7 @@ import 'package:third_task/presentation/utils/app_icons.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CheckoutFieldsWidget extends StatefulWidget {
-  final Order order;
-  const CheckoutFieldsWidget({super.key, required this.order});
+  const CheckoutFieldsWidget({super.key});
 
   @override
   State<CheckoutFieldsWidget> createState() => _CheckoutFieldsWidgetState();

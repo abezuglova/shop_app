@@ -34,7 +34,7 @@ class MainInfoWidget extends StatelessWidget {
                   ),
                   const SizedBox(width: 4),
                   Text(
-                    product.discount,
+                    '${product.discount} ${l10n.percent}',
                     style: AppFonts.bold13.copyWith(
                       color: Colors.white,
                     ),
@@ -57,7 +57,7 @@ class MainInfoWidget extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'Органик',
+                    l10n.organic,
                     style: AppFonts.semiBold13.copyWith(
                       color: Colors.white,
                     ),
@@ -80,7 +80,7 @@ class MainInfoWidget extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'Экспресс-доставка',
+                    l10n.expressDelivery,
                     style: AppFonts.medium13_144_5,
                   ),
                 ],

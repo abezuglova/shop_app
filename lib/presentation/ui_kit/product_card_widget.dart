@@ -59,7 +59,7 @@ class ProductCardWidget extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Text(
-                product.amount,
+                '${l10n.per} ${product.amount} ${l10n.items}',
                 style: AppFonts.regular12_135.copyWith(
                   color: AppColors.secondaryTextColor,
                 ),
@@ -72,7 +72,7 @@ class ProductCardWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    '${product.price} ${l10n.ruble}',
+                    '${product.newPrice} ${l10n.ruble}',
                     style: AppFonts.semiBold18_130,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,

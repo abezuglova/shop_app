@@ -5,8 +5,8 @@ import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class OrderProductWidget extends StatelessWidget {
-  final Product product;
-  const OrderProductWidget({super.key, required this.product});
+  final ShoppingCartItem shoppingCartItem;
+  const OrderProductWidget({super.key, required this.shoppingCartItem});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class OrderProductWidget extends StatelessWidget {
                   ),
                 ),
                 child: Image.network(
-                  product.images[0],
+                  shoppingCartItem.product.images[0],
                   fit: BoxFit.cover,
                 ),
               ),
@@ -37,7 +37,7 @@ class OrderProductWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      product.name,
+                      shoppingCartItem.product.name,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: AppFonts.regular14_132_5,
@@ -47,11 +47,11 @@ class OrderProductWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          '${product.price} ${l10n.ruble}',
+                          '${shoppingCartItem.product.newPrice} ${l10n.ruble}',
                           style: AppFonts.semiBold16_144_5,
                         ),
                         Text(
-                          '${product.amount} шт',
+                          '${shoppingCartItem.product.amount} ${l10n.items}',
                           style: AppFonts.regular16_144_5,
                         ),
                       ],

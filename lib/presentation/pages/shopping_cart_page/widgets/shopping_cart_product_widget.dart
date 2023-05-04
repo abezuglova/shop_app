@@ -64,7 +64,7 @@ class ShoppingCartProductWidget extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
-                            '${shoppingCartItem.product.price} ${l10n.ruble}',
+                            '${shoppingCartItem.product.newPrice} ${l10n.ruble}',
                             style: AppFonts.semiBold16.copyWith(
                               color: AppColors.discountColor,
                             ),
@@ -73,7 +73,7 @@ class ShoppingCartProductWidget extends StatelessWidget {
                           Stack(
                             children: [
                               Text(
-                                '${shoppingCartItem.product.price} ${l10n.ruble}',
+                                '${shoppingCartItem.product.oldPrice} ${l10n.ruble}',
                                 style: AppFonts.regular14.copyWith(
                                   color: AppColors.enabledTextColor,
                                 ),
@@ -121,7 +121,7 @@ class ShoppingCartProductWidget extends StatelessWidget {
                               iconPath: AppIcons.minusIcon,
                             ),
                             Text(
-                              shoppingCartItem.quantity.toString(),
+                              '${shoppingCartItem.quantity} ${l10n.items}',
                               style: AppFonts.regular12,
                             ),
                             SvgIconButton(

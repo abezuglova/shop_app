@@ -5,8 +5,13 @@ import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CheckoutPriceWidget extends StatelessWidget {
-  final Order order;
-  const CheckoutPriceWidget({super.key, required this.order});
+  final ShoppingCart shoppingCart;
+  final double deliveryPrice;
+  const CheckoutPriceWidget({
+    super.key,
+    required this.shoppingCart,
+    required this.deliveryPrice,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +22,13 @@ class CheckoutPriceWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              l10n.nProducts(order.productList.length),
+              l10n.nProducts(shoppingCart.products.length),
               style: AppFonts.regular18.copyWith(
                 color: AppColors.secondaryTextColor,
               ),
             ),
             Text(
-              '${order.generalPrice} р',
+              '${shoppingCart.generalPrice} р',
               style: AppFonts.regular18,
             ),
           ],
@@ -39,7 +44,7 @@ class CheckoutPriceWidget extends StatelessWidget {
               ),
             ),
             Text(
-              '-${order.generalDiscount} р',
+              '-${shoppingCart.generalDiscount} р',
               style: AppFonts.regular18.copyWith(
                 color: AppColors.discountColor,
               ),
@@ -57,7 +62,7 @@ class CheckoutPriceWidget extends StatelessWidget {
               ),
             ),
             Text(
-              '${order.deliveryPrice} р',
+              '$deliveryPrice р',
               style: AppFonts.regular18,
             ),
           ],
@@ -71,7 +76,7 @@ class CheckoutPriceWidget extends StatelessWidget {
               style: AppFonts.semiBold24_144_5,
             ),
             Text(
-              '${order.generalPrice} р',
+              '${shoppingCart.generalPrice + deliveryPrice} р',
               style: AppFonts.semiBold24_144_5,
             ),
           ],

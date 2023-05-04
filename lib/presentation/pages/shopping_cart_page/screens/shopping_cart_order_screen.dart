@@ -29,7 +29,7 @@ class ShoppingCartOrderScreen extends StatelessWidget {
               ),
             ),
             Text(
-              '${l10n.nProducts(order.productList.length)} ${l10n.onSum} ${order.generalPrice} р.',
+              '${l10n.nProducts(order.shoppingCart.products.length)} ${l10n.onSum} ${order.shoppingCart.generalPrice} р.',
               style: AppFonts.regular14_144_5.copyWith(
                 color: AppColors.secondaryTextColor,
               ),
@@ -48,7 +48,8 @@ class ShoppingCartOrderScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () {},
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                 child: Text(
                   l10n.continueShopping,
                   style: AppFonts.semiBold16_144_5.copyWith(

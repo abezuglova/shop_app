@@ -25,7 +25,7 @@ class OrderScreen extends StatelessWidget {
           ),
           const SizedBox(height: 24),
           OrderProductListWidget(
-            productList: order.productList,
+            productList: order.shoppingCart.products,
           ),
           const SizedBox(height: 12.5),
           Row(

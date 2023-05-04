@@ -95,7 +95,10 @@ final router = GoRouter(
           routes: [
             GoRoute(
               path: 'checkout',
-              builder: (context, state) => const CheckoutPage(),
+              builder: (context, state) {
+                final shoppingCart = state.extra as ShoppingCart;
+                return CheckoutPage(shoppingCart: shoppingCart);
+              },
             ),
             GoRoute(
               path: 'product',

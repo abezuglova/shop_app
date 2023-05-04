@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:third_task/domain/entities/entities.dart';
-import 'package:third_task/presentation/pages/product_page/widgets/choose_address_widget.dart';
 import 'package:third_task/presentation/pages/shopping_cart_page/cubit/shopping_cart_cubit.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
@@ -44,7 +43,7 @@ class PriceWidget extends StatelessWidget {
               Stack(
                 children: [
                   Text(
-                    '${product.price} ${l10n.ruble}',
+                    '${product.oldPrice} ${l10n.ruble}',
                     style: AppFonts.regular18.copyWith(
                       color: AppColors.enabledTextColor,
                     ),
@@ -64,7 +63,7 @@ class PriceWidget extends StatelessWidget {
                 ],
               ),
               Text(
-                '${product.price} ${l10n.ruble}',
+                '${product.newPrice} ${l10n.ruble}',
                 style: AppFonts.medium28.copyWith(
                   color: AppColors.discountColor,
                 ),

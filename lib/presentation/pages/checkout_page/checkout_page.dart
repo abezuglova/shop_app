@@ -9,7 +9,8 @@ import 'package:third_task/presentation/utils/app_icons.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CheckoutPage extends StatelessWidget {
-  const CheckoutPage({super.key});
+  final ShoppingCart shoppingCart;
+  const CheckoutPage({super.key, required this.shoppingCart});
 
   @override
   Widget build(BuildContext context) {
@@ -26,59 +27,8 @@ class CheckoutPage extends StatelessWidget {
           ),
         ),
         body: CheckoutScreen(
-          order: Order(
-            number: 8934759379,
-            status: 'В пути',
-            productsNumber: 3,
-            generalDiscount: 150,
-            deliveryPrice: 99,
-            generalPrice: 1799,
-            productList: [
-              Product(
-                id: 1,
-                amount: '1',
-                brand: 'Углече поле',
-                characteristics: 'Lorem ipsum sit amet dolor',
-                description: 'Альтернативный Флэнк стейк',
-                discount: '-50%',
-                images: [
-                  'https://rightfood.net/wp-content/uploads/2014/11/669-4-e1416919923526.jpg',
-                  'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
-                ],
-                name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-                price: 600,
-                reviews: 'Lorem ipsum',
-                recommendations: [],
-              ),
-              Product(
-                id: 1,
-                amount: '1',
-                brand: 'Углече поле',
-                characteristics: 'Lorem ipsum sit amet dolor',
-                description: 'Альтернативный Флэнк стейк',
-                discount: '-50%',
-                images: [
-                  'https://rightfood.net/wp-content/uploads/2014/11/669-4-e1416919923526.jpg',
-                  'https://sostavproduktov.ru/sites/default/files/pictures/meat/miaso/goviadina.jpg',
-                ],
-                name: 'УГЛЕЧЕ ПОЛЕ Стейк Флэнк (Ангус) охл скин',
-                price: 600,
-                reviews: 'Lorem ipsum',
-                recommendations: [],
-              ),
-            ],
-            deliveryAddress: Address(
-              name: 'Дом',
-              city: 'Москва',
-              street: 'Пушкина',
-              house: '13',
-            ),
-            orderingDateTime: DateTime.now(),
-            deliveryDateTime: DateTime.now(),
-            paymentMethod: PaymentMethod(
-              cardList: [],
-            ),
-          ),
+          shoppingCart: shoppingCart,
+          deliveryPrice: 99,
         ),
       ),
     );

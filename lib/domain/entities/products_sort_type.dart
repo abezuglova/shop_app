@@ -12,16 +12,16 @@ extension ProductsSortTypeX on ProductsSortType {
       case ProductsSortType.ascPriceSort:
         return (products
               ..sort(
-                (product1, product2) => product1.price.compareTo(
-                  product2.price,
+                (product1, product2) => product1.newPrice.compareTo(
+                  product2.newPrice,
                 ),
               ))
             .toList();
       case ProductsSortType.descPriceSort:
         return (products
               ..sort(
-                (product1, product2) => product2.price.compareTo(
-                  product1.price,
+                (product1, product2) => product2.newPrice.compareTo(
+                  product1.newPrice,
                 ),
               ))
             .toList();

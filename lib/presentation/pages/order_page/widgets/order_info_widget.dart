@@ -24,7 +24,7 @@ class OrderInfoWidget extends StatelessWidget {
         ),
         const SizedBox(height: 4),
         Text(
-          '${l10n.nProducts(order.productList.length)} ${l10n.onSum} ${order.generalPrice} р.',
+          '${l10n.nProducts(order.shoppingCart.products.length)} ${l10n.onSum} ${order.shoppingCart.generalPrice} р.',
           style: AppFonts.bold16_144_5,
         ),
         const SizedBox(height: 24),

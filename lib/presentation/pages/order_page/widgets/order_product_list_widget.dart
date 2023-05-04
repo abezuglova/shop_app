@@ -3,7 +3,7 @@ import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/pages/order_page/widgets/order_product_widget.dart';
 
 class OrderProductListWidget extends StatelessWidget {
-  final List<Product> productList;
+  final List<ShoppingCartItem> productList;
   const OrderProductListWidget({super.key, required this.productList});
 
   @override
@@ -12,7 +12,7 @@ class OrderProductListWidget extends StatelessWidget {
       children: productList
           .map(
             (product) => OrderProductWidget(
-              product: product,
+              shoppingCartItem: product,
             ),
           )
           .toList(),

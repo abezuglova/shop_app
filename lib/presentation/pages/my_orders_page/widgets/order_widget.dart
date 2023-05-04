@@ -53,7 +53,7 @@ class OrderWidget extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '${l10n.nProducts(order.productList.length)} ${l10n.onSum} ${order.generalPrice} р.',
+                    '${l10n.nProducts(order.shoppingCart.products.length)} ${l10n.onSum} ${order.shoppingCart.generalPrice} р.',
                     style: AppFonts.semiBold14_144_5,
                   ),
                 ],

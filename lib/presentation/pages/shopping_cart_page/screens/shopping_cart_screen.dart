@@ -58,7 +58,10 @@ class ShoppingCartScreen extends StatelessWidget {
               ],
             ),
             child: ElevatedButton(
-              onPressed: () => context.go('/shopping_cart/checkout'),
+              onPressed: () => context.push(
+                '/shopping_cart/checkout',
+                extra: shoppingCart,
+              ),
               child: Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 70, vertical: 16),

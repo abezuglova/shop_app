@@ -8,8 +8,9 @@ import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CheckoutScreen extends StatelessWidget {
-  final Order order;
-  const CheckoutScreen({super.key, required this.order});
+  final ShoppingCart shoppingCart;
+  final double deliveryPrice;
+  const CheckoutScreen({super.key, required this.shoppingCart, required this.deliveryPrice});
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +20,11 @@ class CheckoutScreen extends StatelessWidget {
         ListView(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22.5),
           children: [
-            CheckoutFieldsWidget(
-              order: order,
-            ),
+            const CheckoutFieldsWidget(),
             const SizedBox(height: 16),
             CheckoutPriceWidget(
-              order: order,
+              shoppingCart: shoppingCart,
+              deliveryPrice: deliveryPrice,
             ),
           ],
         ),
