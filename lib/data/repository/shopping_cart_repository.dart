@@ -26,8 +26,9 @@ class ShoppingCartRepository implements IShoppingCartRepository {
     //   '/carts',
     //   data: shoppingCart,
     // );
-    _shoppingCart?.products.add(shoppingCartItem);
-    
+    _shoppingCart = _shoppingCart?.copyWith(
+      products: [..._shoppingCart!.products, shoppingCartItem],
+    );
   }
 
   @override
@@ -45,7 +46,7 @@ class ShoppingCartRepository implements IShoppingCartRepository {
   @override
   Future<ShoppingCart> getShoppingCart(int id) async {
     _shoppingCart ??= await _getShoppingCartFromAPI(id);
-    return _shoppingCart!;
+    return _shoppingCart!.copyWith();
   }
 
   @override
@@ -64,7 +65,7 @@ class ShoppingCartRepository implements IShoppingCartRepository {
     );
     await Future.delayed(const Duration(milliseconds: 500));
     _shoppingCart = shoppingCart;
-    return _shoppingCart!;
+    return _shoppingCart!.copyWith();
   }
 
   Future<ShoppingCart> _getShoppingCartFromAPI(int id) async {

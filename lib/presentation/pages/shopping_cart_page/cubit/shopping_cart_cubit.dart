@@ -75,15 +75,16 @@ class ShoppingCartCubit extends Cubit<ShoppingCartState> {
       await state.mapOrNull<Future>(
         loadSuccess: (state) async {
           try {
-            final shoppingCartItem =
-                ShoppingCartItem(product: product, quantity: 1);
             if (_shoppingCart != null) {
+              final shoppingCartItem =
+                  ShoppingCartItem(product: product, quantity: 1);
               await shoppingCartRepository.addProductToShoppingCart(
                 id,
                 shoppingCartItem,
               );
-            } else {
-              _shoppingCart!.products.add(shoppingCartItem);
+              _shoppingCart = _shoppingCart?.copyWith(
+                products: [..._shoppingCart!.products, shoppingCartItem],
+              );
               emit(
                 state.copyWith(
                   shoppingCart: _shoppingCart!,

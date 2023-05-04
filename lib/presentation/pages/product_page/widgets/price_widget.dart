@@ -1,16 +1,19 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/pages/product_page/widgets/choose_address_widget.dart';
+import 'package:third_task/presentation/pages/shopping_cart_page/cubit/shopping_cart_cubit.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PriceWidget extends StatelessWidget {
-  final String price;
-  const PriceWidget({super.key, required this.price});
+  final Product product;
+  const PriceWidget({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +44,7 @@ class PriceWidget extends StatelessWidget {
               Stack(
                 children: [
                   Text(
-                    price,
+                    '${product.price} ${l10n.ruble}',
                     style: AppFonts.regular18.copyWith(
                       color: AppColors.enabledTextColor,
                     ),
@@ -61,7 +64,7 @@ class PriceWidget extends StatelessWidget {
                 ],
               ),
               Text(
-                price,
+                '${product.price} ${l10n.ruble}',
                 style: AppFonts.medium28.copyWith(
                   color: AppColors.discountColor,
                 ),
@@ -69,17 +72,24 @@ class PriceWidget extends StatelessWidget {
             ],
           ),
           ElevatedButton(
-            onPressed: () => showModalBottomSheet(
-              context: context,
-              isScrollControlled: true,
-              shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(12),
-                  topRight: Radius.circular(12),
-                ),
-              ),
-              builder: (context) => const ChooseAddressWidget(),
-            ),
+            onPressed: () => context
+                          .read<ShoppingCartCubit>()
+                          .onProductToShoppingCartAdded(
+                            product.id,
+                            product,
+                          ),
+            // Если бы была реализована логика с адресами, кнопке был бы назначен следующий callback:
+            // onPressed: () => showModalBottomSheet(
+            //   context: context,
+            //   isScrollControlled: true,
+            //   shape: const RoundedRectangleBorder(
+            //     borderRadius: BorderRadius.only(
+            //       topLeft: Radius.circular(12),
+            //       topRight: Radius.circular(12),
+            //     ),
+            //   ),
+            //   builder: (context) => const ChooseAddressWidget(),
+            // ),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
               child: Row(

@@ -48,7 +48,9 @@ class ProductScreen extends StatelessWidget {
         ),
         Align(
           alignment: Alignment.bottomCenter,
-          child: PriceWidget(price: '${product.price} ${l10n.ruble}'),
+          child: PriceWidget(
+            product: product,
+          ),
         ),
       ],
     );
