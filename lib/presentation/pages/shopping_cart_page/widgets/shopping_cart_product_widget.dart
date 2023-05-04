@@ -102,39 +102,39 @@ class ShoppingCartProductWidget extends StatelessWidget {
                             Radius.circular(50),
                           ),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 12, vertical: 7.5),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              SvgIconButton(
-                                onPressed: shoppingCartItem.quantity == 0 ? null : () => context
-                                    .read<ShoppingCartCubit>()
-                                    .onProductQuantityChanged(
-                                      shoppingCartItem.copyWith(
-                                        quantity: shoppingCartItem.quantity - 1,
+                        clipBehavior: Clip.hardEdge,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            SvgIconButton(
+                              onPressed: shoppingCartItem.quantity == 0
+                                  ? null
+                                  : () => context
+                                      .read<ShoppingCartCubit>()
+                                      .onProductQuantityChanged(
+                                        shoppingCartItem.copyWith(
+                                          quantity:
+                                              shoppingCartItem.quantity - 1,
+                                        ),
                                       ),
+                              iconPath: AppIcons.minusIcon,
+                            ),
+                            Text(
+                              shoppingCartItem.quantity.toString(),
+                              style: AppFonts.regular12,
+                            ),
+                            SvgIconButton(
+                              onPressed: () => context
+                                  .read<ShoppingCartCubit>()
+                                  .onProductQuantityChanged(
+                                    shoppingCartItem.copyWith(
+                                      quantity: shoppingCartItem.quantity + 1,
                                     ),
-                                iconPath: AppIcons.minusIcon,
-                              ),
-                              Text(
-                                shoppingCartItem.quantity.toString(),
-                                style: AppFonts.regular12,
-                              ),
-                              SvgIconButton(
-                                onPressed: () => context
-                                    .read<ShoppingCartCubit>()
-                                    .onProductQuantityChanged(
-                                      shoppingCartItem.copyWith(
-                                        quantity: shoppingCartItem.quantity + 1,
-                                      ),
-                                    ),
-                                iconPath: AppIcons.plusIcon,
-                              ),
-                            ],
-                          ),
+                                  ),
+                              iconPath: AppIcons.plusIcon,
+                            ),
+                          ],
                         ),
                       ),
                     ],
