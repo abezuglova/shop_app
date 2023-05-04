@@ -4,6 +4,7 @@ part of 'main_cubit.dart';
 class MainState with _$MainState {
   const factory MainState.loadInProgress() = MainLoadInProgress;
   const factory MainState.loadSuccess({
+    @Default(false) bool isUpdateInProgress,
     required List<Advertisement> advertisementList,
     required List<Product> alreadyBoughtProductList,
     required List<Product> bestDealsProductList,

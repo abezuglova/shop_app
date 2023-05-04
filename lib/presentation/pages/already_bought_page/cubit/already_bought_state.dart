@@ -5,6 +5,7 @@ class AlreadyBoughtState with _$AlreadyBoughtState {
   const factory AlreadyBoughtState.loadInProgress() =
       AlreadyBoughtLoadInProgress;
   const factory AlreadyBoughtState.loadSuccess({
+    @Default(false) bool isUpdateInProgress,
     required List<Product> products,
   }) = AlreadyBoughtLoadSuccess;
   const factory AlreadyBoughtState.loadFailure({

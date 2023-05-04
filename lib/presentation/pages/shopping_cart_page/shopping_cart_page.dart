@@ -4,6 +4,7 @@ import 'package:third_task/presentation/pages/shopping_cart_page/cubit/shopping_
 import 'package:third_task/presentation/pages/shopping_cart_page/screens/empty_shopping_cart_screen.dart';
 import 'package:third_task/presentation/ui_kit/error_screen.dart';
 import 'package:third_task/presentation/ui_kit/loading_screen.dart';
+import 'package:third_task/presentation/ui_kit/updating_screen_wrapper.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
 import 'package:third_task/presentation/pages/shopping_cart_page/screens/shopping_cart_screen.dart';
@@ -35,8 +36,11 @@ class ShoppingCartPage extends StatelessWidget {
           loadFailure: (state) => const ErrorScreen(),
           loadSuccess: (state) => state.shoppingCart.products.isEmpty
               ? const EmptyShoppingCartScreen()
-              : ShoppingCartScreen(
-                  shoppingCart: state.shoppingCart,
+              : UpdatingScreenWrapper(
+                  isUpdateInProgress: state.isUpdateInProgress,
+                  child: ShoppingCartScreen(
+                    shoppingCart: state.shoppingCart,
+                  ),
                 ),
         ),
       ),

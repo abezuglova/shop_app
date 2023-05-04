@@ -5,6 +5,7 @@ class FavoritesState with _$FavoritesState {
   const factory FavoritesState.loadInProgress() =
       FavoritesLoadInProgress;
   const factory FavoritesState.loadSuccess({
+    @Default(false) bool isUpdateInProgress,
     required List<Product> products,
   }) = FavoritesLoadSuccess;
   const factory FavoritesState.loadFailure({

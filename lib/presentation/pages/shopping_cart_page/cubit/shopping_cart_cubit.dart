@@ -44,6 +44,11 @@ class ShoppingCartCubit extends Cubit<ShoppingCartState> {
       await state.mapOrNull<Future>(
         loadSuccess: (state) async {
           try {
+            emit(
+              state.copyWith(
+                isUpdateInProgress: true,
+              ),
+            );
             if (_shoppingCart != null) {
               await shoppingCartRepository.deleteShoppingCart(id);
               _shoppingCart = _shoppingCart!.copyWith(
@@ -51,6 +56,7 @@ class ShoppingCartCubit extends Cubit<ShoppingCartState> {
               );
               emit(
                 state.copyWith(
+                  isUpdateInProgress: false,
                   shoppingCart: _shoppingCart!,
                 ),
               );
@@ -75,6 +81,11 @@ class ShoppingCartCubit extends Cubit<ShoppingCartState> {
       await state.mapOrNull<Future>(
         loadSuccess: (state) async {
           try {
+            emit(
+              state.copyWith(
+                isUpdateInProgress: true,
+              ),
+            );
             if (_shoppingCart != null) {
               final shoppingCartItem =
                   ShoppingCartItem(product: product, quantity: 1);
@@ -87,6 +98,7 @@ class ShoppingCartCubit extends Cubit<ShoppingCartState> {
               );
               emit(
                 state.copyWith(
+                  isUpdateInProgress: false,
                   shoppingCart: _shoppingCart!,
                 ),
               );
@@ -108,6 +120,11 @@ class ShoppingCartCubit extends Cubit<ShoppingCartState> {
           ShoppingCartItem shoppingCartItem) async =>
       await state.mapOrNull<Future>(loadSuccess: (state) async {
         try {
+          emit(
+            state.copyWith(
+              isUpdateInProgress: true,
+            ),
+          );
           if (_shoppingCart != null) {
             final updatingItemIndex = _shoppingCart!.products.indexWhere(
               (item) => item.product.id == shoppingCartItem.product.id,
@@ -122,6 +139,7 @@ class ShoppingCartCubit extends Cubit<ShoppingCartState> {
             _shoppingCart = updatedShoppingCart;
             emit(
               state.copyWith(
+                isUpdateInProgress: false,
                 shoppingCart: _shoppingCart!,
               ),
             );
