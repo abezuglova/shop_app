@@ -109,11 +109,14 @@ class ShoppingCartCubit extends Cubit<ShoppingCartState> {
       await state.mapOrNull<Future>(loadSuccess: (state) async {
         try {
           if (_shoppingCart != null) {
-            final updatedShoppingCart = _shoppingCart!.copyWith();
-            final updatingItemIndex = updatedShoppingCart.products.indexWhere(
+            final updatingItemIndex = _shoppingCart!.products.indexWhere(
               (item) => item.product.id == shoppingCartItem.product.id,
             );
-            updatedShoppingCart.products[updatingItemIndex] = shoppingCartItem;
+            final updatedProducts = [..._shoppingCart!.products];
+            updatedProducts[updatingItemIndex] = shoppingCartItem;
+            final updatedShoppingCart = _shoppingCart!.copyWith(
+              products: updatedProducts,
+            );
             await shoppingCartRepository
                 .updateShoppingCart(updatedShoppingCart);
             _shoppingCart = updatedShoppingCart;

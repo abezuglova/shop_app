@@ -56,9 +56,9 @@ class ShoppingCartRepository implements IShoppingCartRepository {
       data: ShoppingCartDTO(
               id: shoppingCart.id,
               products: shoppingCart.products
-                  .map((e) => ShoppingCartItemDTO(
-                        id: e.product.id,
-                        quantity: e.quantity,
+                  .map((item) => ShoppingCartItemDTO(
+                        id: item.product.id,
+                        quantity: item.quantity,
                       ))
                   .toList())
           .toJson(),

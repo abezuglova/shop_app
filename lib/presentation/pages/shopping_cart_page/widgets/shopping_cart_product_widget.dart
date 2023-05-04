@@ -1,8 +1,10 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:third_task/domain/entities/entities.dart';
+import 'package:third_task/presentation/pages/shopping_cart_page/cubit/shopping_cart_cubit.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
@@ -108,7 +110,13 @@ class ShoppingCartProductWidget extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               SvgIconButton(
-                                onPressed: () {},
+                                onPressed: shoppingCartItem.quantity == 0 ? null : () => context
+                                    .read<ShoppingCartCubit>()
+                                    .onProductQuantityChanged(
+                                      shoppingCartItem.copyWith(
+                                        quantity: shoppingCartItem.quantity - 1,
+                                      ),
+                                    ),
                                 iconPath: AppIcons.minusIcon,
                               ),
                               Text(
@@ -116,7 +124,13 @@ class ShoppingCartProductWidget extends StatelessWidget {
                                 style: AppFonts.regular12,
                               ),
                               SvgIconButton(
-                                onPressed: () {},
+                                onPressed: () => context
+                                    .read<ShoppingCartCubit>()
+                                    .onProductQuantityChanged(
+                                      shoppingCartItem.copyWith(
+                                        quantity: shoppingCartItem.quantity + 1,
+                                      ),
+                                    ),
                                 iconPath: AppIcons.plusIcon,
                               ),
                             ],
