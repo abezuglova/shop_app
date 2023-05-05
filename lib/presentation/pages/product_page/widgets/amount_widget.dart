@@ -76,7 +76,7 @@ class _AmountWidgetState extends State<AmountWidget> {
                       ),
                       SizedBox(width: 8.w),
                       Text(
-                        '-${widget.product.discount}',
+                        '-${widget.product.discount}${l10n.percent}',
                         style: AppFonts.medium13_144_5.copyWith(
                           color: AppColors.discountColor,
                         ),
