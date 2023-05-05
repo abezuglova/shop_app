@@ -4,4 +4,5 @@ abstract class ICatalogSectionsRepository {
   Future<List<Product>> getAlreadyBoughtProductList();
   Future<List<Product>> getDiscountsProductList();
   Future<List<Product>> getFavoritesProductList();
+  Future<void> addProductToFavorites(Product product);
 }

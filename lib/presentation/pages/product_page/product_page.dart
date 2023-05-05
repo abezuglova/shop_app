@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:third_task/domain/entities/entities.dart';
+import 'package:third_task/presentation/pages/favorites_page/cubit/favorites_cubit.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_icons.dart';
 import 'package:third_task/presentation/pages/product_page/screens/product_screen.dart';
@@ -34,7 +36,9 @@ class ProductPage extends StatelessWidget {
                   iconPath: AppIcons.downloadIcon,
                 ),
                 SvgIconButton(
-                  onPressed: () {},
+                  onPressed: () => context
+                      .read<FavoritesCubit>()
+                      .onProductToFavoritesAdded(product),
                   iconPath: AppIcons.likeIcon,
                 ),
               ],

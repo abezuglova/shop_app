@@ -14,13 +14,15 @@ class FavoritesCubit extends Cubit<FavoritesState> {
     required this.catalogSectionsRepository,
   }) : super(const FavoritesState.loadInProgress());
 
+  var _products = <Product>[];
+
   Future<void> onPageOpened() async {
     try {
-      final products =
+      _products =
           await catalogSectionsRepository.getFavoritesProductList();
       emit(
         FavoritesState.loadSuccess(
-          products: products,
+          products: _products,
         ),
       );
     } catch (error, stackTrace) {
@@ -34,4 +36,35 @@ class FavoritesCubit extends Cubit<FavoritesState> {
       );
     }
   }
+
+  Future<void> onProductToFavoritesAdded(Product product) async =>
+      await state.mapOrNull<Future>(
+        loadSuccess: (state) async {
+          try {
+            emit(
+              state.copyWith(
+                isUpdateInProgress: true,
+              ),
+            );
+
+            await catalogSectionsRepository.addProductToFavorites(product);
+            _products = [..._products, product];
+            emit(
+              state.copyWith(
+                isUpdateInProgress: false,
+                products: _products,
+              ),
+            );
+          } catch (error, stackTrace) {
+            log(
+              'Error during product to shopping cart adding',
+              error: error,
+              stackTrace: stackTrace,
+            );
+            emit(
+              FavoritesState.loadFailure(loadError: error),
+            );
+          }
+        },
+      );
 }

@@ -2,6 +2,8 @@ import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/domain/repository/i_catalog_sections_repository.dart';
 
 class MockCatalogSectionsRepository implements ICatalogSectionsRepository {
+  var _favorites = [..._mockProductList];
+
   @override
   Future<List<Product>> getAlreadyBoughtProductList() async {
     await Future.delayed(const Duration(milliseconds: 500));
@@ -19,8 +21,13 @@ class MockCatalogSectionsRepository implements ICatalogSectionsRepository {
   @override
   Future<List<Product>> getFavoritesProductList() async {
     await Future.delayed(const Duration(milliseconds: 500));
-    const favoritesProductList = [..._mockProductList];
-    return favoritesProductList;
+    return [..._favorites];
+  }
+
+  @override
+  Future<void> addProductToFavorites(Product product) async {
+    await Future.delayed(const Duration(milliseconds: 500));
+    _favorites = [..._favorites, product];
   }
 
   static const _mockProductList = [

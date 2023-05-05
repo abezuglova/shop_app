@@ -19,26 +19,21 @@ class FavoritesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    return BlocProvider<FavoritesCubit>(
-      create: (context) => FavoritesCubit(
-        catalogSectionsRepository: getIt<ICatalogSectionsRepository>(),
-      )..onPageOpened(),
-      child: Scaffold(
-        backgroundColor: AppColors.scaffoldBackgroundColor,
-        appBar: CustomAppBar(
-          titleText: l10n.favorites,
-          leading: SvgIconButton(
-            onPressed: context.pop,
-            iconPath: AppIcons.chevronLeftIcon,
-          ),
+    return Scaffold(
+      backgroundColor: AppColors.scaffoldBackgroundColor,
+      appBar: CustomAppBar(
+        titleText: l10n.favorites,
+        leading: SvgIconButton(
+          onPressed: context.pop,
+          iconPath: AppIcons.chevronLeftIcon,
         ),
-        body: BlocBuilder<FavoritesCubit, FavoritesState>(
-          builder: (context, state) => state.map(
-            loadInProgress: (state) => const LoadingScreen(),
-            loadFailure: (state) => const ErrorScreen(),
-            loadSuccess: (state) => FavoritesScreen(
-              favoriteProducts: state.products,
-            ),
+      ),
+      body: BlocBuilder<FavoritesCubit, FavoritesState>(
+        builder: (context, state) => state.map(
+          loadInProgress: (state) => const LoadingScreen(),
+          loadFailure: (state) => const ErrorScreen(),
+          loadSuccess: (state) => FavoritesScreen(
+            favoriteProducts: state.products,
           ),
         ),
       ),

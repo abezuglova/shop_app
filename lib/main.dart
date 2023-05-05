@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/di.dart';
+import 'package:third_task/domain/repository/i_catalog_sections_repository.dart';
 import 'package:third_task/presentation/navigation/router.dart';
+import 'package:third_task/presentation/pages/favorites_page/cubit/favorites_cubit.dart';
 import 'package:third_task/presentation/pages/shopping_cart_page/cubit/shopping_cart_cubit.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -19,11 +21,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ShoppingCartCubit(
-        shoppingCartRepository: getIt<IShoppingCartRepository>(),
-        shoppingCartId: 1,
-      )..onPageOpened(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => ShoppingCartCubit(
+            shoppingCartRepository: getIt<IShoppingCartRepository>(),
+            shoppingCartId: 1,
+          )..onPageOpened(),
+        ),
+        BlocProvider<FavoritesCubit>(
+          create: (context) => FavoritesCubit(
+            catalogSectionsRepository: getIt<ICatalogSectionsRepository>(),
+          )..onPageOpened(),
+        ),
+      ],
       child: ScreenUtilInit(
         designSize: const Size(375, 812),
         splitScreenMode: true,

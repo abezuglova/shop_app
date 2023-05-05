@@ -1,4 +1,3 @@
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -32,16 +31,55 @@ class CustomBottomNavBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: tabs
-            .mapIndexed(
-              (index, element) => _CustomBottomNavBarItem(
-                title: element.title,
-                iconPath: element.iconPath,
-                onTap: () => onTap(index),
-                isSelected: currentIndex == index,
-              ),
-            )
-            .toList(),
+        children: [
+          _CustomBottomNavBarItem(
+            title: tabs[0].title,
+            iconPath: tabs[0].iconPath,
+            onTap: () => onTap(0),
+            isSelected: currentIndex == 0,
+          ),
+          _CustomBottomNavBarItem(
+            title: tabs[1].title,
+            iconPath: tabs[1].iconPath,
+            onTap: () => onTap(1),
+            isSelected: currentIndex == 1,
+          ),
+          _CustomBottomNavBarItem(
+            title: tabs[2].title,
+            iconPath: tabs[2].iconPath,
+            onTap: () => onTap(2),
+            isSelected: currentIndex == 2,
+          ),
+          Badge(
+            backgroundColor: AppColors.discountColor,
+            textColor: Colors.white,
+            textStyle: AppFonts.bold11,
+            smallSize: 0,
+            largeSize: 16.r,
+            child: _CustomBottomNavBarItem(
+              title: tabs[3].title,
+              iconPath: tabs[3].iconPath,
+              onTap: () => onTap(3),
+              isSelected: currentIndex == 3,
+            ),
+          ),
+          _CustomBottomNavBarItem(
+            title: tabs[4].title,
+            iconPath: tabs[4].iconPath,
+            onTap: () => onTap(4),
+            isSelected: currentIndex == 4,
+          ),
+        ],
+        // children: tabs
+        //     .mapIndexed(
+        //       (index, element) => _CustomBottomNavBarItem(
+        //         title: element.title,
+        //         iconPath: element.iconPath,
+        //         onTap: () => onTap(index),
+        //         isSelected: currentIndex == index,
+        //       ),
+        //     )
+        //     .toList(),
       ),
     );
   }
