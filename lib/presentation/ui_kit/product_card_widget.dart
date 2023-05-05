@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:third_task/domain/entities/entities.dart';
@@ -22,19 +23,19 @@ class ProductCardWidget extends StatelessWidget {
         extra: product,
       ),
       child: Container(
-        width: 168,
-        height: 240,
+        width: 168.w,
+        height: 240.h,
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: const BorderRadius.all(
-            Radius.circular(12),
+          borderRadius: BorderRadius.all(
+            Radius.circular(12.r),
           ),
           boxShadow: [
             BoxShadow(
               color: AppColors.elementShadowColor.withOpacity(0.1),
-              offset: const Offset(0, 10),
-              blurRadius: 20,
-              spreadRadius: -5,
+              offset: Offset(0, 10.h),
+              blurRadius: 20.r,
+              spreadRadius: -5.r,
             ),
           ],
         ),
@@ -44,11 +45,11 @@ class ProductCardWidget extends StatelessWidget {
           children: [
             Image.network(
               product.images[0],
-              width: 168,
-              height: 133,
+              width: 168.w,
+              height: 133.h,
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(12, 8, 12, 4),
+              padding: EdgeInsets.fromLTRB(12.w, 8.h, 12.w, 4.h),
               child: Text(
                 product.name,
                 style: AppFonts.regular12_135,
@@ -57,7 +58,7 @@ class ProductCardWidget extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
+              padding: EdgeInsets.symmetric(horizontal: 12.w),
               child: Text(
                 '${l10n.per} ${product.amount} ${l10n.items}',
                 style: AppFonts.regular12_135.copyWith(
@@ -67,7 +68,10 @@ class ProductCardWidget extends StatelessWidget {
             ),
             const Spacer(),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              padding: EdgeInsets.symmetric(
+                horizontal: 12.w,
+                vertical: 8.h,
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -78,8 +82,8 @@ class ProductCardWidget extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                   ),
                   SizedBox(
-                    width: 52,
-                    height: 31,
+                    width: 52.w,
+                    height: 31.h,
                     child: ElevatedButton(
                       onPressed: () => context
                           .read<ShoppingCartCubit>()
@@ -89,9 +93,9 @@ class ProductCardWidget extends StatelessWidget {
                           ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.smallElevatedButtonColor,
-                        shape: const RoundedRectangleBorder(
+                        shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(
-                            Radius.circular(68),
+                            Radius.circular(68.r),
                           ),
                         ),
                         elevation: 0,

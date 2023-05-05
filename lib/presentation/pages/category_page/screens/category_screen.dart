@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/pages/category_page/widgets/subcategory_widget.dart';
 import 'package:third_task/presentation/ui_kit/shadow_wrapper.dart';
@@ -11,7 +12,7 @@ class CategoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ShadowWrapper(
       child: ListView.separated(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: EdgeInsets.symmetric(horizontal: 16.r),
         itemBuilder: (BuildContext context, int index) => SubcategoryWidget(
           subcategory: category.subcategories[index],
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/pages/main_page/widgets/advertisement_card_widget.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
@@ -17,7 +18,7 @@ class AdvertisementListWidget extends StatelessWidget {
     return SizedBox(
       height: 272,
       child: ListView.separated(
-        padding: const EdgeInsets.fromLTRB(20, 28, 20, 36),
+        padding: EdgeInsets.fromLTRB(20.w, 28.h, 20.w, 36.h),
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, int index) =>
             AdvertisementCardWidget(
@@ -25,7 +26,7 @@ class AdvertisementListWidget extends StatelessWidget {
           color: colors[index % colors.length],
         ),
         separatorBuilder: (BuildContext context, int index) =>
-            const SizedBox(width: 8),
+            SizedBox(width: 8.w),
         itemCount: advertisementList.length,
       ),
     );

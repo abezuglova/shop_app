@@ -28,7 +28,7 @@ class FavoritesPage extends StatelessWidget {
         appBar: CustomAppBar(
           titleText: l10n.favorites,
           leading: SvgIconButton(
-            onPressed: () => context.pop(),
+            onPressed: context.pop,
             iconPath: AppIcons.chevronLeftIcon,
           ),
         ),

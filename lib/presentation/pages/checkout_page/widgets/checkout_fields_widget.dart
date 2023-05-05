@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:third_task/presentation/ui_kit/custom_text_field.dart';
 import 'package:third_task/presentation/ui_kit/svg_icon_button.dart';
@@ -28,36 +29,24 @@ class _CheckoutFieldsWidgetState extends State<CheckoutFieldsWidget> {
             onPressed: () {},
             iconPath: AppIcons.chevronRightIcon,
           ),
-          suffixIconConstraints: const BoxConstraints(
-            maxWidth: 36,
-            maxHeight: 36,
-          ),
         ),
-        const SizedBox(height: 12),
+        SizedBox(height: 12.h),
         CustomTextField(
           labelText: l10n.deliveryDateTime,
           suffixIcon: SvgIconButton(
             onPressed: () {},
             iconPath: AppIcons.chevronRightIcon,
           ),
-          suffixIconConstraints: const BoxConstraints(
-            maxWidth: 36,
-            maxHeight: 36,
-          ),
         ),
-        const SizedBox(height: 12),
+        SizedBox(height: 12.h),
         CustomTextField(
           labelText: l10n.paymentMethod,
           suffixIcon: SvgIconButton(
             onPressed: () {},
             iconPath: AppIcons.chevronRightIcon,
           ),
-          suffixIconConstraints: const BoxConstraints(
-            maxWidth: 36,
-            maxHeight: 36,
-          ),
         ),
-        const SizedBox(height: 12),
+        SizedBox(height: 12.h),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -69,7 +58,7 @@ class _CheckoutFieldsWidgetState extends State<CheckoutFieldsWidget> {
                   l10n.writeOffPoints,
                   style: AppFonts.regular16_144_5,
                 ),
-                const SizedBox(width: 4),
+                SizedBox(width: 4.w),
                 SvgIconButton(
                   onPressed: () {},
                   iconPath: AppIcons.questionMarkIcon,
@@ -85,18 +74,18 @@ class _CheckoutFieldsWidgetState extends State<CheckoutFieldsWidget> {
                 );
               },
               value: light,
-              width: 44,
-              height: 24,
+              width: 44.w,
+              height: 24.h,
               activeColor: AppColors.mainGreen,
               inactiveColor: AppColors.offBackgroundColor2,
-              toggleSize: 16,
+              toggleSize: 16.r,
               toggleBorder: Border.all(
                 color: AppColors.elementShadowColor.withOpacity(0.15),
               ),
             ),
           ],
         ),
-        const SizedBox(height: 12),
+        SizedBox(height: 12.h),
         CustomTextField(
           labelText: l10n.comment,
         ),

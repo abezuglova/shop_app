@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -10,15 +11,15 @@ class FooterWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 9.5),
+      padding: EdgeInsets.symmetric(horizontal: 9.5.w),
       child: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
-                width: 167,
-                height: 58,
+                width: 167.w,
+                height: 58.h,
                 child: ElevatedButton(
                   onPressed: () {},
                   child: Text(
@@ -30,8 +31,8 @@ class FooterWidget extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                width: 173,
-                height: 58,
+                width: 173.w,
+                height: 58.h,
                 child: ElevatedButton(
                   onPressed: () {},
                   child: Text(
@@ -44,9 +45,9 @@ class FooterWidget extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 20),
+          SizedBox(height: 20.h),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30.5),
+            padding: EdgeInsets.symmetric(horizontal: 30.5.w),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

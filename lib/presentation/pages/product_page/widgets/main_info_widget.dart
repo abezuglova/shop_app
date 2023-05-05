@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
@@ -20,7 +21,10 @@ class MainInfoWidget extends StatelessWidget {
         Row(
           children: [
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5.5),
+              padding: EdgeInsets.symmetric(
+                horizontal: 8.w,
+                vertical: 5.5.h,
+              ),
               decoration: const BoxDecoration(
                 color: AppColors.discountColor,
                 borderRadius: BorderRadius.all(Radius.circular(4)),
@@ -28,11 +32,11 @@ class MainInfoWidget extends StatelessWidget {
               child: Row(
                 children: [
                   Container(
-                    width: 6,
-                    height: 2,
+                    width: 6.w,
+                    height: 2.h,
                     color: Colors.white,
                   ),
-                  const SizedBox(width: 4),
+                  SizedBox(width: 4.w),
                   Text(
                     '${product.discount} ${l10n.percent}',
                     style: AppFonts.bold13.copyWith(
@@ -42,12 +46,14 @@ class MainInfoWidget extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(width: 8),
+            SizedBox(width: 8.w),
             Container(
-              padding: const EdgeInsets.fromLTRB(4, 5, 8, 5),
-              decoration: const BoxDecoration(
+              padding: EdgeInsets.fromLTRB(4.w, 5.h, 8.w, 5.h),
+              decoration: BoxDecoration(
                 color: AppColors.brandColor,
-                borderRadius: BorderRadius.all(Radius.circular(4)),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(4.r),
+                ),
               ),
               child: Row(
                 children: [
@@ -65,12 +71,14 @@ class MainInfoWidget extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(width: 8),
+            SizedBox(width: 8.w),
             Container(
-              padding: const EdgeInsets.fromLTRB(4, 3.43, 8, 3.43),
-              decoration: const BoxDecoration(
+              padding: EdgeInsets.fromLTRB(4.w, 3.43.h, 8.w, 3.43.h),
+              decoration: BoxDecoration(
                 color: AppColors.deliveryColor,
-                borderRadius: BorderRadius.all(Radius.circular(4)),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(4.r),
+                ),
               ),
               child: Row(
                 children: [
@@ -88,16 +96,16 @@ class MainInfoWidget extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 16),
+        SizedBox(height: 16.h),
         Text(
           product.name,
           style: AppFonts.regular20_132_5,
         ),
-        const SizedBox(height: 32),
+        SizedBox(height: 32.h),
         Row(
           children: [
             SvgPicture.asset(AppIcons.deliveryIcon),
-            const SizedBox(width: 8),
+            SizedBox(width: 8.w),
             Text(
               '${l10n.nearliestDeliveryDate}: ${l10n.tomorrowMorning}',
               style: AppFonts.medium16_144_5.copyWith(
@@ -106,7 +114,7 @@ class MainInfoWidget extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 8),
+        SizedBox(height: 8.h),
       ],
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
@@ -14,16 +15,16 @@ class OrderProductWidget extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 12.5),
+          padding: EdgeInsets.symmetric(vertical: 12.5.h),
           child: Row(
             children: [
               Container(
-                width: 70,
-                height: 70,
+                width: 70.w,
+                height: 70.h,
                 clipBehavior: Clip.hardEdge,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(
-                    Radius.circular(4),
+                    Radius.circular(4.r),
                   ),
                 ),
                 child: Image.network(
@@ -31,7 +32,7 @@ class OrderProductWidget extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              const SizedBox(width: 16),
+              SizedBox(width: 16.w),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +43,7 @@ class OrderProductWidget extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       style: AppFonts.regular14_132_5,
                     ),
-                    const SizedBox(height: 8),
+                    SizedBox(height: 8.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

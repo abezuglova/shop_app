@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
@@ -15,12 +16,12 @@ class _AmountWidgetState extends State<AmountWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 43,
-      padding: const EdgeInsets.all(4),
-      decoration: const BoxDecoration(
+      height: 43.h,
+      padding: EdgeInsets.all(4.r),
+      decoration: BoxDecoration(
         color: AppColors.offBackgroundColor2,
         borderRadius: BorderRadius.all(
-          Radius.circular(50),
+          Radius.circular(50.r),
         ),
       ),
       child: Row(
@@ -28,10 +29,10 @@ class _AmountWidgetState extends State<AmountWidget> {
           Expanded(
             child: GestureDetector(
               child: Container(
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Colors.transparent,
                   borderRadius: BorderRadius.all(
-                    Radius.circular(50),
+                    Radius.circular(50.r),
                   ),
                 ),
                 child: Center(
@@ -45,21 +46,21 @@ class _AmountWidgetState extends State<AmountWidget> {
               ),
             ),
           ),
-          const SizedBox(width: 4),
+          SizedBox(width: 4.w),
           Expanded(
             child: GestureDetector(
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(50),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(50.r),
                   ),
                   boxShadow: [
                     BoxShadow(
                       color: AppColors.elementShadowColor.withOpacity(0.15),
-                      offset: const Offset(0, 5),
-                      blurRadius: 10,
-                      spreadRadius: -5,
+                      offset: Offset(0, 5.h),
+                      blurRadius: 10.r,
+                      spreadRadius: -5.r,
                     ),
                   ],
                 ),
@@ -71,7 +72,7 @@ class _AmountWidgetState extends State<AmountWidget> {
                         widget.product.amount,
                         style: AppFonts.medium13_144_5,
                       ),
-                      const SizedBox(width: 8),
+                      SizedBox(width: 8.w),
                       Text(
                         '-${widget.product.discount}',
                         style: AppFonts.medium13_144_5.copyWith(

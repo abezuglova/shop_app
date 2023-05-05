@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/pages/checkout_page/widgets/checkout_fields_widget.dart';
 import 'package:third_task/presentation/pages/checkout_page/widgets/checkout_price_widget.dart';
@@ -10,7 +11,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class CheckoutScreen extends StatelessWidget {
   final ShoppingCart shoppingCart;
   final double deliveryPrice;
-  const CheckoutScreen({super.key, required this.shoppingCart, required this.deliveryPrice});
+  const CheckoutScreen(
+      {super.key, required this.shoppingCart, required this.deliveryPrice});
 
   @override
   Widget build(BuildContext context) {
@@ -18,32 +20,36 @@ class CheckoutScreen extends StatelessWidget {
     return Stack(
       children: [
         ListView(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22.5),
+          padding: EdgeInsets.symmetric(
+            horizontal: 16.w,
+            vertical: 22.5.h,
+          ),
           children: [
             const CheckoutFieldsWidget(),
-            const SizedBox(height: 16),
+            SizedBox(height: 16.h),
             CheckoutPriceWidget(
               shoppingCart: shoppingCart,
               deliveryPrice: deliveryPrice,
             ),
+            SizedBox(height: 222.h),
           ],
         ),
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            padding: const EdgeInsets.fromLTRB(16, 16, 16, 89),
+            padding: EdgeInsets.fromLTRB(16.w, 16.h, 16.w, 89.h),
             width: double.infinity,
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(12),
-                topRight: Radius.circular(12),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(12.r),
+                topRight: Radius.circular(12.r),
               ),
               boxShadow: [
                 BoxShadow(
                   color: AppColors.navBarShadowColor.withOpacity(0.06),
-                  offset: const Offset(0, -7),
-                  blurRadius: 15,
+                  offset: Offset(0, -7.h),
+                  blurRadius: 15.r,
                 ),
               ],
             ),
@@ -54,17 +60,19 @@ class CheckoutScreen extends StatelessWidget {
                   onPressed: () => showModalBottomSheet(
                     context: context,
                     isScrollControlled: true,
-                    shape: const RoundedRectangleBorder(
+                    shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(12),
-                        topRight: Radius.circular(12),
+                        topLeft: Radius.circular(12.r),
+                        topRight: Radius.circular(12.r),
                       ),
                     ),
                     builder: (context) => const AuthPhoneNumberWidget(),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 103, vertical: 16),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 103.w,
+                      vertical: 16.h,
+                    ),
                     child: Text(
                       l10n.doCheckout,
                       style: AppFonts.semiBold18_144_5.copyWith(
@@ -73,7 +81,7 @@ class CheckoutScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: 10.h),
                 Text(
                   l10n.pressingCheckoutYouAreAgreeWithConditions,
                   style: AppFonts.regular12_144_5,

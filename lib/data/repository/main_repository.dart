@@ -102,7 +102,7 @@ class MainRepository implements IMainRepository {
       name: 'Новинка от УГЛЕЧЕ ПОЛЕ',
       description: 'Продукт кисломолочный Угурт питьевой с Вишней 250г',
       image:
-          'https://images.coolclever.ru/img/960/20220810090251-0000000034100041-11641-17.jpg',
+          'https://irecommend.ru/sites/default/files/imagecache/copyright1/user-images/1065475/bLpREdJsLEyKn2jg7rbLLA.jpeg',
     ),
     Advertisement(
       id: 1,

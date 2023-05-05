@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
@@ -14,19 +15,22 @@ class BonusesWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
-      padding: const EdgeInsets.all(16),
+      margin: EdgeInsets.symmetric(
+        horizontal: 16.w,
+        vertical: 18.h,
+      ),
+      padding: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: const BorderRadius.all(
-          Radius.circular(8),
+        borderRadius: BorderRadius.all(
+          Radius.circular(8.r),
         ),
         boxShadow: [
           BoxShadow(
             color: AppColors.elementShadowColor.withOpacity(0.1),
-            offset: const Offset(0, 10),
-            blurRadius: 20,
-            spreadRadius: -5,
+            offset: Offset(0, 10.h),
+            blurRadius: 20.r,
+            spreadRadius: -5.r,
           ),
         ],
       ),
@@ -46,7 +50,7 @@ class BonusesWidget extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 4),
+          SizedBox(height: 4.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

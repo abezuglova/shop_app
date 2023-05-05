@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/ui_kit/shadow_wrapper.dart';
@@ -45,12 +46,12 @@ class ProfileScreen extends StatelessWidget {
     ];
     return ShadowWrapper(
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 32),
+        padding: EdgeInsets.symmetric(vertical: 32.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -71,7 +72,7 @@ class ProfileScreen extends StatelessWidget {
               bonuses: bonuses,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: Column(
                 children: sections
                     .map(
@@ -84,7 +85,7 @@ class ProfileScreen extends StatelessWidget {
             ),
             const Spacer(),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: TextButton(
                 onPressed: () {},
                 child: Row(
@@ -92,7 +93,7 @@ class ProfileScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SvgPicture.asset(AppIcons.exitIcon),
-                    const SizedBox(width: 10),
+                    SizedBox(width: 10.w),
                     Text(
                       l10n.exit,
                       style: AppFonts.medium18_144_5.copyWith(

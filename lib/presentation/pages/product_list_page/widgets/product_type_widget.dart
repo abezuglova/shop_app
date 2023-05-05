@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/ui_kit/product_card_widget.dart';
@@ -13,19 +14,19 @@ class ProductTypeWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Text(
             productType.name,
             style: AppFonts.yesevaRegular18,
           ),
         ),
         Padding(
-          padding: const EdgeInsets.fromLTRB(16, 24, 16, 16),
+          padding: EdgeInsets.fromLTRB(16.w, 24.h, 16.w, 16.h),
           child: GridView.count(
             childAspectRatio: 168 / 240,
             crossAxisCount: 2,
-            crossAxisSpacing: 8,
-            mainAxisSpacing: 16,
+            crossAxisSpacing: 8.r,
+            mainAxisSpacing: 16.r,
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             children: productType.products
@@ -35,7 +36,7 @@ class ProductTypeWidget extends StatelessWidget {
                 .toList(),
           ),
         ),
-        const SizedBox(height: 16),
+        SizedBox(height: 16.h),
       ],
     );
   }

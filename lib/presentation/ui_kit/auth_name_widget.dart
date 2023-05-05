@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/presentation/ui_kit/bottom_sheet_line.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
@@ -13,36 +14,38 @@ class AuthNameWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Container(
-        padding: const EdgeInsets.fromLTRB(16, 12, 16, 89),
-        decoration: const BoxDecoration(
+        padding: EdgeInsets.fromLTRB(16.w, 12.h, 16.w, 89.h),
+        decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(12),
-            topRight: Radius.circular(12),
+            topLeft: Radius.circular(12.r),
+            topRight: Radius.circular(12.r),
           ),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             const BottomSheetLine(),
-            const SizedBox(height: 24),
+            SizedBox(height: 24.h),
             Text(
               l10n.howToCallYou,
               style: AppFonts.bold20_144_5,
             ),
-            const SizedBox(height: 24),
+            SizedBox(height: 24.h),
             TextField(
               style: AppFonts.medium16_144_5,
               textAlign: TextAlign.center,
               decoration: InputDecoration(
-                border: const OutlineInputBorder(
+                border: OutlineInputBorder(
                   borderSide: BorderSide.none,
                   borderRadius: BorderRadius.all(
-                    Radius.circular(4),
+                    Radius.circular(4.r),
                   ),
                 ),
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 19),
+                contentPadding: EdgeInsets.symmetric(
+                  horizontal: 12.w,
+                  vertical: 19.h,
+                ),
                 fillColor: AppColors.offBackgroundColor2,
                 filled: true,
                 hintText: l10n.name,
@@ -51,19 +54,21 @@ class AuthNameWidget extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: 8.h),
             TextField(
               style: AppFonts.medium16_144_5,
               textAlign: TextAlign.center,
               decoration: InputDecoration(
-                border: const OutlineInputBorder(
+                border: OutlineInputBorder(
                   borderSide: BorderSide.none,
                   borderRadius: BorderRadius.all(
-                    Radius.circular(4),
+                    Radius.circular(4.r),
                   ),
                 ),
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 19),
+                contentPadding: EdgeInsets.symmetric(
+                  horizontal: 12.w,
+                  vertical: 19.h,
+                ),
                 fillColor: AppColors.offBackgroundColor2,
                 filled: true,
                 hintText: l10n.surname,
@@ -72,13 +77,13 @@ class AuthNameWidget extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 24),
+            SizedBox(height: 24.h),
             ElevatedButton(
               onPressed: () {},
               child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 61.5,
-                  vertical: 16,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 61.5.w,
+                  vertical: 16.h,
                 ),
                 child: Text(
                   l10n.continueCheckout,

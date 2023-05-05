@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 
 class ErrorScreen extends StatelessWidget {
@@ -15,7 +16,7 @@ class ErrorScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const Icon(Icons.wifi_off),
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
             Text(
               l10n.loadingFailure,
               style: AppFonts.regular16,

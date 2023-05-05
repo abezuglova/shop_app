@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/ui_kit/svg_icon_button.dart';
@@ -19,28 +20,28 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 64,
+      height: 64.h,
       child: Stack(
         children: [
           Container(
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: const BorderRadius.only(
-                bottomLeft: Radius.circular(12),
-                bottomRight: Radius.circular(12),
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(12.r),
+                bottomRight: Radius.circular(12.r),
               ),
               boxShadow: [
                 BoxShadow(
                   color: AppColors.appBarShadowColor.withOpacity(0.06),
-                  offset: const Offset(0, 7),
-                  blurRadius: 15,
+                  offset: Offset(0, 7.h),
+                  blurRadius: 15.r,
                 ),
               ],
             ),
             child: Align(
               alignment: Alignment.bottomCenter,
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(72, 0, 72, 9),
+                padding: EdgeInsets.fromLTRB(72.w, 0.h, 72.w, 10.h),
                 child: titleText != null
                     ? Text(
                         titleText!,
@@ -54,21 +55,21 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
           if (leading != null)
             Positioned(
-              left: 16,
-              bottom: 9,
+              left: 16.w,
+              bottom: 9.h,
               child: leading!,
             ),
           if (actions != null)
             Positioned(
-              right: 8,
-              bottom: 9,
+              right: 8.w,
+              bottom: 9.h,
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: actions!
                     .map(
                       (action) => Padding(
-                        padding: const EdgeInsets.only(right: 8),
+                        padding: EdgeInsets.only(right: 8.w),
                         child: action,
                       ),
                     )
@@ -81,5 +82,5 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(64);
+  Size get preferredSize => Size.fromHeight(64.h);
 }

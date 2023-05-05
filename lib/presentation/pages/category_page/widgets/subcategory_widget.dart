@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:third_task/domain/entities/entities.dart';
@@ -18,7 +19,7 @@ class SubcategoryWidget extends StatelessWidget {
       ),
       behavior: HitTestBehavior.translucent,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 22),
+        padding: EdgeInsets.symmetric(vertical: 22.h),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,

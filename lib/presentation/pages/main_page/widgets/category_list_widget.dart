@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/pages/main_page/widgets/category_card_widget.dart';
@@ -22,23 +23,24 @@ class CategoryListWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Text(
             l10n.popularCategories,
             style: AppFonts.yesevaRegular24,
           ),
         ),
         SizedBox(
-          height: 158,
+          height: 158.h,
           child: ListView.separated(
-            padding: const EdgeInsets.fromLTRB(16, 18, 16, 36),
+            padding: EdgeInsets.fromLTRB(16.w, 18.h, 16.w, 36.h),
             scrollDirection: Axis.horizontal,
-            itemBuilder: (BuildContext context, int index) => CategoryCardWidget(
+            itemBuilder: (BuildContext context, int index) =>
+                CategoryCardWidget(
               category: categories[index],
               image: categoryImages[index],
             ),
             separatorBuilder: (BuildContext context, int index) =>
-                const SizedBox(width: 8),
+                SizedBox(width: 8.w),
             itemCount: categories.length,
           ),
         ),

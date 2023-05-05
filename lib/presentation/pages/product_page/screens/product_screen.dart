@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/pages/product_page/widgets/amount_widget.dart';
 import 'package:third_task/presentation/pages/product_page/widgets/brand_widget.dart';
@@ -20,30 +21,30 @@ class ProductScreen extends StatelessWidget {
       children: [
         ListView(
           children: [
-            const SizedBox(height: 64),
+            SizedBox(height: 64.h),
             PhotoSliderWidget(
               images: product.images,
             ),
-            const SizedBox(height: 24),
+            SizedBox(height: 24.h),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: Column(
                 children: [
                   MainInfoWidget(
                     product: product,
                   ),
-                  const SizedBox(height: 24),
+                  SizedBox(height: 24.h),
                   AmountWidget(product: product),
                 ],
               ),
             ),
-            const SizedBox(height: 24),
+            SizedBox(height: 24.h),
             OverviewWidget(product: product),
-            const SizedBox(height: 24),
+            SizedBox(height: 24.h),
             BrandWidget(brand: product.brand),
-            const SizedBox(height: 24),
+            SizedBox(height: 24.h),
             RecommendationsWidget(recommendations: product.recommendations),
-            const SizedBox(height: 163),
+            SizedBox(height: 163.h),
           ],
         ),
         Align(

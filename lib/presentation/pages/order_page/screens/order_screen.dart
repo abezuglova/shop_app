@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/ui_kit/shadow_wrapper.dart';
@@ -18,24 +19,27 @@ class OrderScreen extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     return ShadowWrapper(
       child: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+        padding: EdgeInsets.symmetric(
+          horizontal: 16.w,
+          vertical: 32.h,
+        ),
         children: [
           OrderInfoWidget(
             order: order,
           ),
-          const SizedBox(height: 24),
+          SizedBox(height: 24.h),
           OrderProductListWidget(
             productList: order.shoppingCart.products,
           ),
-          const SizedBox(height: 12.5),
+          SizedBox(height: 12.5.h),
           Row(
             children: [
               Container(
-                padding: const EdgeInsets.all(23),
-                decoration: const BoxDecoration(
+                padding: EdgeInsets.all(23.r),
+                decoration: BoxDecoration(
                   color: AppColors.orderDeliveryPriceColor,
                   borderRadius: BorderRadius.all(
-                    Radius.circular(4),
+                    Radius.circular(4.r),
                   ),
                 ),
                 child: SvgPicture.asset(
@@ -46,7 +50,7 @@ class OrderScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(width: 16),
+              SizedBox(width: 16.w),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -54,7 +58,7 @@ class OrderScreen extends StatelessWidget {
                     l10n.delivery,
                     style: AppFonts.regular14_132_5,
                   ),
-                  const SizedBox(height: 8),
+                  SizedBox(height: 8.h),
                   Text(
                     '${order.deliveryPrice} р.',
                     style: AppFonts.semiBold16_144_5,

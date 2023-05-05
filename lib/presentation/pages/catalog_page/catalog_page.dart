@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:third_task/di.dart';
 import 'package:third_task/domain/repository/i_catalog_repository.dart';
@@ -32,7 +33,7 @@ class CatalogPage extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 SvgPicture.asset(AppIcons.smallDeliveryIcon),
-                const SizedBox(width: 8),
+                SizedBox(width: 8.w),
                 Text(
                   l10n.mockAddress,
                   style: AppFonts.medium14,

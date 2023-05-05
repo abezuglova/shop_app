@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
@@ -25,35 +26,35 @@ class ShoppingCartScreen extends StatelessWidget {
             RecommendationsWidget(
               recommendations: shoppingCart.recommendations,
             ),
-            const SizedBox(height: 6),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Divider(
+            SizedBox(height: 6.h),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              child: const Divider(
                 color: AppColors.offBackgroundColor2,
               ),
             ),
             SummaryWidget(
               shoppingCart: shoppingCart,
             ),
-            const SizedBox(height: 164),
+            SizedBox(height: 164.h),
           ],
         ),
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            padding: const EdgeInsets.fromLTRB(16, 16, 16, 89),
+            padding: EdgeInsets.fromLTRB(16.w, 16.h, 16.w, 89.h),
             width: double.infinity,
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(12),
-                topRight: Radius.circular(12),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(12.r),
+                topRight: Radius.circular(12.r),
               ),
               boxShadow: [
                 BoxShadow(
                   color: AppColors.navBarShadowColor.withOpacity(0.06),
-                  offset: const Offset(0, -7),
-                  blurRadius: 15,
+                  offset: Offset(0, -7.h),
+                  blurRadius: 15.r,
                 ),
               ],
             ),
@@ -63,8 +64,10 @@ class ShoppingCartScreen extends StatelessWidget {
                 extra: shoppingCart,
               ),
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 70, vertical: 16),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 70.w,
+                  vertical: 16.h,
+                ),
                 child: Text(
                   l10n.goToCheckout,
                   style: AppFonts.semiBold18_144_5.copyWith(

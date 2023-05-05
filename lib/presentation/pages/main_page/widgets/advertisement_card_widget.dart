@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
@@ -17,26 +18,26 @@ class AdvertisementCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return SizedBox(
-      width: 335,
-      height: 208,
+      width: 335.w,
+      height: 208.h,
       child: ClipRRect(
-        borderRadius: const BorderRadius.all(
-          Radius.circular(8),
+        borderRadius: BorderRadius.all(
+          Radius.circular(8.r),
         ),
         child: Stack(
           children: [
             Container(
-              width: 335,
-              height: 208,
-              padding: const EdgeInsets.all(16),
+              width: 335.w,
+              height: 240.h,
+              padding: EdgeInsets.all(16.r),
               decoration: BoxDecoration(
                 color: color,
                 boxShadow: [
                   BoxShadow(
                     color: AppColors.advertisementShadowColor1.withOpacity(0.5),
-                    offset: const Offset(0, 10),
-                    blurRadius: 20,
-                    spreadRadius: -13,
+                    offset: Offset(0, 10.h),
+                    blurRadius: 20.r,
+                    spreadRadius: -13.r,
                   ),
                 ],
               ),
@@ -44,7 +45,7 @@ class AdvertisementCardWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    width: 233,
+                    width: 233.w,
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,9 +54,9 @@ class AdvertisementCardWidget extends StatelessWidget {
                           advertisement.name,
                           style: AppFonts.yesevaRegular24,
                         ),
-                        const SizedBox(height: 8),
+                        SizedBox(height: 8.h),
                         SizedBox(
-                          width: 175,
+                          width: 175.w,
                           child: Text(
                             advertisement.description,
                             maxLines: 3,
@@ -68,8 +69,8 @@ class AdvertisementCardWidget extends StatelessWidget {
                   ),
                   const Spacer(),
                   SizedBox(
-                    width: 131,
-                    height: 35,
+                    width: 131.w,
+                    height: 35.h,
                     child: ElevatedButton(
                       onPressed: () {},
                       child: Text(
@@ -84,14 +85,14 @@ class AdvertisementCardWidget extends StatelessWidget {
               ),
             ),
             Positioned(
-              left: 150,
-              top: 30,
+              right: -16.w,
+              bottom: 0,
               child: ClipOval(
                 clipper: _MyClip(),
                 child: Image.network(
                   advertisement.image,
-                  width: 200,
-                  height: 200,
+                  width: 220.w,
+                  height: 190.h,
                 ),
               ),
             ),
@@ -105,7 +106,7 @@ class AdvertisementCardWidget extends StatelessWidget {
 class _MyClip extends CustomClipper<Rect> {
   @override
   Rect getClip(Size size) {
-    return const Rect.fromLTWH(52, 40, 200, 200);
+    return Rect.fromLTWH(56.w, 40.h, 220.w, 190.h);
   }
 
   @override

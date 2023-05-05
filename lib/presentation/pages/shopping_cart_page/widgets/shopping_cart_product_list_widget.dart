@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/pages/shopping_cart_page/widgets/shopping_cart_product_widget.dart';
@@ -10,7 +11,7 @@ class ShoppingCartProductListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16.r),
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         itemBuilder: (BuildContext context, int index) => ShoppingCartProductWidget(

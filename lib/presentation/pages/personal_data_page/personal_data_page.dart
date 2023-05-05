@@ -21,7 +21,7 @@ class PersonalDataPage extends StatelessWidget {
         appBar: CustomAppBar(
           titleText: l10n.personalData,
           leading: SvgIconButton(
-            onPressed: () => context.pop(),
+            onPressed: context.pop,
             iconPath: AppIcons.chevronLeftIcon,
           ),
         ),

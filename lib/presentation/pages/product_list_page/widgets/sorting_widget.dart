@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/domain/entities/products_sort_type.dart';
@@ -23,7 +24,7 @@ class SortingWidget extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final cubit = context.read<ProductListCubit>();
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+      padding: EdgeInsets.fromLTRB(16.w, 16.h, 16.w, 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -36,8 +37,8 @@ class SortingWidget extends StatelessWidget {
           ),
           DropdownButtonHideUnderline(
             child: SizedBox(
-              width: 150,
-              height: 20,
+              width: 150.w,
+              height: 20.h,
               child: DropdownButton<ProductsSortType>(
                 value: sortType,
                 icon: SvgPicture.asset(AppIcons.arrowDownIcon),

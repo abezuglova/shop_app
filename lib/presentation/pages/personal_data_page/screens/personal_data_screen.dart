@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/ui_kit/custom_text_field.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
@@ -17,34 +18,33 @@ class PersonalDataScreen extends StatelessWidget {
     return Stack(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+          padding: EdgeInsets.symmetric(
+            horizontal: 16.w,
+            vertical: 32.h,
+          ),
           child: SingleChildScrollView(
             child: Column(
               children: [
                 CustomTextField(
                   labelText: l10n.name,
                 ),
-                const SizedBox(height: 12),
+                SizedBox(height: 12.h),
                 CustomTextField(
                   labelText: l10n.surname,
                 ),
-                const SizedBox(height: 12),
+                SizedBox(height: 12.h),
                 CustomTextField(
                   labelText: l10n.birthDate,
                   suffixIcon: SvgIconButton(
                     onPressed: () {},
                     iconPath: AppIcons.calenderIcon,
                   ),
-                  suffixIconConstraints: const BoxConstraints(
-                    maxWidth: 36,
-                    maxHeight: 36,
-                  ),
                 ),
-                const SizedBox(height: 12),
+                SizedBox(height: 12.h),
                 CustomTextField(
                   labelText: l10n.phone,
                 ),
-                const SizedBox(height: 12),
+                SizedBox(height: 12.h),
                 CustomTextField(
                   labelText: l10n.eMail,
                 ),
@@ -55,27 +55,29 @@ class PersonalDataScreen extends StatelessWidget {
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            padding: const EdgeInsets.fromLTRB(16, 16, 16, 89),
+            padding: EdgeInsets.fromLTRB(16.w, 16.h, 16.w, 89.h),
             width: double.infinity,
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(12),
-                topRight: Radius.circular(12),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(12.r),
+                topRight: Radius.circular(12.r),
               ),
               boxShadow: [
                 BoxShadow(
                   color: AppColors.navBarShadowColor.withOpacity(0.06),
-                  offset: const Offset(0, -7),
-                  blurRadius: 15,
+                  offset: Offset(0, -7.h),
+                  blurRadius: 15.r,
                 ),
               ],
             ),
             child: ElevatedButton(
               onPressed: () {},
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 127, vertical: 16),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 127.w,
+                  vertical: 16.h,
+                ),
                 child: Text(
                   l10n.save,
                   style: AppFonts.semiBold18_144_5.copyWith(

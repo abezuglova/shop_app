@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/ui_kit/shadow_wrapper.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
@@ -27,7 +28,7 @@ class CatalogScreen extends StatelessWidget {
             child: SectionsWidget(),
           ),
           SliverPadding(
-            padding: const EdgeInsets.all(16),
+            padding: EdgeInsets.all(16.r),
             sliver: SliverToBoxAdapter(
               child: Text(
                 l10n.categories,
@@ -36,13 +37,13 @@ class CatalogScreen extends StatelessWidget {
             ),
           ),
           SliverPadding(
-            padding: const EdgeInsets.fromLTRB(16, 0, 16, 89),
+            padding: EdgeInsets.fromLTRB(16.w, 0, 16.w, 89.h),
             sliver: SliverGrid.builder(
-              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: 200,
                 childAspectRatio: 163 / 117,
-                crossAxisSpacing: 16,
-                mainAxisSpacing: 16,
+                crossAxisSpacing: 16.r,
+                mainAxisSpacing: 16.r,
               ),
               itemBuilder: (context, index) => CategoryWidget(
                 category: categories[index],

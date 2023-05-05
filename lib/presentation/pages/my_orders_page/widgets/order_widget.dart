@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 import 'package:third_task/domain/entities/entities.dart';
@@ -23,7 +24,7 @@ class OrderWidget extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                padding: const EdgeInsets.all(11),
+                padding: EdgeInsets.all(11.r),
                 decoration: BoxDecoration(
                   color: order.status == 'В пути'
                       ? AppColors.inWayColor.withOpacity(0.1)
@@ -42,7 +43,7 @@ class OrderWidget extends StatelessWidget {
                       )
                     : SvgPicture.asset(AppIcons.dawIcon),
               ),
-              const SizedBox(width: 12),
+              SizedBox(width: 12.w),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

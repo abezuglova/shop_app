@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/pages/shopping_cart_page/cubit/shopping_cart_cubit.dart';
@@ -18,18 +19,18 @@ class PriceWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Container(
-      padding: const EdgeInsets.fromLTRB(8, 8, 8, 81),
+      padding: EdgeInsets.fromLTRB(8.w, 8.h, 8.w, 81.h),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(12),
-          topRight: Radius.circular(12),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(12.r),
+          topRight: Radius.circular(12.r),
         ),
         boxShadow: [
           BoxShadow(
             color: AppColors.navBarShadowColor.withOpacity(0.06),
-            offset: const Offset(0, -7),
-            blurRadius: 15,
+            offset: Offset(0, -7.h),
+            blurRadius: 15.r,
           ),
         ],
       ),
@@ -49,13 +50,13 @@ class PriceWidget extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    left: 1.71,
-                    top: 13,
+                    left: 1.71.w,
+                    top: 13.h,
                     child: Transform.rotate(
                       angle: -6.71 * pi / 180,
                       child: Container(
-                        width: 85.59,
-                        height: 1.4,
+                        width: 85.59.w,
+                        height: 1.4.h,
                         color: AppColors.discountColor,
                       ),
                     ),
@@ -71,12 +72,11 @@ class PriceWidget extends StatelessWidget {
             ],
           ),
           ElevatedButton(
-            onPressed: () => context
-                          .read<ShoppingCartCubit>()
-                          .onProductToShoppingCartAdded(
-                            product.id,
-                            product,
-                          ),
+            onPressed: () =>
+                context.read<ShoppingCartCubit>().onProductToShoppingCartAdded(
+                      product.id,
+                      product,
+                    ),
             // Если бы была реализована логика с адресами, кнопке был бы назначен следующий callback:
             // onPressed: () => showModalBottomSheet(
             //   context: context,
@@ -90,15 +90,18 @@ class PriceWidget extends StatelessWidget {
             //   builder: (context) => const ChooseAddressWidget(),
             // ),
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+              padding: EdgeInsets.symmetric(
+                horizontal: 20.w,
+                vertical: 12.h,
+              ),
               child: Row(
                 children: [
                   SvgPicture.asset(
                     AppIcons.shoppingCartIcon,
-                    width: 24,
-                    height: 24,
+                    width: 24.r,
+                    height: 24.r,
                   ),
-                  const SizedBox(width: 8),
+                  SizedBox(width: 8.w),
                   Text(
                     l10n.toShoppingCart,
                     style: AppFonts.semiBold16.copyWith(

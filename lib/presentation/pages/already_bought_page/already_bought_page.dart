@@ -28,7 +28,7 @@ class AlreadyBoughtPage extends StatelessWidget {
         appBar: CustomAppBar(
           titleText: l10n.alreadyBought,
           leading: SvgIconButton(
-            onPressed: () => context.pop(),
+            onPressed: context.pop,
             iconPath: AppIcons.chevronLeftIcon,
           ),
         ),

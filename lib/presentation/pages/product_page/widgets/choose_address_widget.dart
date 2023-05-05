@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:third_task/presentation/ui_kit/bottom_sheet_line.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
@@ -13,28 +14,28 @@ class ChooseAddressWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Container(
-      padding: const EdgeInsets.fromLTRB(16, 12, 16, 89),
-      decoration: const BoxDecoration(
+      padding: EdgeInsets.fromLTRB(16.w, 12.h, 16.w, 89.h),
+      decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(12),
-          topRight: Radius.circular(12),
+          topLeft: Radius.circular(12.r),
+          topRight: Radius.circular(12.r),
         ),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           const BottomSheetLine(),
-          const SizedBox(height: 16),
+          SizedBox(height: 16.h),
           SvgPicture.asset(
             AppIcons.deliveryIcon,
           ),
-          const SizedBox(height: 4),
+          SizedBox(height: 4.h),
           Text(
             l10n.enterAddress,
             style: AppFonts.bold18_144_5,
           ),
-          const SizedBox(height: 4),
+          SizedBox(height: 4.h),
           Text(
             l10n.enterAddressForDelivery,
             style: AppFonts.regular14_144_5.copyWith(
@@ -42,13 +43,13 @@ class ChooseAddressWidget extends StatelessWidget {
             ),
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: 16),
+          SizedBox(height: 16.h),
           ElevatedButton(
             onPressed: () {},
             child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 107.5,
-                vertical: 16,
+              padding: EdgeInsets.symmetric(
+                horizontal: 107.5.w,
+                vertical: 16.h,
               ),
               child: Text(
                 l10n.chooseAddress,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/ui_kit/shadow_wrapper.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
@@ -21,7 +22,7 @@ class ShoppingCartOrderScreen extends StatelessWidget {
               l10n.orderIsSuccessfullyCreated,
               style: AppFonts.medium24_144_5,
             ),
-            const SizedBox(height: 9),
+            SizedBox(height: 9.h),
             Text(
               '${l10n.orderNumber}: ${order.number}',
               style: AppFonts.regular14_144_5.copyWith(
@@ -34,7 +35,7 @@ class ShoppingCartOrderScreen extends StatelessWidget {
                 color: AppColors.secondaryTextColor,
               ),
             ),
-            const SizedBox(height: 9),
+            SizedBox(height: 9.h),
             TextButton(
               onPressed: () {},
               child: Text(
@@ -44,12 +45,14 @@ class ShoppingCartOrderScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 24),
+            SizedBox(height: 24.h),
             ElevatedButton(
               onPressed: () {},
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 24.w,
+                  vertical: 12.h,
+                ),
                 child: Text(
                   l10n.continueShopping,
                   style: AppFonts.semiBold16_144_5.copyWith(

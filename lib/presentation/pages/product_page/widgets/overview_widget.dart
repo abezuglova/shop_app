@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
@@ -19,7 +20,7 @@ class _OverviewWidgetState extends State<OverviewWidget> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Column(
         children: [
           Row(
@@ -36,7 +37,7 @@ class _OverviewWidgetState extends State<OverviewWidget> {
                           .copyWith(color: AppColors.enabledTextColor),
                 ),
               ),
-              const SizedBox(width: 16),
+              SizedBox(width: 16.w),
               GestureDetector(
                 onTap: () => setState(
                   () => _selectedTab = 1,
@@ -49,7 +50,7 @@ class _OverviewWidgetState extends State<OverviewWidget> {
                           .copyWith(color: AppColors.enabledTextColor),
                 ),
               ),
-              const SizedBox(width: 16),
+              SizedBox(width: 16.w),
               GestureDetector(
                 onTap: () => setState(
                   () => _selectedTab = 2,
@@ -64,7 +65,7 @@ class _OverviewWidgetState extends State<OverviewWidget> {
               ),
             ],
           ),
-          const SizedBox(height: 16),
+          SizedBox(width: 16.w),
           IndexedStack(
             index: _selectedTab,
             children: [

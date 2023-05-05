@@ -19,7 +19,7 @@ class MyOrdersPage extends StatelessWidget {
       appBar: CustomAppBar(
         titleText: l10n.myOrders,
         leading: SvgIconButton(
-          onPressed: () => context.pop(),
+          onPressed: context.pop,
           iconPath: AppIcons.chevronLeftIcon,
         ),
       ),

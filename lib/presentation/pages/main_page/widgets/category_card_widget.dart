@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
@@ -21,24 +22,24 @@ class CategoryCardWidget extends StatelessWidget {
         extra: category,
       ),
       child: SizedBox(
-        width: 104,
-        height: 104,
+        width: 104.r,
+        height: 104.r,
         child: Stack(
           children: [
             Container(
-              width: 104,
-              height: 104,
+              width: 104.r,
+              height: 104.r,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(12),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(12.r),
                 ),
                 boxShadow: [
                   BoxShadow(
                     color: AppColors.elementShadowColor.withOpacity(0.1),
-                    offset: const Offset(0, 10),
-                    blurRadius: 20,
-                    spreadRadius: -5,
+                    offset: Offset(0, 10.h),
+                    blurRadius: 20.r,
+                    spreadRadius: -5.r,
                   ),
                 ],
               ),
@@ -51,10 +52,10 @@ class CategoryCardWidget extends StatelessWidget {
               ),
             ),
             Positioned(
-              left: 12,
-              bottom: 8,
+              left: 12.w,
+              bottom: 8.h,
               child: SizedBox(
-                width: 84,
+                width: 84.w,
                 child: Text(
                   category.name,
                   maxLines: 2,

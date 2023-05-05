@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/pages/shopping_cart_page/cubit/shopping_cart_cubit.dart';
@@ -25,17 +26,17 @@ class ShoppingCartProductWidget extends StatelessWidget {
       ),
       behavior: HitTestBehavior.translucent,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8),
+        padding: EdgeInsets.symmetric(vertical: 8.h),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              width: 70,
-              height: 70,
+              width: 70.r,
+              height: 70.r,
               clipBehavior: Clip.hardEdge,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(
-                  Radius.circular(4),
+                  Radius.circular(4.r),
                 ),
               ),
               child: Image.network(
@@ -43,7 +44,7 @@ class ShoppingCartProductWidget extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            const SizedBox(width: 16),
+            SizedBox(width: 16.w),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,7 +55,7 @@ class ShoppingCartProductWidget extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: AppFonts.regular14_132_5,
                   ),
-                  const SizedBox(height: 8),
+                  SizedBox(height: 8.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -69,7 +70,7 @@ class ShoppingCartProductWidget extends StatelessWidget {
                               color: AppColors.discountColor,
                             ),
                           ),
-                          const SizedBox(width: 8),
+                          SizedBox(width: 8.w),
                           Stack(
                             children: [
                               Text(
@@ -83,8 +84,8 @@ class ShoppingCartProductWidget extends StatelessWidget {
                                 child: Transform.rotate(
                                   angle: -7.25 * pi / 180,
                                   child: Container(
-                                    width: 55.44,
-                                    height: 1.4,
+                                    width: 55.44.w,
+                                    height: 1.4.h,
                                     color: AppColors.discountColor,
                                   ),
                                 ),
@@ -94,12 +95,12 @@ class ShoppingCartProductWidget extends StatelessWidget {
                         ],
                       ),
                       Container(
-                        width: 104,
-                        height: 32,
-                        decoration: const BoxDecoration(
+                        width: 104.w,
+                        height: 32.h,
+                        decoration: BoxDecoration(
                           color: AppColors.offBackgroundColor2,
                           borderRadius: BorderRadius.all(
-                            Radius.circular(50),
+                            Radius.circular(50.r),
                           ),
                         ),
                         clipBehavior: Clip.hardEdge,

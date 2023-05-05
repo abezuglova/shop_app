@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 import 'package:third_task/domain/entities/entities.dart';
@@ -22,20 +23,23 @@ class OrderInfoWidget extends StatelessWidget {
             color: AppColors.dateColor,
           ),
         ),
-        const SizedBox(height: 4),
+        SizedBox(height: 4.h),
         Text(
           '${l10n.nProducts(order.shoppingCart.products.length)} ${l10n.onSum} ${order.shoppingCart.generalPrice} р.',
           style: AppFonts.bold16_144_5,
         ),
-        const SizedBox(height: 24),
+        SizedBox(height: 24.h),
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          padding: EdgeInsets.symmetric(
+            horizontal: 20.w,
+            vertical: 10.h,
+          ),
           decoration: BoxDecoration(
             color: order.status == 'В пути'
                 ? AppColors.inWayColor.withOpacity(0.1)
                 : AppColors.mainGreen.withOpacity(0.1),
-            borderRadius: const BorderRadius.all(
-              Radius.circular(41),
+            borderRadius: BorderRadius.all(
+              Radius.circular(41.r),
             ),
           ),
           child: order.status == 'В пути'
@@ -49,7 +53,7 @@ class OrderInfoWidget extends StatelessWidget {
                         BlendMode.srcIn,
                       ),
                     ),
-                    const SizedBox(width: 8),
+                    SizedBox(width: 8.w),
                     Text(
                       l10n.inWay,
                       style: AppFonts.medium14_144_5.copyWith(
@@ -64,7 +68,7 @@ class OrderInfoWidget extends StatelessWidget {
                     SvgPicture.asset(
                       AppIcons.dawIcon,
                     ),
-                    const SizedBox(width: 8),
+                    SizedBox(width: 8.r),
                     Text(
                       l10n.sent,
                       style: AppFonts.medium14_144_5.copyWith(

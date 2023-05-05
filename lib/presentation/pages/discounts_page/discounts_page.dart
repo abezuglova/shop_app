@@ -28,7 +28,7 @@ class DiscountsPage extends StatelessWidget {
         appBar: CustomAppBar(
           titleText: l10n.discounts,
           leading: SvgIconButton(
-            onPressed: () => context.pop(),
+            onPressed: context.pop,
             iconPath: AppIcons.chevronLeftIcon,
           ),
         ),

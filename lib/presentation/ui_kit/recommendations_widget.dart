@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/ui_kit/product_card_widget.dart';
@@ -15,7 +16,7 @@ class RecommendationsWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Text(
             l10n.recommend,
             style: AppFonts.regular20_132_5,
@@ -24,13 +25,16 @@ class RecommendationsWidget extends StatelessWidget {
         SizedBox(
           height: 276,
           child: ListView.separated(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
+            padding: EdgeInsets.symmetric(
+              horizontal: 16.w,
+              vertical: 18.h,
+            ),
             scrollDirection: Axis.horizontal,
             itemBuilder: (BuildContext context, int index) => ProductCardWidget(
               product: recommendations[index],
             ),
             separatorBuilder: (BuildContext context, int index) =>
-                const SizedBox(width: 8),
+                SizedBox(width: 8.w),
             itemCount: recommendations.length,
           ),
         ),

@@ -22,7 +22,7 @@ class CheckoutPage extends StatelessWidget {
         appBar: CustomAppBar(
           titleText: l10n.checkout,
           leading: SvgIconButton(
-            onPressed: () => context.pop(),
+            onPressed: context.pop,
             iconPath: AppIcons.chevronLeftIcon,
           ),
         ),

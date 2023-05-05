@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/pages/main_page/widgets/advertisement_list_widget.dart';
 import 'package:third_task/presentation/pages/main_page/widgets/already_bought_list_widget.dart';
@@ -32,9 +33,9 @@ class MainScreen extends StatelessWidget {
           BrandListWidget(
             brandList: mainPageData.brandList,
           ),
-          const SizedBox(height: 36),
+          SizedBox(height: 36.h),
           const FooterWidget(),
-          const SizedBox(height: 134),
+          SizedBox(height: 134.h),
         ],
       ),
     );

@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 
 class CustomTextField extends StatelessWidget {
   final String labelText;
   final Widget? suffixIcon;
-  final BoxConstraints? suffixIconConstraints;
   const CustomTextField({
     super.key,
     required this.labelText,
     this.suffixIcon,
-    this.suffixIconConstraints,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12),
-      decoration: const BoxDecoration(
+      padding: EdgeInsets.symmetric(horizontal: 12.w),
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.all(
-          Radius.circular(4),
+          Radius.circular(4.r),
         ),
         color: AppColors.offBackgroundColor2,
       ),
@@ -37,7 +36,10 @@ class CustomTextField extends StatelessWidget {
             color: AppColors.secondaryTextColor,
           ),
           suffixIcon: suffixIcon,
-          suffixIconConstraints: suffixIconConstraints,
+          suffixIconConstraints: BoxConstraints(
+            maxWidth: 36.r,
+            maxHeight: 36.r,
+          ),
         ),
       ),
     );

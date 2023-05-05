@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
@@ -14,13 +15,13 @@ class SectionsWidget extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final decoration = BoxDecoration(
       color: Colors.white,
-      borderRadius: const BorderRadius.all(
-        Radius.circular(8),
+      borderRadius: BorderRadius.all(
+        Radius.circular(8.r),
       ),
       boxShadow: [
         BoxShadow(
           color: AppColors.elementShadowColor.withOpacity(0.1),
-          offset: const Offset(0, 10),
+          offset: Offset(0, 10.h),
           blurRadius: 20,
           spreadRadius: -5,
         ),
