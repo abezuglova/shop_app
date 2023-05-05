@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/domain/entities/entities.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AmountWidget extends StatefulWidget {
   final Product product;
@@ -15,6 +16,7 @@ class AmountWidget extends StatefulWidget {
 class _AmountWidgetState extends State<AmountWidget> {
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Container(
       height: 43.h,
       padding: EdgeInsets.all(4.r),
@@ -37,7 +39,7 @@ class _AmountWidgetState extends State<AmountWidget> {
                 ),
                 child: Center(
                   child: Text(
-                    widget.product.amount,
+                    '${widget.product.amount} ${l10n.items}',
                     style: AppFonts.medium13_144_5.copyWith(
                       color: AppColors.secondaryTextColor,
                     ),
@@ -69,7 +71,7 @@ class _AmountWidgetState extends State<AmountWidget> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        widget.product.amount,
+                        '${widget.product.amount} ${l10n.items}',
                         style: AppFonts.medium13_144_5,
                       ),
                       SizedBox(width: 8.w),

@@ -7,7 +7,7 @@ class Product with _$Product {
     required String name,
     required List<String> images,
     int? discount,
-    required String amount,
+    required int amount,
     required String description,
     required String characteristics,
     required String reviews,
