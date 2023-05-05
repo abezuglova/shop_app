@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:third_task/di.dart';
 import 'package:third_task/domain/repository/i_catalog_sections_repository.dart';
 import 'package:third_task/presentation/pages/already_bought_page/cubit/already_bought_cubit.dart';
+import 'package:third_task/presentation/pages/catalog_page/cubit/catalog_cubit.dart';
 import 'package:third_task/presentation/ui_kit/error_screen.dart';
 import 'package:third_task/presentation/ui_kit/loading_screen.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
@@ -35,7 +36,11 @@ class AlreadyBoughtPage extends StatelessWidget {
         body: BlocBuilder<AlreadyBoughtCubit, AlreadyBoughtState>(
           builder: (context, state) => state.map(
             loadInProgress: (state) => const LoadingScreen(),
-            loadFailure: (state) => const ErrorScreen(),
+            loadFailure: (state) => ErrorScreen(
+              onRefresh: () async {
+                await context.read<CatalogCubit>().onPageOpened();
+              },
+            ),
             loadSuccess: (state) => AlreadyBoughtScreen(
               alreadyBoughtProducts: state.products,
             ),

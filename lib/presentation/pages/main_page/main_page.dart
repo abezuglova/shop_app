@@ -46,7 +46,11 @@ class MainPage extends StatelessWidget {
         body: BlocBuilder<MainCubit, MainState>(
           builder: (context, state) => state.map(
             loadInProgress: (state) => const LoadingScreen(),
-            loadFailure: (state) => const ErrorScreen(),
+            loadFailure: (state) => ErrorScreen(
+              onRefresh: () async {
+                await context.read<MainCubit>().onPageOpened();
+              },
+            ),
             loadSuccess: (state) => MainScreen(
               mainPageData: MainPageData(
                 advertisementList: state.advertisementList,

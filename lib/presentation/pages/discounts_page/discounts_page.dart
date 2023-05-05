@@ -35,7 +35,11 @@ class DiscountsPage extends StatelessWidget {
         body: BlocBuilder<DiscountsCubit, DiscountsState>(
           builder: (context, state) => state.map(
             loadInProgress: (state) => const LoadingScreen(),
-            loadFailure: (state) => const ErrorScreen(),
+            loadFailure: (state) => ErrorScreen(
+              onRefresh: () async {
+                await context.read<DiscountsCubit>().onPageOpened();
+              },
+            ),
             loadSuccess: (state) => DiscountsScreen(
               discountProducts: state.products,
             ),

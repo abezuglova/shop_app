@@ -33,7 +33,11 @@ class ShoppingCartPage extends StatelessWidget {
       body: BlocBuilder<ShoppingCartCubit, ShoppingCartState>(
         builder: (context, state) => state.map(
           loadInProgress: (state) => const LoadingScreen(),
-          loadFailure: (state) => const ErrorScreen(),
+          loadFailure: (state) => ErrorScreen(
+            onRefresh: () async {
+              await context.read<ShoppingCartCubit>().onPageOpened();
+            },
+          ),
           loadSuccess: (state) => state.shoppingCart.products.isEmpty
               ? const EmptyShoppingCartScreen()
               : UpdatingScreenWrapper(

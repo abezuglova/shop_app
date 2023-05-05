@@ -31,7 +31,11 @@ class FavoritesPage extends StatelessWidget {
       body: BlocBuilder<FavoritesCubit, FavoritesState>(
         builder: (context, state) => state.map(
           loadInProgress: (state) => const LoadingScreen(),
-          loadFailure: (state) => const ErrorScreen(),
+          loadFailure: (state) => ErrorScreen(
+            onRefresh: () async {
+              await context.read<FavoritesCubit>().onPageOpened();
+            },
+          ),
           loadSuccess: (state) => FavoritesScreen(
             favoriteProducts: state.products,
           ),
