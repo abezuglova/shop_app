@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/domain/entities/entities.dart';
+import 'package:third_task/presentation/pages/main_page/cubit/main_cubit.dart';
 import 'package:third_task/presentation/pages/main_page/widgets/advertisement_list_widget.dart';
 import 'package:third_task/presentation/pages/main_page/widgets/already_bought_list_widget.dart';
 import 'package:third_task/presentation/pages/main_page/widgets/best_deals_widget.dart';
@@ -16,27 +18,32 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ShadowWrapper(
-      child: ListView(
-        children: [
-          AdvertisementListWidget(
-            advertisementList: mainPageData.advertisementList,
-          ),
-          CategoryListWidget(
-            categories: mainPageData.popularCategories,
-          ),
-          BestDealsWidget(
-            bestDeals: mainPageData.bestDeals,
-          ),
-          AlreadyBoughtListWidget(
-            alreadyBoughtList: mainPageData.alreadyBoughtList,
-          ),
-          BrandListWidget(
-            brandList: mainPageData.brandList,
-          ),
-          SizedBox(height: 36.h),
-          const FooterWidget(),
-          SizedBox(height: 134.h),
-        ],
+      child: RefreshIndicator(
+        onRefresh: () async {
+          await context.read<MainCubit>().onPageOpened();
+        },
+        child: ListView(
+          children: [
+            AdvertisementListWidget(
+              advertisementList: mainPageData.advertisementList,
+            ),
+            CategoryListWidget(
+              categories: mainPageData.popularCategories,
+            ),
+            BestDealsWidget(
+              bestDeals: mainPageData.bestDeals,
+            ),
+            AlreadyBoughtListWidget(
+              alreadyBoughtList: mainPageData.alreadyBoughtList,
+            ),
+            BrandListWidget(
+              brandList: mainPageData.brandList,
+            ),
+            SizedBox(height: 36.h),
+            const FooterWidget(),
+            SizedBox(height: 134.h),
+          ],
+        ),
       ),
     );
   }

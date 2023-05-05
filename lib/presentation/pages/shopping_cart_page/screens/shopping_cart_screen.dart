@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:third_task/domain/entities/entities.dart';
+import 'package:third_task/presentation/pages/shopping_cart_page/cubit/shopping_cart_cubit.dart';
 import 'package:third_task/presentation/utils/app_colors.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/pages/shopping_cart_page/widgets/shopping_cart_product_list_widget.dart';
@@ -18,26 +20,31 @@ class ShoppingCartScreen extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     return Stack(
       children: [
-        ListView(
-          children: [
-            ShoppingCartProductListWidget(
-              productList: shoppingCart.products,
-            ),
-            RecommendationsWidget(
-              recommendations: shoppingCart.recommendations,
-            ),
-            SizedBox(height: 6.h),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: const Divider(
-                color: AppColors.offBackgroundColor2,
+        RefreshIndicator(
+          onRefresh: () async {
+            await context.read<ShoppingCartCubit>().onPageOpened();
+          },
+          child: ListView(
+            children: [
+              ShoppingCartProductListWidget(
+                productList: shoppingCart.products,
               ),
-            ),
-            SummaryWidget(
-              shoppingCart: shoppingCart,
-            ),
-            SizedBox(height: 164.h),
-          ],
+              RecommendationsWidget(
+                recommendations: shoppingCart.recommendations,
+              ),
+              SizedBox(height: 6.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: const Divider(
+                  color: AppColors.offBackgroundColor2,
+                ),
+              ),
+              SummaryWidget(
+                shoppingCart: shoppingCart,
+              ),
+              SizedBox(height: 164.h),
+            ],
+          ),
         ),
         Align(
           alignment: Alignment.bottomCenter,

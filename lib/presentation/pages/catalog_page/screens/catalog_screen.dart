@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/domain/entities/entities.dart';
+import 'package:third_task/presentation/pages/catalog_page/cubit/catalog_cubit.dart';
 import 'package:third_task/presentation/ui_kit/shadow_wrapper.dart';
 import 'package:third_task/presentation/utils/app_fonts.dart';
 import 'package:third_task/presentation/pages/catalog_page/widgets/category_widget.dart';
@@ -22,37 +24,42 @@ class CatalogScreen extends StatelessWidget {
       AppImages.category4,
     ];
     return ShadowWrapper(
-      child: CustomScrollView(
-        slivers: [
-          const SliverToBoxAdapter(
-            child: SectionsWidget(),
-          ),
-          SliverPadding(
-            padding: EdgeInsets.all(16.r),
-            sliver: SliverToBoxAdapter(
-              child: Text(
-                l10n.categories,
-                style: AppFonts.yesevaRegular24,
+      child: RefreshIndicator(
+        onRefresh: () async {
+          await context.read<CatalogCubit>().onPageOpened();
+        },
+        child: CustomScrollView(
+          slivers: [
+            const SliverToBoxAdapter(
+              child: SectionsWidget(),
+            ),
+            SliverPadding(
+              padding: EdgeInsets.all(16.r),
+              sliver: SliverToBoxAdapter(
+                child: Text(
+                  l10n.categories,
+                  style: AppFonts.yesevaRegular24,
+                ),
               ),
             ),
-          ),
-          SliverPadding(
-            padding: EdgeInsets.fromLTRB(16.w, 0, 16.w, 89.h),
-            sliver: SliverGrid.builder(
-              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 200,
-                childAspectRatio: 163 / 117,
-                crossAxisSpacing: 16.r,
-                mainAxisSpacing: 16.r,
+            SliverPadding(
+              padding: EdgeInsets.fromLTRB(16.w, 0, 16.w, 89.h),
+              sliver: SliverGrid.builder(
+                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                  maxCrossAxisExtent: 200,
+                  childAspectRatio: 163 / 117,
+                  crossAxisSpacing: 16.r,
+                  mainAxisSpacing: 16.r,
+                ),
+                itemBuilder: (context, index) => CategoryWidget(
+                  category: categories[index],
+                  image: categoryImages[index],
+                ),
+                itemCount: categories.length,
               ),
-              itemBuilder: (context, index) => CategoryWidget(
-                category: categories[index],
-                image: categoryImages[index],
-              ),
-              itemCount: categories.length,
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

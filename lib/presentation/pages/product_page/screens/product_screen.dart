@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_task/domain/entities/entities.dart';
+import 'package:third_task/presentation/pages/catalog_page/cubit/catalog_cubit.dart';
 import 'package:third_task/presentation/pages/product_page/widgets/amount_widget.dart';
 import 'package:third_task/presentation/pages/product_page/widgets/brand_widget.dart';
 import 'package:third_task/presentation/pages/product_page/widgets/main_info_widget.dart';
@@ -19,33 +21,38 @@ class ProductScreen extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     return Stack(
       children: [
-        ListView(
-          children: [
-            SizedBox(height: 64.h),
-            PhotoSliderWidget(
-              images: product.images,
-            ),
-            SizedBox(height: 24.h),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: Column(
-                children: [
-                  MainInfoWidget(
-                    product: product,
-                  ),
-                  SizedBox(height: 24.h),
-                  AmountWidget(product: product),
-                ],
+        RefreshIndicator(
+          onRefresh: () async {
+            await context.read<CatalogCubit>().onPageOpened();
+          },
+          child: ListView(
+            children: [
+              SizedBox(height: 64.h),
+              PhotoSliderWidget(
+                images: product.images,
               ),
-            ),
-            SizedBox(height: 24.h),
-            OverviewWidget(product: product),
-            SizedBox(height: 24.h),
-            BrandWidget(brand: product.brand),
-            SizedBox(height: 24.h),
-            RecommendationsWidget(recommendations: product.recommendations),
-            SizedBox(height: 163.h),
-          ],
+              SizedBox(height: 24.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: Column(
+                  children: [
+                    MainInfoWidget(
+                      product: product,
+                    ),
+                    SizedBox(height: 24.h),
+                    AmountWidget(product: product),
+                  ],
+                ),
+              ),
+              SizedBox(height: 24.h),
+              OverviewWidget(product: product),
+              SizedBox(height: 24.h),
+              BrandWidget(brand: product.brand),
+              SizedBox(height: 24.h),
+              RecommendationsWidget(recommendations: product.recommendations),
+              SizedBox(height: 163.h),
+            ],
+          ),
         ),
         Align(
           alignment: Alignment.bottomCenter,
