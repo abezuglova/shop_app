@@ -68,7 +68,7 @@ class CatalogRepository implements ICatalogRepository {
         .toList();
   }
 
-  _getSubCategoriesMockList(id) => [
+  List<Category> _getSubCategoriesMockList(id) => [
         Category(
           id: id,
           name: 'Чай',
